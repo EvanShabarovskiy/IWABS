@@ -2,7 +2,44 @@
   display: flex
   justify-content: flex-end
   box-shadow: $shadow
-  
+  position: relative
+  .flag
+    position: absolute
+    padding-top: 12px
+    top: 0
+    left: 50px
+    background-color: $l_red
+    width: 100px
+    height: 120px
+    display: flex
+    justify-content: center
+    .logo
+      color: #ffffff
+      font-size: 4rem
+    &::before
+      content: ''
+      position: absolute
+      left: -6px
+      bottom: -4px
+      width: 0
+      height: 0
+      border-left: 56px solid transparent
+      border-right: 56px solid transparent
+      border-bottom: 30px solid #ffffff
+    .slogan
+      position: absolute
+      top: 10px
+      left: 125px
+      width: 400px
+      font-size: 2rem
+      *
+        line-height: 28px
+        text-transform: uppercase
+        // font-weight: 600
+        // color: $l_red
+      .row-2
+        text-indent: 100px
+
   &-links-wrap
     display: flex
     padding: 20px

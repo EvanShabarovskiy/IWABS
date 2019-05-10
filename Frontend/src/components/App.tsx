@@ -7,7 +7,7 @@ const App = () => (
     <>
       <Menu />
       <Switch>
-        <Route exact path="/" component={() => <h1>Welcome</h1>} />
+        <Route exact path="/" component={() => <h1></h1>} />
       </Switch>
     </>
   </Router>

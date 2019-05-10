@@ -1,9 +1,11 @@
 import * as React from 'react';
 import Link from './Link';
+import Flag from './Flag';
 
 const Menu = () => {
   return (
     <nav id="main-menu" className="menu">
+      <Flag />
       <ul id="main-menu-links-wrap">
         <li className="link-wrap">
           <Link active to="/" label="головна" />
