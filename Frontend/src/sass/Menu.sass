@@ -10,22 +10,23 @@
     left: 50px
     background-color: $l_red
     width: 100px
-    height: 120px
+    height: 90px
     display: flex
     justify-content: center
+    z-index: 1
     .logo
       color: #ffffff
       font-size: 4rem
     &::before
       content: ''
       position: absolute
-      left: -6px
-      bottom: -4px
+      left: 0
+      bottom: -25px
       width: 0
       height: 0
-      border-left: 56px solid transparent
-      border-right: 56px solid transparent
-      border-bottom: 30px solid #ffffff
+      border-bottom: 25px solid transparent
+      border-left: 50px solid $l_red
+      border-right: 50px solid $l_red
     .slogan
       position: absolute
       top: 10px
@@ -44,8 +45,10 @@
     display: flex
     padding: 20px
     .link-wrap
-      padding: 10px 20px
+      padding: 5px 20px
       .link
+        display: block
+        padding: 5px
         font-size: .7rem
         text-transform: uppercase
         letter-spacing: 1px

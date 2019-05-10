@@ -1,0 +1,66 @@
+.banner
+  position: relative
+  height: 500px
+  display: flex
+  align-items: center
+  justify-content: center
+  overflow: hidden
+  &::before, &::after
+    content: ''
+    position: absolute
+    top: -10px
+    left: -10px
+    right: -10px
+    bottom: -10px
+    background-color: #00000080
+    filter: blur(7px)
+  &::before
+    background-image: url(assets/images/family.jpg)
+    background-size: cover
+    background-position: center
+  .motivation
+    flex-basis: 50%
+    z-index: 1
+    text-align: center
+    color: #ffffff
+    padding: 180px
+    .title
+      text-transform: capitalize
+      padding: 20px 75px 30px
+      position: relative
+      &::before
+        content: ''
+        height: 1px
+        width: 50px
+        background-color: $l_red
+        position: absolute
+        left: calc(50% - 25px)
+        bottom: 15px
+    &-text
+      font-size: 1.15rem
+      line-height: 2rem
+      letter-spacing: 2px
+    .feedback-btn
+      color: #ffffff
+      margin: 30px auto 0
+      border: 1px solid #ffffff
+      text-transform: uppercase
+      letter-spacing: 1px
+      cursor: pointer
+      transition: $transition
+      &:hover
+        border-color: $l_red
+        background-color: $l_red
+
+  .slogan-wrap
+    flex-basis: 50%
+    z-index: 1
+    .title
+      display: none
+      font-weight: 900
+      font-size: 4.5rem
+      text-transform: capitalize
+      width: 700px
+      margin: 0 auto
+      text-align: center
+      color: #ffffff
