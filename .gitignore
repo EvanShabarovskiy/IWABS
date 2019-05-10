@@ -1,5 +1,5 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
-*/.vs
+
 
 # compiled output
 /tmp
@@ -9,6 +9,10 @@
 
 # dependencies
 node_modules
+
+# VS2017 and VSCode config files.
+.vscode
+.vs
 
 # profiling files
 chrome-profiler-events.json
