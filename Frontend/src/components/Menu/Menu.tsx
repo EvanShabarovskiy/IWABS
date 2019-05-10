@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Link from './Link';
+import { Link } from './Link';
 import Flag from './Flag';
 
 const Menu = () => {
@@ -25,7 +25,6 @@ const Menu = () => {
         <li className="link-wrap">
           <Link to="/photos" label="фотогалерея" />
         </li>
-
       </ul>
     </nav>
   );

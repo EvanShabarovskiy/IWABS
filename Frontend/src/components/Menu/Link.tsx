@@ -5,7 +5,7 @@ import cx from 'classnames';
 
 import { ILinkProps } from '../../interfaces/ILinkProps';
 
-const Link: StatelessComponent<ILinkProps> = ({ to, active, label }) => (
+export const Link: StatelessComponent<ILinkProps> = ({ to, active, label }) => (
   <Route
     path={to}
     exact={active}
@@ -16,5 +16,3 @@ const Link: StatelessComponent<ILinkProps> = ({ to, active, label }) => (
     )}
   />
 );
-
-export default Link;

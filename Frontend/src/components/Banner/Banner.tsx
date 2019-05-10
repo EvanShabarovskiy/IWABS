@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 const Banner = () => (
-  <div className="banner">
+  <section className="banner">
     <div className="motivation">
       <h2 className="title">бути донором – це благородно і корисно!</h2>
       <span className="motivation-text">
@@ -14,7 +14,7 @@ const Banner = () => (
     <div className="slogan-wrap">
       <h1 className="title">врятуй чиєсь життя</h1>
     </div>
-  </div>
+  </section>
 );
 
 export default Banner;
