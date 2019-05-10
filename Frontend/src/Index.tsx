@@ -1,8 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-const { render } = ReactDOM;
-
 import App from './components/App';
+
+const { render } = ReactDOM;
 
 render(<App />, document.getElementById('app'));
