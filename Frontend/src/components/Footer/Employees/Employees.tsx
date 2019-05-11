@@ -1,11 +1,6 @@
 import * as React from 'react';
+import { StatelessComponent } from 'react';
 
-const Employees = () => {
-  return (
-    <div>
-      
-    </div>
-  );
-};
-
-export default Employees;
+export const Employees: StatelessComponent = ({ children }) => (
+  <div className="employees">{children}</div>
+);
