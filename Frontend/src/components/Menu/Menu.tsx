@@ -1,33 +1,19 @@
 import * as React from 'react';
 import { Link } from './Link';
 import Flag from './Flag';
+import { menu_items } from '../../assets/constants/menu_items';
 
-const Menu = () => {
+export const Menu = () => {
   return (
     <nav id="main-menu" className="menu">
       <Flag />
       <ul id="main-menu-links-wrap">
-        <li className="link-wrap">
-          <Link active to="/" label="головна" />
-        </li>
-        <li className="link-wrap">
-          <Link active to="/documents" label="документи" />
-        </li>
-        <li className="link-wrap">
-          <Link to="/for-donors" label="для донорів" />
-        </li>
-        <li className="link-wrap">
-          <Link to="/medicine" label="ліки" />
-        </li>
-        <li className="link-wrap">
-          <Link to="/news" label="новини" />
-        </li>
-        <li className="link-wrap">
-          <Link to="/photos" label="фотогалерея" />
-        </li>
+        {menu_items.map(({ to, active, label }, i) => (
+          <li className="link-wrap">
+            <Link active={active} to={to} label={label} />
+          </li>
+        ))}
       </ul>
     </nav>
   );
 };
-
-export default Menu;
