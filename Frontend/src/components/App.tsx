@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Menu } from './Menu/Menu';
 import { Banner } from './Banner/Banner';
 import { HistoryContainer } from './History/HistoryContainer';
+import Footer from './Footer/Footer';
 
 const App = () => (
   <Router>

@@ -9,7 +9,7 @@ export const Menu = () => {
       <Flag />
       <ul id="main-menu-links-wrap">
         {menu_items.map(({ to, active, label }, i) => (
-          <li className="link-wrap">
+          <li key={i} className="link-wrap">
             <Link active={active} to={to} label={label} />
           </li>
         ))}
