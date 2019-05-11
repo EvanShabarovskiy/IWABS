@@ -9,8 +9,6 @@ const App = () => (
   <Router>
     <>
       <Menu />
-      <Banner />
-      <HistoryContainer />
       <Switch>
         {routes_data.map(({ exact, path, component }) => (
           <Route exact={exact} path={path} component={component} />
