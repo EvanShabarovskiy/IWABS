@@ -5,7 +5,7 @@ import { HistoryItem } from './HistoryItem';
 
 const HistoryContainer = () => (
   <>
-    <h1 className="title">історія закладу</h1>,
+    <h1 className="title">історія закладу</h1>
     <History>
       {history.map(({ title, text }) => (
         <HistoryItem title={title} text={text} />
