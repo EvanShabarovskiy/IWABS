@@ -3,7 +3,7 @@ import { EmployeesContainer } from './Employees/EmployeesContainer';
 
 const Footer = () => {
   return (
-    <footer>
+    <footer id="main-footer">
       <EmployeesContainer />
     </footer>
   );
