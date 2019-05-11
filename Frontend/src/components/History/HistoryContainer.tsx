@@ -7,8 +7,8 @@ export const HistoryContainer = () => (
   <>
     <h1 className="title">історія закладу</h1>
     <History>
-      {history.map(({ title, text }) => (
-        <HistoryItem title={title} text={text} />
+      {history.map(({ title, text }, i) => (
+        <HistoryItem key={i} title={title} text={text} />
       ))}
     </History>
   </>

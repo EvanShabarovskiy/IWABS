@@ -5,7 +5,7 @@ import { Employee } from './Employee';
 
 export const EmployeesContainer = () => (
   <>
-    <h4 className="sub-title">наші працівники</h4>
+    <h6 className="sub-title">наші працівники</h6>
     <Employees>
       {employees_data.map(({ position, fullName, phone }, i) => (
         <Employee

@@ -11,8 +11,8 @@ const App = () => (
     <>
       <Menu />
       <Switch>
-        {routes_data.map(({ exact, path, component }) => (
-          <Route exact={exact} path={path} component={component} />
+        {routes_data.map(({ exact, path, component }, i) => (
+          <Route key={i} exact={exact} path={path} component={component} />
         ))}
       </Switch>
       <Footer />

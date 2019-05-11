@@ -5,18 +5,19 @@
   position: relative
   .flag
     position: absolute
-    padding-top: 12px
+    padding-top: 10px
     top: 0
     left: 50px
-    background-color: $l_red
+    background-color: #ffffff
+    box-shadow: $shadow
     width: 100px
     height: 90px
     display: flex
     justify-content: center
     z-index: 1
     .logo
-      color: #ffffff
-      font-size: 4rem
+      height: 70px
+      filter: grayscale(100%)
     &::before
       content: ''
       position: absolute
@@ -25,21 +26,17 @@
       width: 0
       height: 0
       border-bottom: 25px solid transparent
-      border-left: 50px solid $l_red
-      border-right: 50px solid $l_red
-    .slogan
+      border-left: 50px solid #ffffff
+      border-right: 50px solid #ffffff
+    .company-name-wrap
       position: absolute
       top: 10px
       left: 125px
       width: 400px
-      font-size: 2rem
-      *
-        line-height: 28px
+      color: #606060
+      .company-name
+        line-height: 1.15rem
         text-transform: uppercase
-        // font-weight: 600
-        // color: $l_red
-      .row-2
-        text-indent: 100px
 
   &-links-wrap
     display: flex
