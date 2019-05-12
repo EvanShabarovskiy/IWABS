@@ -1,0 +1,29 @@
+.circles
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  .circle
+    flex-basis: 200px
+    height: 200px
+    margin: 20px 40px
+    border: 7px solid $d_red
+    border-radius: 50%
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    text-align: center
+    i
+      color: $d_red
+      font-size: 4rem
+    &-title
+      font-weight: 900
+      font-size: .7rem
+      color: $d_red
+      text-transform: capitalize
+      margin: 10px 0
+      letter-spacing: 1px
+      width: 70%
+    &-value
+      color: #606060
+      font-size: 1.1rem

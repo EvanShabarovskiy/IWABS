@@ -9,3 +9,28 @@
   padding: 40px 40px 20px
   text-transform: uppercase
   font-weight: 900
+
+.number
+  font-family: 'Rubik', sans-serif
+
+.section
+  position: relative
+  padding: 100px 100px 20px
+
+.section-title
+  position: absolute
+  top: 30px
+  left: 50%
+  transform: translate(-50%, 0)
+  text-align: center
+  text-transform: uppercase
+  font-size: 1.5rem
+  letter-spacing: 5px
+  &::before
+    content: ''
+    width: 150px
+    height: 1px
+    background-color: #000000
+    position: absolute
+    bottom: -20px
+    left: calc(50% - 75px)
