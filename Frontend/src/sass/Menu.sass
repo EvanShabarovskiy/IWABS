@@ -51,5 +51,35 @@
         letter-spacing: 1px
         &.active
           color: $l_red
-
+@media screen and (max-width: 1400px)
+  #main-menu
+    .flag
+      padding-top: 5px
+      width: 70px
+      height: 70px
+      .logo
+        height: 55px
+      .company-name-wrap
+        top: 5px
+        left: 100px
+        width: 300px
+        .company-name
+          line-height: 1rem
+          font-size: .75rem
+      &::before
+        content: ''
+        position: absolute
+        left: 0
+        bottom: -20px
+        width: 0
+        height: 0
+        border-bottom: 20px solid transparent
+        border-left: 35px solid #ffffff
+        border-right: 35px solid #ffffff
+    &-links-wrap
+      padding: 15px
+      .link-wrap
+        padding: 5px 10px
+        .link
+          font-size: .5rem
 

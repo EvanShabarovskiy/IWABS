@@ -12,8 +12,8 @@
     left: -10px
     right: -10px
     bottom: -10px
-    background-color: #00000080
-    filter: blur(7px)
+    background-color: #00000050
+    filter: blur(5px)
   &::before
     background-image: url(assets/images/family.jpg)
     background-size: cover
@@ -64,3 +64,21 @@
       margin: 0 auto
       text-align: center
       color: #ffffff
+
+@media screen and (max-width: 1400px)
+  .banner
+    height: 400px
+    .motivation
+      padding: 100px
+      &-title
+        padding: 20px 50px 30px
+        font-size: 1.3rem
+      &-text
+        font-size: 1rem
+        line-height: 1.65rem
+        letter-spacing: 2px
+      .feedback-btn
+        color: #ffffff
+        margin: 15px auto 0
+        font-size: .75rem
+        padding: .75rem
