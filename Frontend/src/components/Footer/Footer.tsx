@@ -1,9 +1,7 @@
 import * as React from 'react';
-import { EmployeesContainer } from './Employees/EmployeesContainer';
 
 const Footer = () => (
   <footer id="main-footer">
-    <EmployeesContainer />
   </footer>
 );
 

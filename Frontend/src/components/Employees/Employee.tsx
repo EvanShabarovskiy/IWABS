@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StatelessComponent } from 'react';
-import { IEmployee } from '../../../interfaces/IEmployee';
+import { IEmployee } from '../../interfaces/IEmployee';
 
 export const Employee: StatelessComponent<IEmployee> = ({
   position,
