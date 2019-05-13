@@ -13,6 +13,8 @@ node_modules
 .vs
 .vs/*
 .vscode/*
+obj
+obj/*
 
 # profiling files
 chrome-profiler-events.json
