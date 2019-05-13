@@ -2,5 +2,8 @@ import * as React from 'react';
 import { StatelessComponent } from 'react';
 
 export const Employees: StatelessComponent = ({ children }) => (
-  <div className="employees">{children}</div>
+  <section className="section employees">
+    <h1 className="section-title">наші працівники</h1>
+    {children}
+  </section>
 );
