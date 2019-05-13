@@ -11,6 +11,10 @@ node_modules
 # VS2017 and VSCode config files.
 .vscode
 .vs
+.vs/*
+.vscode/*
+obj
+obj/*
 
 # profiling files
 chrome-profiler-events.json
