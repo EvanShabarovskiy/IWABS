@@ -8,6 +8,7 @@ const SignInContainer = () => {
   });
   const change = (e: { target: { name: any; value: any } }) => {
     const { name, value } = e.target;
+    console.log(fields);
     setFields(fields => ({
       ...fields,
       [name]: value
