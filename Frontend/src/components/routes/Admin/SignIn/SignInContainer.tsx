@@ -22,11 +22,13 @@ const SignInContainer = () => {
     {
       value: fields.login,
       name: 'login',
+      placeholder: 'логін',
       change
     },
     {
       value: fields.password,
       name: 'password',
+      placeholder: 'пароль',
       change
     }
   ];
