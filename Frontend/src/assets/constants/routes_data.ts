@@ -5,7 +5,6 @@ import { ForDonors } from '../../components/routes/ForDonorsRoute/ForDonors';
 import { Medicine } from '../../components/routes/MedicineRoute/Medicine';
 import { News } from '../../components/routes/NewsRoute/News';
 import { Gallery } from '../../components/routes/GalleryRoute/Gallery';
-import { AdminContainer } from '../../components/routes/Admin/AdminContainer';
 
 export const routes_data: IRoute[] = [
   {
@@ -37,10 +36,5 @@ export const routes_data: IRoute[] = [
     exact: false,
     path: '/photos',
     component: Gallery
-  },
-  {
-    exact: false,
-    path: '/admin',
-    component: AdminContainer
   }
 ];
