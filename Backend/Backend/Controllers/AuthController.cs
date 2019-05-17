@@ -14,12 +14,12 @@ namespace Backend.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private IWABS_Context db;
         private AuthService authService;
+        private UsersService usersService;
 
-        public AuthController(IWABS_Context db, AuthService authService)
+        public AuthController(AuthService authService, UsersService usersService)
         {
-            this.db = db;
+            this.usersService = usersService;
             this.authService = authService;
         }
 
@@ -27,14 +27,12 @@ namespace Backend.Controllers
         {
             if(adminUI != null)
             {
-                Admin admin = db.Admins.Single(x => x.Login == adminUI.Login && x.Password == adminUI.Password);
-
+                Admin admin = usersService.GetAdmin(adminUI.Email, adminUI.Password);
                 if(admin != null)
                 {
                     return Ok(authService.BuildToken(admin));
                 }
             }
-
             return BadRequest();
         }
     }

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Backend.Models
 {
-    public class User
+    public class Donor
     {
         public string Id { get; set; }
         public string Name { get; set; }

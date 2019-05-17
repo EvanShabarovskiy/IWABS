@@ -13,7 +13,7 @@ namespace Backend.Models
             Database.EnsureCreated();
         }
 
-        public DbSet<User> Users { get; set; }
+        public DbSet<Donor> Donors { get; set; }
         public DbSet<Post> News { get; set; }
         public DbSet<Admin> Admins { get; set; }
 
