@@ -59,6 +59,7 @@ namespace Backend
 
             services.AddTransient<AuthService>();
             services.AddTransient<UsersService>();
+            services.AddTransient<NewsService>();
             services.AddMvc();
         }
 
