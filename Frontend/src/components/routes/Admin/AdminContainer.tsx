@@ -9,7 +9,7 @@ interface props {
 }
 
 export const AdminContainer: StatelessComponent<props> = ({ signedIn }) => {
-  if (signedIn) {
+  if (!signedIn) {
     return <Admin />;
   }
   return <SignInContainer />;
