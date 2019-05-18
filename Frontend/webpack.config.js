@@ -31,11 +31,7 @@ const config = {
   },
 
   module: {
-    rules: [{
-        test: /\.tsx?$/,
-        use: 'awesome-typescript-loader',
-        exclude: /node_modules/
-      },
+    rules: [
       {
         test: /\.jsx?$/,
         use: {
