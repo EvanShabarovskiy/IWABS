@@ -1,7 +1,7 @@
 import React from 'react';
-import { banner_data } from '../../assets/constants/banner_data';
+import { banner } from 'assets/constants/data/banner';
 
-const { motivation, slogan } = banner_data;
+const { motivation, slogan } = banner;
 
 export const Banner = () => (
   <section className="banner">

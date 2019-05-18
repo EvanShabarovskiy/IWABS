@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { history } from '../../assets/constants/history';
+import { history } from '../../assets/constants/data/history';
 import { HistoryItem } from './HistoryItem';
 
 export const History = () => (

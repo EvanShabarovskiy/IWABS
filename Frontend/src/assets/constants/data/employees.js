@@ -1,6 +1,4 @@
-import { IEmployee } from "../../interfaces/IEmployee";
-
-export const employees_data: IEmployee[] = [
+export const employees = [
   {
     position: 'Головний лікар',
     fullName: 'Михальчук Ліна Миколаївна',

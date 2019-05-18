@@ -1,6 +1,4 @@
-import { IHistoryItemProps } from '../../interfaces/IHistoryItemProps';
-
-export const history: IHistoryItemProps[] = [
+export const history = [
   {
     title: '1944',
     text:

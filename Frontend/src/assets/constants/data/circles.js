@@ -1,6 +1,4 @@
-import { ICircle } from "../../interfaces/ICircle";
-
-export const circles_data: ICircle[] = [
+export const circles = [
   {
     iconClass: 'fas fa-user-friends',
     title: 'донорів',

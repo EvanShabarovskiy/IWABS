@@ -1,6 +1,4 @@
-import { ILinkProps } from '../../interfaces/ILinkProps';
-
-export const menu_items: ILinkProps[] = [
+export const links = [
   {
     active: true,
     to: '/',

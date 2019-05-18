@@ -16,7 +16,7 @@ const config = {
   entry: {
     bundle: [
       '@babel/polyfill',
-      './Index.tsx',
+      './Index.js',
       './Index.sass'
     ],
   },

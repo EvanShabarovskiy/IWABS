@@ -1,11 +1,11 @@
 import React from 'react';
 import { Employees } from './Employees';
-import { employees_data } from '../../assets/constants/employees_data';
+import { employees } from 'assets/constants/data/employees';
 import { Employee } from './Employee';
 
 export const EmployeesContainer = () => (
   <Employees>
-    {employees_data.map(({ position, fullName, phone }, i) => (
+    {employees.map(({ position, fullName, phone }, i) => (
       <Employee
         key={i}
         position={position}

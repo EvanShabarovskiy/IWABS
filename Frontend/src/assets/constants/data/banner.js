@@ -1,4 +1,4 @@
-export const banner_data = {
+export const banner = {
   motivation: {
     title: 'бути донором – це благородно і корисно!',
     text: `У організмі людини міститься в середньому близько 5 літрів крові, тобтo
