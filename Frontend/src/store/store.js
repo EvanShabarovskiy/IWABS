@@ -1,16 +1,16 @@
 import { createStore } from 'redux';
 import rootReducer from './reducers';
-import { get } from 'js-cookie';
-import Axios from 'axios';
+import { get as getCookies } from 'js-cookie';
+import { get } from 'axios';
 import { toggleSignedIn } from './actions';
 
 export const store = createStore(rootReducer);
 
 const getSignedIn = () => {
-  const token = get('token');
+  const token = getCookies('token');
 
   if (token) {
-    Axios.get('http://***/api/auth', {
+    get('http://***/api/auth', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(() => {
