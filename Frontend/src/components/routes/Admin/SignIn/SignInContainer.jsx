@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { SignIn } from './SignIn';
 import Axios from 'axios';
 import { set } from 'js-cookie';
@@ -8,7 +8,7 @@ const SignInContainer = () => {
     login: '',
     password: ''
   });
-  const change = (e: { target: { name: any; value: any } }) => {
+  const change = e => {
     const { name, value } = e.target;
     console.log(fields);
     setFields(fields => ({
@@ -16,7 +16,7 @@ const SignInContainer = () => {
       [name]: value
     }));
   };
-  const submit = (e: { preventDefault: () => void }) => {
+  const submit = e => {
     e.preventDefault();
     Axios.post('http://***/api/auth', fields)
       .then(({ data }) => {

@@ -1,9 +1,9 @@
-import * as React from 'react';
-import { StatelessComponent } from 'react';
+import React from 'react';
+
 import { history } from '../../assets/constants/history';
 import { HistoryItem } from './HistoryItem';
 
-export const History: StatelessComponent = () => (
+export const History = () => (
   <section className="section history">
     <h1 className="section-title">історія закладу</h1>
     {history.map(({ title, text }, i) => (

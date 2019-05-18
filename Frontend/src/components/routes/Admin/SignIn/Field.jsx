@@ -1,13 +1,6 @@
-import * as React from 'react';
-import { StatelessComponent } from 'react';
-import { IField } from '../../../../interfaces/IField';
+import React from 'react';
 
-const Field: StatelessComponent<IField> = ({
-  name,
-  value,
-  placeholder,
-  change
-}) => (
+const Field = ({ name, value, placeholder, change }) => (
   <label htmlFor={`id-${name}`} className="field">
     <span className="field-title">{placeholder}</span>
     <input

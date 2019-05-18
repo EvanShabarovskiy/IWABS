@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { banner_data } from '../../assets/constants/banner_data';
 
 const { motivation, slogan } = banner_data;

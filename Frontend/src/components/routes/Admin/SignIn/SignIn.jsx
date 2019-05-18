@@ -1,9 +1,7 @@
-import * as React from 'react';
-import { StatelessComponent } from 'react';
+import React from 'react';
 import Field from './Field';
-import { ISignIn } from '../../../../interfaces/ISignIn';
 
-export const SignIn: StatelessComponent<ISignIn> = ({ submit, fields }) => (
+export const SignIn = ({ submit, fields }) => (
   <section className="section">
     <form className="sign-in-form" onSubmit={submit}>
       <h1 className="sign-in-form-title">Вхід</h1>

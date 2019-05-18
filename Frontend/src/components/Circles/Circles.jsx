@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Circle from './Circle';
 import { circles_data } from '../../assets/constants/circles_data';
 

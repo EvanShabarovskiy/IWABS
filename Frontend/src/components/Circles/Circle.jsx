@@ -1,8 +1,6 @@
-import * as React from 'react';
-import { StatelessComponent } from 'react';
-import { ICircle } from '../../interfaces/ICircle';
+import React from 'react';
 
-const Circle: StatelessComponent<ICircle> = ({ iconClass, title, value }) => (
+const Circle = ({ iconClass, title, value }) => (
   <div className="circle">
     <i className={iconClass} />
     <h5 className="circle-title">{title}</h5>
