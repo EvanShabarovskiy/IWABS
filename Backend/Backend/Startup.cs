@@ -71,6 +71,8 @@ namespace Backend
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseAuthentication();
+            app.UseCors("CorsPolicy");
             app.UseMvc();
         }
     }
