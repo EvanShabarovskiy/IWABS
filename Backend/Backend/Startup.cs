@@ -73,6 +73,7 @@ namespace Backend
 
             app.UseStaticFiles();
             app.UseAuthentication();
+            app.UseStaticFiles();
             app.UseCors("CorsPolicy");
             app.UseMvc();
         }
