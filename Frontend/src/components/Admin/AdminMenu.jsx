@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from '../../Menu/Link';
+import { Link } from '../Menu/Link';
 import { withRouter } from 'react-router';
 
 const AdminMenu = ({ match: { path } }) => (

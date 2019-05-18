@@ -1,39 +1,21 @@
-import { Main } from '../../../components/routes/MainRoute/Main';
-import { Documents } from '../../../components/routes/DocumentsRoute/Documents';
-import { ForDonors } from '../../../components/routes/ForDonorsRoute/ForDonors';
-import { Medicine } from '../../../components/routes/MedicineRoute/Medicine';
-import { News } from '../../../components/routes/NewsRoute/News';
-import { Gallery } from '../../../components/routes/GalleryRoute/Gallery';
+import AdminRoute from '../../../components/AdminRoute';
+import NewsRoute from '../../../components/NewsRoute';
+import MainRoute from '../../../components/MainRoute';
 
 export const routing = [
   {
     exact: true,
     path: '/',
-    component: Main
-  },
-  {
-    exact: false,
-    path: '/documents',
-    component: Documents
-  },
-  {
-    exact: false,
-    path: '/for-donors',
-    component: ForDonors
-  },
-  {
-    exact: false,
-    path: '/medicine',
-    component: Medicine
+    component: MainRoute
   },
   {
     exact: false,
     path: '/news',
-    component: News
+    component: NewsRoute
   },
   {
     exact: false,
-    path: '/photos',
-    component: Gallery
+    path: '/admin',
+    component: AdminRoute
   }
 ];

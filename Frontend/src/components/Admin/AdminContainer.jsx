@@ -1,6 +1,6 @@
 import React from 'react';
 import Admin from './Admin';
-import SignInContainer from './SignIn/SignInContainer';
+import SignInContainer from '../SignIn/SignInContainer';
 import { connect } from 'react-redux';
 
 export const AdminContainer = ({ signedIn }) => {
