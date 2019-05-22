@@ -1,5 +1,5 @@
 import React from 'react';
-import Post from './Post';
+import Post from '../../News/Post';
 
 const News = ({ news }) => (
   <section className="news section">
@@ -9,7 +9,5 @@ const News = ({ news }) => (
     ))}
   </section>
 );
-
-
 
 export default News;
