@@ -1,4 +1,5 @@
 .admin.section
+  padding-top: 80px
   #admin-menu
     position: absolute
     top: 30px
@@ -24,4 +25,39 @@
               bottom: 0
               height: 2px
               background-color: $l_red
-  
+  .news.section
+    .post
+      width: 968px
+      padding: 
+        bottom: 20px
+      margin: 0 auto
+        bottom: 20px
+      position: relative
+      border: 
+        bottom: 1px solid #ccc
+      &:last-child
+        border: none
+      &-title
+        text-align: center
+      .publishing-date
+        margin: 
+          bottom: 10px
+        text-align: center
+      &-img
+        float: left
+        margin: 0
+          right: 20px
+        width: 250px
+      .remove-btn
+        position: absolute
+        top: 0
+        right: 20px
+        font-size: 1.5rem
+        font-weight: 500
+        font-family: $rubik
+        transform: rotate(45deg)
+        padding: 5px
+        color: #cccccc
+        transition: $transition
+        &:hover
+          color: $l_red

@@ -1,5 +1,5 @@
 import React from 'react';
-import Post from '../../News/Post';
+import Post from './Post';
 
 const News = ({ news }) => (
   <section className="news section">
