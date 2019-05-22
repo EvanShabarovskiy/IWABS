@@ -11,5 +11,6 @@ export const History = () => (
         <HistoryItem key={i} title={title} text={text} />
       ))}
     </div>
+    <button className="btn show-more-btn">більше історії</button>
   </section>
 );

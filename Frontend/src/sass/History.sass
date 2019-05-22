@@ -1,25 +1,51 @@
 .history
-  display: flex
-  flex-wrap: wrap
-  flex-direction: column
-  justify-content: center
-  align-content: center
-  height: 1750px
   background-color: #f9f9f9
-  &-item
-    padding: 50px 20px 20px
-    box-shadow: $shadow
-    text-align: center
-    letter-spacing: 1px
-    position: relative
-    width: 320px
-    margin: 10px
-    &-title
-        position: absolute
-        top: 20px
-        left: 20px
-        font-weight: 900
-        color: $l_red
+  height: 800px
+  overflow: hidden
+  position: relative
+  .history-list
+    height: 1550px
+    display: flex
+    flex-wrap: wrap
+    flex-direction: column
+    justify-content: center
+    align-content: center
+    .history-item
+      padding: 50px 20px 20px
+      box-shadow: $shadow
+      text-align: center
+      letter-spacing: 1px
+      position: relative
+      width: 320px
+      margin: 10px
+      &-title
+          position: absolute
+          top: 20px
+          left: 20px
+          font-weight: 900
+          color: $l_red
+  .show-more-btn
+    border: 1px solid $l_red
+    position: absolute
+    left: 50%
+    transform: translate(-50%, 0)
+    bottom: 40px
+    color: $l_red
+    z-index: 1
+    &:hover
+      color: #ffffff
+      background: $l_red
+  &::before
+    content: ''
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: #f9f9f9
+    height: 120px
+    z-index: 1
+    box-shadow: 0 0 34px 36px #f9f9f9
+
 @media screen and (max-width: 1400px) 
   .history
     height: 1400px
