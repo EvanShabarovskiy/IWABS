@@ -6,8 +6,10 @@ import { HistoryItem } from './HistoryItem';
 export const History = () => (
   <section className="section history">
     <h1 className="section-title">історія закладу</h1>
-    {history.map(({ title, text }, i) => (
-      <HistoryItem key={i} title={title} text={text} />
-    ))}
+    <div className="history-list">
+      {history.map(({ title, text }, i) => (
+        <HistoryItem key={i} title={title} text={text} />
+      ))}
+    </div>
   </section>
 );
