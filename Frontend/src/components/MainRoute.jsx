@@ -2,14 +2,14 @@ import React from 'react';
 
 import { Banner } from './Banner/Banner';
 import Circles from './Circles/Circles';
-import { History } from './History/History';
 import { EmployeesContainer } from './Employees/EmployeesContainer';
+import HistoryContainer from './History/HistoryContainer';
 
 const MainRoute = () => (
   <>
     <Banner />
     <Circles />
-    <History />
+    <HistoryContainer />
     <EmployeesContainer />
   </>
 );
