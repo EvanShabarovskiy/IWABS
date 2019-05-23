@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from './Link';
+import { Link } from '../_General/Link';
 import Flag from './Flag';
 import { links } from '../../assets/constants/data/links';
 

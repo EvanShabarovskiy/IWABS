@@ -4,6 +4,7 @@ import { Banner } from './Banner/Banner';
 import Circles from './Circles/Circles';
 import { EmployeesContainer } from './Employees/EmployeesContainer';
 import HistoryContainer from './History/HistoryContainer';
+import ContactUs from './ContactUs/ContactUs';
 
 const MainRoute = () => (
   <>
@@ -11,6 +12,7 @@ const MainRoute = () => (
     <Circles />
     <HistoryContainer />
     <EmployeesContainer />
+    <ContactUs />
   </>
 );
 

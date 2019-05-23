@@ -1,5 +1,5 @@
 import React from 'react';
-import Field from './Field';
+import Field from '../_General/Field';
 
 export const SignIn = ({ submit, fields }) => (
   <section className="section">
