@@ -11,6 +11,15 @@ const AdminMenu = ({ match: { path } }) => (
       <li className="link-wrap">
         <Link to={`${path}/donors`} label="донори" />
       </li>
+      <li className="link-wrap">
+        <Link to={`${path}/documents`} label="документи" />
+      </li>
+      <li className="link-wrap">
+        <Link to={`${path}/medicine`} label="ліки" />
+      </li>
+      <li className="link-wrap">
+        <Link to={`${path}/gallery`} label="фотогалерея" />
+      </li>
     </ul>
   </nav>
 );
