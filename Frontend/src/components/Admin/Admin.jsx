@@ -4,7 +4,7 @@ import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 import NewsContainer from './News/NewsContainer'
 
 const Admin = ({ match: { path } }) => (
-  <section className="admin section">
+  <section className="section admin">
     <AdminMenu />
     <Switch>
       <Route exact path={path} component={() => <Redirect to={path + '/news'} />}  />

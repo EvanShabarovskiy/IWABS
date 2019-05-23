@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Field = ({ name, value, placeholder, change, isTextarea }) => (
+const Field = ({ name, value, placeholder, type, change, isTextarea }) => (
   <label htmlFor={`id-${name}`} className={`field ${name}-field`}>
     <span className="field-title">{placeholder}</span>
     {isTextarea ? 
@@ -8,7 +8,6 @@ const Field = ({ name, value, placeholder, change, isTextarea }) => (
         id={`id-${name}`}
         name={name}
         value={value}
-        type="text"
         className="input textarea"
         onChange={change}
       /> :
@@ -16,16 +15,18 @@ const Field = ({ name, value, placeholder, change, isTextarea }) => (
         id={`id-${name}`}
         name={name}
         value={value}
-        type="text"
+        type={type}
         className="input"
         onChange={change}
+        autoComplete="off"
       />
     }
   </label>
 );
 
 Field.defaultProps = {
-  isTextarea: false
+  isTextarea: false,
+  type: 'text'
 }
 
 export default Field;
