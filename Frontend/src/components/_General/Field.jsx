@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Field = ({ name, value, placeholder, change, isTextarea }) => (
-  <label htmlFor={`id-${name}`} className="field">
+  <label htmlFor={`id-${name}`} className={`field ${name}-field`}>
     <span className="field-title">{placeholder}</span>
     {isTextarea ? 
       <textarea
