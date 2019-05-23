@@ -10,6 +10,4 @@ const News = ({ news }) => (
   </section>
 );
 
-
-
 export default News;

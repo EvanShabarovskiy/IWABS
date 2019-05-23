@@ -1,11 +1,17 @@
 import React from 'react';
 import AdminMenu from './AdminMenu';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
+import NewsContainer from './News/NewsContainer'
 
-const Admin = () => (
+const Admin = ({ match: { path } }) => (
   <section className="admin section">
     <AdminMenu />
-    <h1>Welcome to admin page.</h1>
+    <Switch>
+      <Route exact path={path} component={() => <Redirect to={path + '/news'} />}  />
+      <Route path={path + '/news'} component={() => <NewsContainer />}  />
+      <Route path={path + '/donors'} component={() => <h1>donors</h1>}  />
+    </Switch>
   </section>
 );
 
-export default Admin;
+export default withRouter(Admin);
