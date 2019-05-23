@@ -9,7 +9,7 @@ const Field = ({ name, value, placeholder, change, isTextarea }) => (
         name={name}
         value={value}
         type="text"
-        className="input"
+        className="input textarea"
         onChange={change}
       /> :
       <input

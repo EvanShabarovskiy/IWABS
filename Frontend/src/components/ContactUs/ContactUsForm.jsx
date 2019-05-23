@@ -7,7 +7,7 @@ const ContactUsForm = ({ onSubmit, data: { name, email, message }, setValue }) =
     <form className="form contact-us-form" onSubmit={onSubmit}>
       <Field name="name" value={name} placeholder="повне ім'я" change={setValue} />
       <Field name="email" value={email} placeholder="електронна пошта" change={setValue} />
-      <Field name="message" value={message} placeholder="повідомлення" change={setValue} />
+      <Field isTextarea name="message" value={message} placeholder="повідомлення" change={setValue} />
       <button className="btn sub-btn">відправити повідомлення</button>
     </form>
   );

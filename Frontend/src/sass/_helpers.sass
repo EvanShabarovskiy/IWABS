@@ -21,21 +21,27 @@
 .section
   position: relative
   padding: 120px 100px 40px
-
-.section-title
-  position: absolute
-  top: 40px
-  left: 50%
-  transform: translate(-50%, 0)
-  text-align: center
-  text-transform: uppercase
-  font-size: 1.5rem
-  letter-spacing: 5px
-  &::before
-    content: ''
-    width: 150px
-    height: 1px
-    background-color: #000000
+  &-title
     position: absolute
-    bottom: -20px
-    left: calc(50% - 75px)
+    top: 40px
+    left: 50%
+    transform: translate(-50%, 0)
+    text-align: center
+    text-transform: uppercase
+    font-size: 1.5rem
+    letter-spacing: 5px
+    &::before
+      content: ''
+      width: 150px
+      height: 1px
+      background-color: #000000
+      position: absolute
+      bottom: -20px
+      left: calc(50% - 75px)
+
+.input
+  padding: .75rem 1rem
+  border: 1px solid #cccccc
+    radius: 4px
+  &.textarea
+    resize: none
