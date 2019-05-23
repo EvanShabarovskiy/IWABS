@@ -1,24 +1,14 @@
 import React from 'react';
 import Field from '../_General/Field';
-import withForm from '../withForm';
 
-const ContactUsForm = ({ onSubmit, data: { name, subject, email, message }, setValue }) => {
-  return (
-    <form className="form contact-us-form" onSubmit={onSubmit}>
-      <Field name="name" value={name} placeholder="повне ім'я" change={setValue} />
-      <Field name="subject" value={subject} placeholder="тема повідомлення" change={setValue} />
-      <Field name="email" value={email} placeholder="електронна пошта" change={setValue} />
-      <Field isTextarea name="message" value={message} placeholder="повідомлення" change={setValue} />
-      <button className="btn sub-btn">відправити повідомлення</button>
-    </form>
-  );
-};
+const ContactUsForm = ({ onSubmit, data: { name, subject, email, message }, change }) => (
+  <form className="form contact-us-form" onSubmit={onSubmit}>
+    <Field name="name" value={name} placeholder="повне ім'я" change={change} />
+    <Field name="subject" value={subject} placeholder="тема повідомлення" change={change} />
+    <Field name="email" value={email} placeholder="електронна пошта" change={change} />
+    <Field isTextarea name="message" value={message} placeholder="повідомлення" change={change} />
+    <button className="btn sub-btn">відправити повідомлення</button>
+  </form>
+);
 
-const initialState = {
-  name: '', 
-  email: '',
-  subject: '', 
-  message: '' 
-}
-
-export default withForm(initialState, initialState)(ContactUsForm);
+export default ContactUsForm;
