@@ -19,7 +19,7 @@ namespace Backend.Controllers
         {
             this.mailService = mailService;
         }
-
+        //post
         [HttpPost]
         public IActionResult SendFeedback(FeedbackUI feedback)
         {
