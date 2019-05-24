@@ -1,5 +1,5 @@
 import React from 'react';
-import { AdminContainer } from './Admin/AdminContainer';
+import AdminContainer from './Admin/AdminContainer';
 
 const AdminRoute = () => <AdminContainer />
 

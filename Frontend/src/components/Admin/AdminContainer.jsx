@@ -3,11 +3,13 @@ import Admin from './Admin';
 import SignInContainer from '../SignIn/SignInContainer';
 import { connect } from 'react-redux';
 
-export const AdminContainer = ({ signedIn }) => {
-  if (!signedIn) {
+const AdminContainer = ({ signedIn }) => {
+  console.log('signedIn', signedIn);
+  if (signedIn) {
     return <Admin />;
+  } else {
+    return <SignInContainer />;
   }
-  return <SignInContainer />;
 };
 
 const mapStateToProps = ({ general: { signedIn } }) => ({ signedIn });

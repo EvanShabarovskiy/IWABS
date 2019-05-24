@@ -1,27 +1,16 @@
 import React from 'react';
 import { Link } from '../_General/Link';
 import { withRouter } from 'react-router';
+import Menu from '../_General/Menu';
 
 const AdminMenu = ({ match: { path } }) => (
-  <nav id="admin-menu">
-    <ul className="links-wrap">
-      <li className="link-wrap">
-        <Link to={`${path}/news`} label="новини" />
-      </li>
-      <li className="link-wrap">
-        <Link to={`${path}/donors`} label="донори" />
-      </li>
-      <li className="link-wrap">
-        <Link to={`${path}/documents`} label="документи" />
-      </li>
-      <li className="link-wrap">
-        <Link to={`${path}/medicine`} label="ліки" />
-      </li>
-      <li className="link-wrap">
-        <Link to={`${path}/gallery`} label="фотогалерея" />
-      </li>
-    </ul>
-  </nav>
+  <Menu menuId="admin-menu">
+    <Link to={`${path}/news`} label="новини" />
+    <Link to={`${path}/donors`} label="донори" />
+    <Link to={`${path}/documents`} label="документи" />
+    <Link to={`${path}/medicine`} label="ліки" />
+    <Link to={`${path}/gallery`} label="фотогалерея" />
+  </Menu>
 );
 
 export default withRouter(AdminMenu);

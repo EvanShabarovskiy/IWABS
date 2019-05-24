@@ -7,9 +7,11 @@ export const Link = ({ to, active, label }) => (
     path={to}
     exact={active}
     children={({ match }) => (
-      <RouterLink className={cx('link', !!match && 'active')} to={to}>
-        {label}
-      </RouterLink>
+      <li className="link-wrap">
+        <RouterLink className={cx('link', !!match && 'active')} to={to}>
+          {label}
+        </RouterLink>
+      </li>
     )}
   />
 );

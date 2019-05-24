@@ -7,7 +7,7 @@ const getDefaultValues = (initialState, requiredFields) => Component => props =>
     const { value, name } = currentTarget;
     setData(data => ({
       ...data, 
-      [name]: value.trim()
+      [name]: value
     }));
     setErrors(errors => ({
       ...errors,
