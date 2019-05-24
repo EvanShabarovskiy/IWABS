@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using Backend.Models;
@@ -62,6 +63,9 @@ namespace Backend
             services.AddTransient<AuthService>();
             services.AddTransient<UsersService>();
             services.AddTransient<NewsService>();
+            services.AddTransient<MailService>();
+            services.AddTransient<SmtpClient>();
+            //services.AddTransient<IHostingEnvironment>();
             services.AddMvc();
         }
 
