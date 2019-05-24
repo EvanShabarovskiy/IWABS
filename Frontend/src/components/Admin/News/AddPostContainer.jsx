@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import AddPost from './AddPost';
 import Axios from 'axios';
 import { api } from '../../../assets/constants/api';
+import { message } from 'antd';
 
 const AddPostContainer = () => {
   const [addPostData, setAddPostData] = useState({ title: '', text: '', file: null});
@@ -34,7 +35,7 @@ const AddPostContainer = () => {
   }
   const onSubmit = e => {
     e.preventDefault();
-    Axios.post(api + 'news')
+    Axios.post(api + 'news', addPostData)
       .then(({ data }) => console.log('success', data))
   }
   return (

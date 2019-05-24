@@ -11,6 +11,7 @@ const AddPost = ({ data: { title, text }, change, onSubmit, uploadOptions }) => 
     </Upload>
     <Field name="title" value={title} placeholder="заголовок" change={change} />
     <Field name="text" value={text} placeholder="текст" change={change} />
+    <button type="submit" className="btn sub-btn">відправити</button>
   </form>
 );
 

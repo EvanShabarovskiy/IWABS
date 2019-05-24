@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 const AdminContainer = ({ signedIn }) => {
   console.log('signedIn', signedIn);
-  if (!signedIn) {
+  if (signedIn) {
     return <Admin />;
   } else {
     return <SignInContainer />;
