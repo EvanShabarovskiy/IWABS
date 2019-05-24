@@ -45,7 +45,7 @@ const config = {
 
       /* --- scss ---*/
       {
-        test: /\.sass/,
+        test: /\.(sa|c)ss/,
         use: ExtractTextPlugin.extract({
           use: [{
               loader: 'css-loader',

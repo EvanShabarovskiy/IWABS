@@ -8,7 +8,7 @@ import { api } from '../../assets/constants/api';
 const ContactUsFormContainer = ({ data, setValue }) => {
   const onSubmit = e => {
     e.preventDefault();
-    Axios.post(`${api}`, data)
+    Axios.post(`${api}feedback`, data)
       .then(({ data }) => console.log(data))
   }
 
