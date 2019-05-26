@@ -18,5 +18,7 @@ namespace Backend.Services
         public Admin GetAdmin(string email, string password) => db.Admins.SingleOrDefault(x => x.Email == email && x.Password == password);
 
         public Admin GetAdmin(string id) => db.Admins.SingleOrDefault(x => x.Id == id);
+
+        public List<Donor> GetDonos() => db.Donors.ToList(); 
     }
 }

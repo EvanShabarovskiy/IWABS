@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Backend.Models;
+using Backend.Models.UIModels;
 using Backend.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -28,7 +29,7 @@ namespace Backend.Controllers
         }
 
         //[HttpPost]
-        //public IActionResult AddPost(Post post, IFormFile file)
+        //public IActionResult AddPost(PostUI post, IFormFile file)
         //{
         //    return Ok(newsService.AddPost(post, file));
         //}

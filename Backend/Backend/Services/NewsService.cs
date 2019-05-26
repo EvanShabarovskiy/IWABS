@@ -13,12 +13,12 @@ namespace Backend.Services
     public class NewsService
     {
         private IWABS_Context database;
-        public IHostingEnvironment env;
+        //public IHostingEnvironment env;
 
-        public NewsService(IWABS_Context database, IHostingEnvironment env)
+        public NewsService(IWABS_Context database)
         {
             this.database = database;
-            this.env = env;
+            //this.env = env;
         }
 
         public List<Post> GetNews()
@@ -27,39 +27,39 @@ namespace Backend.Services
             return news;
         }
 
-        public Post AddPost(Post post, IFormFile file)
-        {
-            if (post != null)
-            {
-                post.Id = Guid.NewGuid().ToString();
-                post.PublishingDate = DateTime.UtcNow.ToString("mm-dd-yyyy, HH:mm tt");
-            }
+        //public Post AddPost(Post post, IFormFile file)
+        //{
+        //    if (post != null)
+        //    {
+        //        post.Id = Guid.NewGuid().ToString();
+        //        post.PublishingDate = DateTime.UtcNow.ToString("mm-dd-yyyy, HH:mm tt");
+        //    }
 
-            string folderName = "Static/Images";
-            string webRootPath = env.ContentRootPath;
-            string newPath = Path.Combine(webRootPath, folderName);
+        //    string folderName = "Static/Images";
+        //    string webRootPath = env.ContentRootPath;
+        //    string newPath = Path.Combine(webRootPath, folderName);
 
-            if (!Directory.Exists(newPath))
-            {
-                Directory.CreateDirectory(newPath);
-            }
+        //    if (!Directory.Exists(newPath))
+        //    {
+        //        Directory.CreateDirectory(newPath);
+        //    }
 
-            if (file != null)
-            {
-                string fileName = Guid.NewGuid().ToString() + ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-                string fullPath = Path.Combine(newPath, fileName);
-                post.Image = fileName;
-                using (var stream = new FileStream(fullPath, FileMode.Create))
-                {
-                    file.CopyTo(stream);
-                }
-            }
+        //    if (file != null)
+        //    {
+        //        string fileName = Guid.NewGuid().ToString() + ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+        //        string fullPath = Path.Combine(newPath, fileName);
+        //        post.Image = fileName;
+        //        using (var stream = new FileStream(fullPath, FileMode.Create))
+        //        {
+        //            file.CopyTo(stream);
+        //        }
+        //    }
 
-            database.News.Add(post);
-            database.SaveChanges();
+        //    database.News.Add(post);
+        //    database.SaveChanges();
 
-            return post;
-        }
+        //    return post;
+        //}
 
         public void DeletePost(string id)
         {

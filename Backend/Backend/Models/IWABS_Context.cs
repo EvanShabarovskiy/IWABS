@@ -38,6 +38,14 @@ namespace Backend.Models
 
                 }
             );
+
+            builder.Entity<Donor>().HasData(
+               new Donor[]
+               {
+                    new Donor { Id = Guid.NewGuid().ToString(), Name="Frederick Berch", Email="fred123@gmail.com", Adress="12/4, Soborna.st, Rivne", BloodDonated=3.42f, BloodGroup="I+", DateofBirth="23-03-1995" },
+                    new Donor { Id = Guid.NewGuid().ToString(), Name="Jesica Millson", Email="jessjess@gmail.com", Adress="34a, Molodizhna.st, Bichal", BloodDonated=2.78f, BloodGroup="IV-", DateofBirth="02-07-1998" },
+               }
+           );
         }
     }
 }
