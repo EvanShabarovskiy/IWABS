@@ -11,13 +11,12 @@ const Admin = ({ match: { path } }) => (
   <section className="section admin">
     <AdminMenu />
     <Switch>
-      <Route exact path={path} component={() => <Redirect to={path + '/news'} />}  />
-      <Route path={path + '/news'} component={() => <NewsContainer />}  />
-      <Route path={path + '/donors'} component={() => <DonorsContainer />}  />
-      <Route path={path + '/docs'} component={() => <DocsContainer />}  />
-      <Route path={path + '/medicine'} component={() => <MedicineContainer />}  />
-      <Route path={path + '/gallery'} component={() => <PhotoGalleryContainer />}  />
-
+      <Route exact path={path} component={() => <Redirect to={path + '/news'} />} />
+      <Route path={path + '/news'} component={() => <NewsContainer />} />
+      <Route path={path + '/donors'} component={() => <DonorsContainer />} />
+      <Route path={path + '/docs'} component={() => <DocsContainer />} />
+      <Route path={path + '/medicine'} component={() => <MedicineContainer />} />
+      <Route path={path + '/gallery'} component={() => <PhotoGalleryContainer />} />
     </Switch>
   </section>
 );
