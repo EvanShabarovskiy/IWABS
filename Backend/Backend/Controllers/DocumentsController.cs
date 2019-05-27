@@ -10,17 +10,16 @@ namespace Backend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DonorsController : ControllerBase
+    public class DocumentsController : ControllerBase
     {
-        private UsersService usersService;
+        private InfoService infoService;
 
-        public DonorsController(UsersService usersService)
+        public DocumentsController(InfoService infoService)
         {
-            this.usersService = usersService;
+            this.infoService = infoService;
         }
 
         [HttpGet]
-        public IActionResult GetDonors() => Ok(new { donors = usersService.GetDonors() });
-        
+        public IActionResult GetDocuments() => Ok(new { documents = infoService.GetDocuments() });
     }
 }
