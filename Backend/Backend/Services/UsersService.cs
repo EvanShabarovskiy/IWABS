@@ -19,6 +19,6 @@ namespace Backend.Services
 
         public Admin GetAdmin(string id) => db.Admins.SingleOrDefault(x => x.Id == id);
 
-        public List<Donor> GetDonos() => db.Donors.ToList(); 
+        public List<Donor> GetDonors() => db.Donors.ToList(); 
     }
 }

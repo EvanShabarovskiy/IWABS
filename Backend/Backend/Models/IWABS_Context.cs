@@ -16,6 +16,8 @@ namespace Backend.Models
         public DbSet<Donor> Donors { get; set; }
         public DbSet<Post> News { get; set; }
         public DbSet<Admin> Admins { get; set; }
+        public DbSet<Medicine> Medicines { get; set; }
+        public DbSet<Document> Documents { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -45,7 +47,24 @@ namespace Backend.Models
                     new Donor { Id = Guid.NewGuid().ToString(), Name="Frederick Berch", Email="fred123@gmail.com", Adress="12/4, Soborna.st, Rivne", BloodDonated=3.42f, BloodGroup="I+", DateofBirth="23-03-1995" },
                     new Donor { Id = Guid.NewGuid().ToString(), Name="Jesica Millson", Email="jessjess@gmail.com", Adress="34a, Molodizhna.st, Bichal", BloodDonated=2.78f, BloodGroup="IV-", DateofBirth="02-07-1998" },
                }
-           );
+            );
+
+            builder.Entity<Medicine>().HasData(
+              new Medicine[]
+              {
+                    new Medicine { Id = Guid.NewGuid().ToString(), Name="Маріхуана медицинська", Amount=999, Price=200f },
+                    new Medicine { Id = Guid.NewGuid().ToString(), Name="Анал гин", Amount=69, Price=13.70f },
+                    new Medicine { Id = Guid.NewGuid().ToString(), Name="Парацетамол эптить", Amount=45, Price=15.50f },
+              }
+            );
+
+            builder.Entity<Document>().HasData(
+              new Document[]
+              {
+                    new Document { Id = Guid.NewGuid().ToString(), Title="Мотивація", DocumentName="first-document.txt" },
+                    new Document { Id = Guid.NewGuid().ToString(), Title="Вміння Дмитра", DocumentName="second-document.txt" },
+              }
+            );
         }
     }
 }

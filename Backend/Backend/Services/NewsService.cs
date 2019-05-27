@@ -1,4 +1,5 @@
 ﻿using Backend.Models;
+using Backend.Models.UIModels;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using System;
@@ -27,8 +28,9 @@ namespace Backend.Services
             return news;
         }
 
-        //public Post AddPost(Post post, IFormFile file)
-        //{
+        public string AddPost(PostUI post)
+        {
+            return "Ok";
         //    if (post != null)
         //    {
         //        post.Id = Guid.NewGuid().ToString();
@@ -59,7 +61,7 @@ namespace Backend.Services
         //    database.SaveChanges();
 
         //    return post;
-        //}
+        }
 
         public void DeletePost(string id)
         {
