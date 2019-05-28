@@ -35,8 +35,16 @@ const AddPostContainer = () => {
   }
   const onSubmit = e => {
     e.preventDefault();
-    Axios.post(api + 'news', addPostData)
+    let formData = new FormData();
+    const { title, text, file } = addPostData;
+    formData.append("title", title);
+    formData.append("text", text);
+    formData.append("file", file);
+    console.log(formData);
+    console.log(addPostData)
+    Axios.post(api + 'news', formData)
       .then(({ data }) => console.log('success', data))
+      .catch(error => console.log(error.response))
   }
   return (
     <AddPost uploadOptions={uploadOptions} data={addPostData} change={change} onSubmit={onSubmit} />
