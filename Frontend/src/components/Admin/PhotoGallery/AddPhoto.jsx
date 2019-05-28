@@ -1,14 +1,10 @@
 import React from 'react';
-import { Upload, Button, Icon } from 'antd';
 import Field from '../../_General/Field';
+import Upload from '../../_General/Upload';
 
 const AddPhoto = ({ uploadOptions, data: { title }, change, onSubmit }) => (
   <form className="form add-photo-form" onSubmit={onSubmit}>
-    <Upload {...uploadOptions}>
-      <Button size="large" className="upload">
-        <Icon type="upload" /> натисніть для завантаження
-      </Button>
-    </Upload>
+    <Upload {...uploadOptions} label="натисніть для завантаження" />
     <Field name="title" value={title} placeholder="заголовок зображення" change={change} />
     <button className="btn sub-btn">додати</button>
   </form>
