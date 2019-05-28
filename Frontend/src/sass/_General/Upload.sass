@@ -1,5 +1,27 @@
-.upload-wrap
+.upload-block
   display: grid
+  justify-items: center
   .upload
     &-input
       display: none
+      &:disabled ~ .upload-btn
+        cursor: default
+        border-color: #d7d7d7
+        color: #d7d7d7
+    &-btn
+      border: 1px solid #dddddd
+      border-radius: 4px
+      display: block
+
+      .upload-icon
+        margin-right: 10px
+        font-size: .9rem
+      &:hover
+        border-color: $l_red
+        color: $l_red
+  .file-name
+    padding: 5px
+    cursor: pointer
+    transition: $transition
+    &:hover
+      color: $l_red

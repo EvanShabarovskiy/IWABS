@@ -1,11 +1,11 @@
 import React from 'react';
 import { Icon } from 'antd';
 
-const Upload = ({ fileName, label, change }) => (
+const Upload = ({ fileName, label, disabled, fileChange }) => (
   <div className="upload-block">
-    <label htmlFor="upload-input" className="upload">
-      <input id="upload-input" type="file" className="upload-input" onChange={change}/>
-      <button type="button" className="btn upload-btn"><Icon type="upload" /> {label}</button>
+    <label  className="upload">
+      <input disabled={disabled} type="file" className="upload-input" onChange={fileChange}/>
+      <span className="btn upload-btn"><Icon type="upload" className="upload-icon" />{label}</span>
     </label>
     {!!fileName && <span className="file-name">{fileName}</span>}
   </div>

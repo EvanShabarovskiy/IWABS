@@ -21,10 +21,8 @@ const withPost = Component => {
         })
         .catch(error => !!error.response && console.log(error.response))
     }
-
     post['src'] = stat + post.image;
     post['onRemove'] = () => onRemove(post.id);
-    console.log('post', post);
     return (
       <Component post={post} />
     );

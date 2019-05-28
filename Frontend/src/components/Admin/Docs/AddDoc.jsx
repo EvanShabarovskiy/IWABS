@@ -1,14 +1,10 @@
 import React from 'react';
 import Field from '../../_General/Field';
-import { Upload, Button, Icon } from 'antd';
+import Upload from '../../_General/Upload';
 
 const AddDoc = ({ uploadOptions, data: { name }, change, onSubmit }) => (
   <form className="form add-doc-form" onSubmit={onSubmit}>
-    <Upload {...uploadOptions}>
-      <Button size="large" className="upload">
-        <Icon type="upload" /> натисніть для завантаження
-      </Button>
-    </Upload>
+    <Upload {...uploadOptions} label="натисніть для завантаження" />
     <Field name="name" value={name} placeholder="назва документа" change={change} />
     <button className="btn sub-btn">додати</button>
   </form>
