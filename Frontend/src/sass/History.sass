@@ -8,7 +8,7 @@
   &.hidden
     height: 800px
 
-  .history-list
+  &-list
     height: 1550px
     display: flex
     flex-wrap: wrap
@@ -25,11 +25,13 @@
       width: 320px
       margin: 10px
       &-title
-          position: absolute
-          top: 20px
-          left: 20px
-          font-weight: 900
-          color: $l_red
+        position: absolute
+        top: 20px
+        left: 20px
+        font-weight: 900
+        color: $l_red
+      &-text
+        font-size: .9rem
   .show-more-btn
     border: 1px solid $l_red
     position: absolute

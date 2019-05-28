@@ -7,7 +7,7 @@ const AdminMenu = ({ match: { path } }) => (
   <Menu menuId="admin-menu">
     <Link to={`${path}/news`} label="новини" />
     <Link to={`${path}/donors`} label="донори" />
-    <Link to={`${path}/documents`} label="документи" />
+    <Link to={`${path}/docs`} label="документи" />
     <Link to={`${path}/medicine`} label="ліки" />
     <Link to={`${path}/gallery`} label="фотогалерея" />
   </Menu>

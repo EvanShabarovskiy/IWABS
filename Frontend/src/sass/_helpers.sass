@@ -46,6 +46,7 @@
   width: 100%
   &.textarea
     resize: none
+    height: 200px
 
 .field
   &-title
@@ -56,10 +57,23 @@
     outline-color: $l_red
 
 .sub-btn
-  grid-column: span 3
   border: 1px solid $l_red
   color: $l_red
   justify-self: center
   &:hover
     background-color: $l_red
     color: #ffffff
+
+.form
+  display: grid
+  grid-gap: 20px
+  width: 520px
+  margin: 0 auto
+  > span:first-child
+    text-align: center
+
+.upload
+  text-transform: capitalize
+  &:hover, &:focus
+    border-color: $l_red
+    color: $l_red
