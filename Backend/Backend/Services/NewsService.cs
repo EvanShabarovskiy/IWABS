@@ -14,12 +14,12 @@ namespace Backend.Services
     public class NewsService
     {
         private IWABS_Context database;
-        //public IHostingEnvironment env;
+        public IHostingEnvironment env;
 
-        public NewsService(IWABS_Context database)
+        public NewsService(IWABS_Context database, IHostingEnvironment env)
         {
             this.database = database;
-            //this.env = env;
+            this.env = env;
         }
 
         public List<Post> GetNews()
@@ -28,39 +28,42 @@ namespace Backend.Services
             return news;
         }
 
-        public string AddPost(PostUI post)
+        public Post AddPost(PostUI postUI)
         {
-            return "Ok";
-        //    if (post != null)
-        //    {
-        //        post.Id = Guid.NewGuid().ToString();
-        //        post.PublishingDate = DateTime.UtcNow.ToString("mm-dd-yyyy, HH:mm tt");
-        //    }
+            Post post = new Post();
 
-        //    string folderName = "Static/Images";
-        //    string webRootPath = env.ContentRootPath;
-        //    string newPath = Path.Combine(webRootPath, folderName);
+            if (postUI != null)
+            {
+                post.Id = Guid.NewGuid().ToString();
+                post.PublishingDate = DateTime.UtcNow.ToString("mm-dd-yyyy, HH:mm");
+                post.Title = postUI.Title;
+                post.Text = postUI.Text;
+            }
 
-        //    if (!Directory.Exists(newPath))
-        //    {
-        //        Directory.CreateDirectory(newPath);
-        //    }
+            string folderName = "Static/Images";
+            string webRootPath = env.ContentRootPath;
+            string newPath = Path.Combine(webRootPath, folderName);
 
-        //    if (file != null)
-        //    {
-        //        string fileName = Guid.NewGuid().ToString() + ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-        //        string fullPath = Path.Combine(newPath, fileName);
-        //        post.Image = fileName;
-        //        using (var stream = new FileStream(fullPath, FileMode.Create))
-        //        {
-        //            file.CopyTo(stream);
-        //        }
-        //    }
+            if (!Directory.Exists(newPath))
+            {
+                Directory.CreateDirectory(newPath);
+            }
 
-        //    database.News.Add(post);
-        //    database.SaveChanges();
+            if (postUI.File != null)
+            {
+                string fileName = Guid.NewGuid().ToString() + ContentDispositionHeaderValue.Parse(postUI.File.ContentDisposition).FileName.Trim('"');
+                string fullPath = Path.Combine(newPath, fileName);
+                post.Image = fileName;
+                using (var stream = new FileStream(fullPath, FileMode.Create))
+                {
+                    postUI.File.CopyTo(stream);
+                }
+            }
 
-        //    return post;
+            database.News.Add(post);
+            database.SaveChanges();
+
+            return post;
         }
 
         public void DeletePost(string id)
@@ -69,6 +72,14 @@ namespace Backend.Services
 
             if (post != null)
             {
+                string filePath = "Static/Images/" + post.Image;
+                string webRootPath = env.ContentRootPath;
+                string newPath = Path.Combine(webRootPath, filePath);
+                if (File.Exists(newPath))
+                {
+                    File.Delete(newPath);
+                }
+
                 database.News.Remove(post);
                 database.SaveChanges();
             }

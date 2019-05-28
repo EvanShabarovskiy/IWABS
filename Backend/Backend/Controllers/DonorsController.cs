@@ -12,15 +12,15 @@ namespace Backend.Controllers
     [ApiController]
     public class DonorsController : ControllerBase
     {
-        private UsersService usersService;
+        private DonorsService donorsService;
 
-        public DonorsController(UsersService usersService)
+        public DonorsController(DonorsService donorsService)
         {
-            this.usersService = usersService;
+            this.donorsService = donorsService;
         }
 
         [HttpGet]
-        public IActionResult GetDonors() => Ok(new { donors = usersService.GetDonors() });
+        public IActionResult GetDonors() => Ok(new { donors = donorsService.GetDonors() });
         
     }
 }
