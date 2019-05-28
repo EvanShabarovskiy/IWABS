@@ -17,11 +17,11 @@ namespace Backend.Controllers
     public class AuthController : ControllerBase
     {
         private AuthService authService;
-        private UsersService usersService;
+        private AdminService adminService;
 
-        public AuthController(AuthService authService, UsersService usersService)
+        public AuthController(AuthService authService, AdminService adminService)
         {
-            this.usersService = usersService;
+            this.adminService = adminService;
             this.authService = authService;
         }
 
@@ -30,7 +30,7 @@ namespace Backend.Controllers
         {
             if(adminUI != null)
             {
-                Admin admin = usersService.GetAdmin(adminUI.Email, adminUI.Password);
+                Admin admin = adminService.GetAdmin(adminUI.Email, adminUI.Password);
                 if(admin != null)
                 {
                     return Ok(new { token = authService.BuildToken(admin) });
@@ -45,7 +45,7 @@ namespace Backend.Controllers
         {
             string id = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            if (usersService.GetAdmin(id) != null) {
+            if (adminService.GetAdmin(id) != null) {
                 return Ok();
             }
             return BadRequest();

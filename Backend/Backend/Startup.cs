@@ -62,7 +62,8 @@ namespace Backend
             });
 
             services.AddTransient<AuthService>();
-            services.AddTransient<UsersService>();
+            services.AddTransient<DonorsService>();
+            services.AddTransient<AdminService>();
             services.AddTransient<NewsService>();
             services.AddTransient<MailService>();
             services.AddTransient<SmtpClient>();
