@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import AddPost from './AddPost';
 import Axios from 'axios';
 import { api } from '../../assets/constants/api';

@@ -3,9 +3,9 @@ import Field from '../_General/Field';
 import Upload from '../_General/Upload';
 import Form from '../_General/Form';
 
-const AddDoc = ({ uploadOptions, data: { name }, change, onSubmit }) => (
+const AddDoc = ({ upload, data: { name }, change, onSubmit }) => (
   <Form formClass="add-doc-form" onSubmit={onSubmit} title="новий документ" buttonText="додати документ">
-    <Upload {...uploadOptions} label="натисніть для завантаження" />
+    <Upload {...upload} label="натисніть для завантаження" />
     <Field name="name" value={name} placeholder="назва документа" change={change} />
   </Form>
 );
