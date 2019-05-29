@@ -9,6 +9,16 @@
   letter-spacing: 1px
   outline: none
   transition: all .25s ease
+  font-weight: lighter
+  &.toggle-btn
+    margin: 20px auto
+    border: 1px solid $l_red
+    background-color: $l_red
+    color: #ffffff
+    &:hover
+      background-color: transparent
+      color: $l_red
+
 .title
   text-align: center
   padding: 40px 40px 20px
@@ -30,6 +40,7 @@
     text-transform: uppercase
     font-size: 1.5rem
     letter-spacing: 5px
+    margin: 0
     &::before
       content: ''
       width: 150px

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import AddDoc from './AddDoc';
 import withForm from '../../withForm';
+import { useToggle } from '../../../assets/hooks/useToggle';
 
 const AddDocContainer = ({ setValue, data }) => {
+  const { toggled, handleToggled } = useToggle();
   const [uploadOptions, setUploadOptions] = useState({
     file: null, 
     fileName: '', 
@@ -20,11 +22,14 @@ const AddDocContainer = ({ setValue, data }) => {
   const onSubmit = e => {
     e.preventDefault();
     console.log('submit');
+    handleToggled();
   }
   uploadOptions['fileChange'] = fileChange;
-  return (
-    <AddDoc uploadOptions={uploadOptions} change={setValue} data={data} onSubmit={onSubmit} />
-  );
+  if (toggled) {
+    return <AddDoc uploadOptions={uploadOptions} change={setValue} data={data} onSubmit={onSubmit} />
+  } else {
+    return <button className="btn toggle-btn" onClick={handleToggled}>додати документ</button>
+  }
 };
 
 const initialState = { 

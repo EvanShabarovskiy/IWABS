@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import AddPhoto from './AddPhoto';
-import { message } from 'antd';
 import withForm from '../../withForm';
+import { useToggle } from '../../../assets/hooks/useToggle';
 
 
 const AddPhotoContainer = ({ setValue, data }) => {
+  const { toggled, handleToggled } = useToggle();
+
   const [uploadOptions, setUploadOptions] = useState({
     file: null, 
     fileName: '', 
@@ -22,12 +24,15 @@ const AddPhotoContainer = ({ setValue, data }) => {
   const onSubmit = e => {
     e.preventDefault();
     console.log('submit');
+    handleToggled();
   }
   uploadOptions['fileChange'] = fileChange;
 
-  return (
-    <AddPhoto uploadOptions={uploadOptions} change={setValue} data={data} onSubmit={onSubmit} />
-  );
+  if (toggled) {
+    return <AddPhoto uploadOptions={uploadOptions} change={setValue} data={data} onSubmit={onSubmit} />
+  } else {
+    return <button className="btn toggle-btn" onClick={handleToggled}>додати фото</button>
+  }
 };
 
 const initialState = { 
