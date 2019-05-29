@@ -4,28 +4,17 @@ import Axios from 'axios';
 import { api } from '../../assets/constants/api';
 import withForm from '../withForm';
 import { useToggle } from '../../assets/hooks/useToggle';
+import { useUpload } from '../../assets/hooks/useUpload';
 
 const AddPostContainer = ({ data, setValue }) => {
   const { toggled, handleToggled } = useToggle();
-  const [uploadOptions, setUploadOptions] = useState({
-    file: null, 
-    fileName: '', 
-    disabled: false
-  });
-
-  const fileChange = ({ target: { files } }) => {
-    console.log('files', files);
-    setUploadOptions({
-      file: files[0],
-      fileName: files[0].name,
-      disabled: true
-    })
-  }
+  const { upload } = useUpload();
+  
   const onSubmit = e => {
     e.preventDefault();
     let formData = new FormData();
     const { title, text } = data;
-    const { file } = uploadOptions;
+    const { file } = upload;
 
     formData.append("title", title);
     formData.append("text", text);
@@ -38,10 +27,9 @@ const AddPostContainer = ({ data, setValue }) => {
       })
       .catch(error => console.log(error.response))
   }
-  uploadOptions['fileChange'] = fileChange;
 
   if (toggled) {
-    return <AddPost uploadOptions={uploadOptions} data={data} change={setValue} onSubmit={onSubmit} />
+    return <AddPost upload={upload} data={data} change={setValue} onSubmit={onSubmit} />
   } else {
     return <button className="btn toggle-btn" onClick={handleToggled}>додати новину</button>
   }
