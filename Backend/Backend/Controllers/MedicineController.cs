@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Backend.Models;
+using Backend.Models.UIModels;
 using Backend.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,14 +14,23 @@ namespace Backend.Controllers
     [ApiController]
     public class MedicineController : ControllerBase
     {
-        private InfoService infoService;
+        private MedicineService medicineService;
 
-        public MedicineController(InfoService infoService)
+        public MedicineController(MedicineService medicineService)
         {
-            this.infoService = infoService;
+            this.medicineService = medicineService;
         }
 
         [HttpGet]
-        public IActionResult GetMedicine() => Ok(new { medicine = infoService.GetMedicine() });
+        public IActionResult GetMedicine() => Ok(new { medicine = medicineService.GetMedicine() });
+
+        [HttpPost]
+        public IActionResult AddNewMedicine(MedicineUI medicine) => Ok(new { donor = medicineService.AddNewMedicine(medicine) });
+
+        [HttpPost]
+        public IActionResult ChangeMedicine(Medicine medicine) => Ok(new { donor = medicineService.ChangeMedicine(medicine) });
+
+        [HttpDelete]
+        public IActionResult DeleteMedicine(string id) => Ok(new { status = medicineService.DeleteMedicine(id) });
     }
 }
