@@ -6,7 +6,7 @@ const Form = ({ formClass, onSubmit, children, buttonText, title }) => (
     className={cx('grid', 'form', !!formClass && formClass)} 
     onSubmit={onSubmit}
   >
-    <h1 className={cx('title', !!formClass && `${formClass}-title`)}>{title}</h1>
+    <h1 className={cx('form-title', !!formClass && `${formClass}-title`)}>{title}</h1>
     {children}
     <button 
       type="submit" 
