@@ -1,6 +1,6 @@
 import React from 'react';
-import Field from '../../_General/Field';
-import Upload from '../../_General/Upload';
+import Field from '../_General/Field';
+import Upload from '../_General/Upload';
 
 const AddPost = ({ data: { title, text }, change, onSubmit, uploadOptions}) => (
   <form className="form add-post-form" onSubmit={onSubmit}>

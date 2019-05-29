@@ -1,6 +1,6 @@
 import React from 'react';
-import Field from '../../_General/Field';
-import Upload from '../../_General/Upload';
+import Field from '../_General/Field';
+import Upload from '../_General/Upload';
 
 const AddDoc = ({ uploadOptions, data: { name }, change, onSubmit }) => (
   <form className="form add-doc-form" onSubmit={onSubmit}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import AddDocContainer from './AddDocContainer';
+import AddDocContainer from '../../_Forms/AddDocContainer';
 
 const Docs = () => {
   return (

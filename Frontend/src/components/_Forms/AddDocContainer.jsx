@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import AddDoc from './AddDoc';
-import withForm from '../../withForm';
-import { useToggle } from '../../../assets/hooks/useToggle';
+import withForm from '../withForm';
+import { useToggle } from '../../assets/hooks/useToggle';
 
 const AddDocContainer = ({ setValue, data }) => {
   const { toggled, handleToggled } = useToggle();

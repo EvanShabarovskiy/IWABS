@@ -1,5 +1,5 @@
 import React from 'react';
-import AddMedicineContainer from './AddMedicineContainer';
+import AddMedicineContainer from '../../_Forms/AddMedicineContainer';
 
 const Medicine = () => {
   return (

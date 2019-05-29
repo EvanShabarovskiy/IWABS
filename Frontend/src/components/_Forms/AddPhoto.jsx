@@ -1,6 +1,6 @@
 import React from 'react';
-import Field from '../../_General/Field';
-import Upload from '../../_General/Upload';
+import Field from '../_General/Field';
+import Upload from '../_General/Upload';
 
 const AddPhoto = ({ uploadOptions, data: { title }, change, onSubmit }) => (
   <form className="form add-photo-form" onSubmit={onSubmit}>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import AddPhoto from './AddPhoto';
-import withForm from '../../withForm';
-import { useToggle } from '../../../assets/hooks/useToggle';
+import withForm from '../withForm';
+import { useToggle } from '../../assets/hooks/useToggle';
 
 
 const AddPhotoContainer = ({ setValue, data }) => {

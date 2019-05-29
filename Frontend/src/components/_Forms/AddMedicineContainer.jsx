@@ -1,7 +1,7 @@
 import React from 'react';
 import AddMedicine from './AddMedicine';
-import withForm from '../../withForm';
-import { useToggle } from '../../../assets/hooks/useToggle';
+import withForm from '../withForm';
+import { useToggle } from '../../assets/hooks/useToggle';
 
 const AddMedicineContainer = ({ setValue, data }) => {
   const { toggled, handleToggled } = useToggle();

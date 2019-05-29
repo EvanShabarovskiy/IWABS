@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import AddPost from './AddPost';
 import Axios from 'axios';
-import { api } from '../../../assets/constants/api';
-import withForm from '../../withForm';
-import { useToggle } from '../../../assets/hooks/useToggle';
+import { api } from '../../assets/constants/api';
+import withForm from '../withForm';
+import { useToggle } from '../../assets/hooks/useToggle';
 
 const AddPostContainer = ({ data, setValue }) => {
   const { toggled, handleToggled } = useToggle();

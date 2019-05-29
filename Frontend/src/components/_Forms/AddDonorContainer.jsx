@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import AddDonor from './AddDonor';
-import withForm from '../../withForm';
-import { useToggle } from '../../../assets/hooks/useToggle';
+import withForm from '../withForm';
+import { useToggle } from '../../assets/hooks/useToggle';
 
 const AddDonorContainer = ({ data, setValue }) => {
   const { toggled, handleToggled } = useToggle();

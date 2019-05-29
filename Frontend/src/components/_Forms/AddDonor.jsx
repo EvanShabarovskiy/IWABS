@@ -1,8 +1,8 @@
 import React from 'react';
-import Field from '../../_General/Field';
-import { disabledDate } from '../../../assets/constants/functions/disabledDate';
+import Field from '../_General/Field';
+import { disabledDate } from '../../assets/constants/functions/disabledDate';
 import { DatePicker, Select } from 'antd';
-import { bloodGroups } from '../../../assets/constants/data/bloodGroups';
+import { bloodGroups } from '../../assets/constants/data/bloodGroups';
 
 const { Option } = Select;
 

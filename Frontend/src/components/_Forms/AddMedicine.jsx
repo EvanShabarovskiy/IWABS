@@ -1,5 +1,5 @@
 import React from 'react';
-import Field from '../../_General/Field';
+import Field from '../_General/Field';
 
 const AddMedicine = ({ data: { name, releaseForm, unit, amount }, change, onSubmit}) => (
   <form className="form add-medicine-form" onSubmit={onSubmit}>
