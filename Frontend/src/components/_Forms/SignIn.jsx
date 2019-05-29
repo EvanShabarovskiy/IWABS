@@ -1,10 +1,10 @@
 import React from 'react';
 import Field from '../_General/Field';
+import { Form } from 'antd';
 
 export const SignIn = ({ submit, fields }) => (
   <section className="section sign-in">
-    <form className="sign-in-form" onSubmit={submit}>
-      <h1 className="sign-in-form-title">Вхід</h1>
+    <Form formClass="sign-in-form" onSubmit={submit} title="вхід" buttonText="увійти">
       {fields.map(({ name, value, placeholder, type, change }, i) => (
         <Field
           key={i}
@@ -15,7 +15,6 @@ export const SignIn = ({ submit, fields }) => (
           placeholder={placeholder}
         />
       ))}
-      <button className="btn sub-btn" type="submit">Увійти</button>
-    </form>
+    </Form>
   </section>
 );
