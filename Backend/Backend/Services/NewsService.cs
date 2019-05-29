@@ -35,7 +35,7 @@ namespace Backend.Services
             if (postUI != null)
             {
                 post.Id = Guid.NewGuid().ToString();
-                post.PublishingDate = DateTime.UtcNow.ToString("mm-dd-yyyy, HH:mm");
+                post.PublishingDate = DateTime.UtcNow.ToString("dd-MM-yyyy, HH:mm");
                 post.Title = postUI.Title;
                 post.Text = postUI.Text;
             }
