@@ -3,14 +3,14 @@ import Field from '../_General/Field';
 import { disabledDate } from '../../assets/constants/functions/disabledDate';
 import { DatePicker, Select } from 'antd';
 import { bloodGroups } from '../../assets/constants/data/bloodGroups';
+import Form from '../_General/Form';
 
 const { Option } = Select;
 
 const AddDonor = ({ data: { name, email, bloodGroup, bloodDonated, address }, change, onSubmit, onDateChange, onSelectChange}) => (
-  <form className="form add-donor-form" onSubmit={onSubmit}>
-    <Field name="name" value={name} placeholder="ім'я та фамілія донора донора" change={change} />
+  <Form formClass="add-donor-form" onSubmit={onSubmit} title="новий донор" buttonText="додати донора">
+    <Field name="name" value={name} placeholder="ім'я та фамілія донора" change={change} />
     <Field name="email" value={email} placeholder="електронна адреса" change={change} />
-    <Field name="bloodGroup" value={bloodGroup} placeholder="ім'я та фамілія донора донора" change={change}/>
     <Field name="bloodDonated" value={bloodDonated} placeholder="крові здано" change={change}/>
     <Field name="address" value={address} placeholder="адреса" change={change}/>
     <Select
@@ -27,8 +27,7 @@ const AddDonor = ({ data: { name, email, bloodGroup, bloodDonated, address }, ch
       }
    </Select>
     <DatePicker className="date-picker" showToday={false} disabledDate={disabledDate} size="large" onChange={onDateChange} />
-    <button className="btn sub-btn">додати</button>
-  </form>
+  </Form>
 );
 
 export default AddDonor;
