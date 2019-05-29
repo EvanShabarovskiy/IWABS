@@ -43,7 +43,7 @@ const AddPostContainer = ({ data, setValue }) => {
   if (toggled) {
     return <AddPost uploadOptions={uploadOptions} data={data} change={setValue} onSubmit={onSubmit} />
   } else {
-    return <button className="btn toggle-btn" onClick={handleToggled}>створити новину</button>
+    return <button className="btn toggle-btn" onClick={handleToggled}>додати новину</button>
   }
 };
 
