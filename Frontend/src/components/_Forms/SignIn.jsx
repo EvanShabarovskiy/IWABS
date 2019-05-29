@@ -1,6 +1,6 @@
 import React from 'react';
 import Field from '../_General/Field';
-import { Form } from 'antd';
+import Form from '../_General/Form';
 
 export const SignIn = ({ submit, fields }) => (
   <section className="section sign-in">
