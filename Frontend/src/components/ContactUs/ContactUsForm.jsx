@@ -1,14 +1,14 @@
 import React from 'react';
 import Field from '../_General/Field';
+import Form from '../_General/Form';
 
 const ContactUsForm = ({ onSubmit, data: { name, subject, email, message }, change }) => (
-  <form className="form contact-us-form" onSubmit={onSubmit}>
+  <Form formClass="contact-us-form" onSubmit={onSubmit} title="задайте питання" buttonText="відправити">
     <Field name="name" value={name} placeholder="повне ім'я" change={change} />
     <Field name="subject" value={subject} placeholder="тема повідомлення" change={change} />
     <Field name="email" value={email} placeholder="електронна пошта" change={change} />
     <Field isTextarea name="message" value={message} placeholder="повідомлення" change={change} />
-    <button className="btn sub-btn">відправити повідомлення</button>
-  </form>
+  </Form>
 );
 
 export default ContactUsForm;

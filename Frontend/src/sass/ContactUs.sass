@@ -1,3 +1,6 @@
+=span
+  grid-column: span 2
+
 .contact-us
   background-color: #f9f9f9
   &-form.form
@@ -7,14 +10,17 @@
     width: 600px
     margin: 0 auto
     background-color: #fff
+    .form-title
+      margin: 0
+      +span
     .name-field
-      grid-column: span 2
+      +span
     .message-field
-      grid-column: span 2
+      +span
       .input
         height: 150px
     .sub-btn
-      grid-column: span 2
+      +span
     
 
     
