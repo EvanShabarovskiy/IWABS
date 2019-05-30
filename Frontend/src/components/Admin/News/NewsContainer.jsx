@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import Axios from 'axios';
-import { api } from '../../../assets/constants/api';
+import React, { useEffect} from 'react';
 import News from './News';
 import { connect } from 'react-redux'
 import { getNews } from '../../../store/news/actions';
+
 const NewsContainer = ({ news, getNews }) => {
   useEffect(() => getNews(), []);
   return <News news={news} />

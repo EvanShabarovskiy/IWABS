@@ -1,27 +1,22 @@
 import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers';
-import { get as getCookies } from 'js-cookie';
-import { get } from 'axios';
+import { get } from 'js-cookie';
 import { toggleSignedIn } from './actions';
 import { api } from '../assets/constants/api';
 import thunk from 'redux-thunk';
+import { Get } from '../assets/services/request.service';
 
 export const store = createStore(rootReducer, applyMiddleware(thunk));
 
 const getSignedIn = () => {
-  const token = getCookies('token');
+  const token = get('token');
   if (token) {
-    get(api + 'auth', {
-      headers: { 
-        Authorization: `Bearer ${token}` 
-      }
-    })
-      .then(() => {
-        store.dispatch(toggleSignedIn(true));
-      })
-      .catch(error => {
-        !!error.response && console.log(error.response);
-      });
+    Get(
+      api + 'auth', 
+      () => store.dispatch(toggleSignedIn(true)),
+      error => console.log(error),
+      token
+    )
   }
 };
 

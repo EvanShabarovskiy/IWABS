@@ -16,7 +16,7 @@ export const Get = (url, success, error) => {
 
 export const Post = (url, data, success, error, token) => {
   const headers = getHeaders(token);
-  post(api + url, data, !!headers && headers)
+  post(url, data, !!headers && headers)
     .then(({ data }) => success(data))
     .catch(({ response }) => error(response));
 }
@@ -28,9 +28,9 @@ export const Put = (url, data, success, error, token) => {
     .catch(({ response }) => error(response));
 }
 
-export const Delete = (url, data, success, error, token) => {
+export const Delete = (url, success, error, token) => {
   const headers = getHeaders(token);
-  del(url, data, !!headers && headers)
+  del(url, !!headers && headers)
     .then(({ data }) => success(data))
     .catch(({ response }) => error(response));
 }

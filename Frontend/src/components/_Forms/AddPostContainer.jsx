@@ -1,12 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux'
+
 import AddPost from './AddPost';
-import Axios from 'axios';
-import { api } from '../../assets/constants/api';
 import withForm from '../withForm';
 import { useToggle } from '../../assets/hooks/useToggle';
 import { useUpload } from '../../assets/hooks/useUpload';
+import { createPost } from '../../store/news/actions';
 
-const AddPostContainer = ({ data, setValue }) => {
+const AddPostContainer = ({ data, setValue, createPost }) => {
   const { toggled, handleToggled } = useToggle();
   const { upload } = useUpload();
   
@@ -19,13 +20,8 @@ const AddPostContainer = ({ data, setValue }) => {
     formData.append("title", title);
     formData.append("text", text);
     formData.append("file", file);
-    console.log(formData);
-    Axios.post(api + 'news', formData)
-      .then(({ data }) => {
-        console.log('success', data);
-        handleToggled();
-      })
-      .catch(error => console.log(error.response))
+    
+    createPost(formData);
   }
 
   if (toggled) {
@@ -40,4 +36,4 @@ const initialState = {
   text: ''
 }
 
-export default withForm(initialState, initialState)(AddPostContainer);
+export default connect(() => ({}), { createPost })(withForm(initialState, initialState)(AddPostContainer));
