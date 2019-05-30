@@ -9,7 +9,7 @@ import { createPost } from '../../store/news/actions';
 
 const AddPostContainer = ({ data, setValue, createPost }) => {
   const { toggled, handleToggled } = useToggle();
-  const { upload } = useUpload();
+  const { upload, resetFile } = useUpload();
   
   const onSubmit = e => {
     e.preventDefault();
@@ -22,6 +22,9 @@ const AddPostContainer = ({ data, setValue, createPost }) => {
     formData.append("file", file);
     
     createPost(formData);
+    handleToggled();
+    setValue(initialState)
+    resetFile();
   }
 
   if (toggled) {

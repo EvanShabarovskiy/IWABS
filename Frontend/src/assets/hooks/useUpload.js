@@ -16,6 +16,12 @@ export const useUpload = () => {
     })
   }
 
+  const resetFile = () => setUpload({
+    file: null, 
+    fileName: '', 
+    disabled: false
+  });
+
   upload['fileChange'] = fileChange;
-  return { upload };
+  return { upload, resetFile };
 }
