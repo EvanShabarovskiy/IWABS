@@ -21,37 +21,33 @@ namespace Backend.Services
 
         public Donor AddNewDonor(DonorUI donorUI)
         {
-            if(donorUI != null)
-            {
-                Donor donor = new Donor{
-                    Id = Guid.NewGuid().ToString(),
-                    DateOfBirth = donorUI.DateOfBirth,
-                    Email = donorUI.Email,
-                    Name = donorUI.Name,
-                    Adress = donorUI.Adress,
-                    BloodDonated = donorUI.BloodDonated,
-                    BloodGroup = donorUI.BloodGroup,
-                };
+            Donor donor = new Donor{
+                Id = Guid.NewGuid().ToString(),
+                DateOfBirth = donorUI.DateOfBirth,
+                Email = donorUI.Email,
+                Name = donorUI.Name,
+                Adress = donorUI.Adress,
+                BloodDonated = donorUI.BloodDonated,
+                BloodGroup = donorUI.BloodGroup,
+            };
 
-                database.Donors.Add(donor);
-                database.SaveChanges();
-                return donor;
-            }
-            return null;
+            database.Donors.Add(donor);
+            database.SaveChanges();
+            return donor;
         }
 
         public Donor ChangeDonor(Donor donorUI)
         {
-            if (donorUI != null) {
-                Donor donor = database.Donors.FirstOrDefault(x => x.Id == donorUI.Id);
+            Donor donor = database.Donors.FirstOrDefault(x => x.Id == donorUI.Id);
+            if (donor != null)
+            {
                 database.Donors.Update(donor);
                 database.SaveChanges();
-                return donor;
             }
-            return null;
+            return donor;
         }
 
-        public string DeleteDonor(string id)
+        public bool DeleteDonor(string id)
         {
             Donor donor = database.Donors.FirstOrDefault(x => x.Id == id);
 
@@ -59,9 +55,9 @@ namespace Backend.Services
             {
                 database.Donors.Remove(donor);
                 database.SaveChanges();
-                return "Deleted";
+                return true;
             }
-            return "Error";
+            return false;
         }
     }
 }

@@ -25,12 +25,37 @@ namespace Backend.Controllers
         public IActionResult GetDonors() => Ok(new { donors = donorsService.GetDonors() });
 
         [HttpPost]
-        public IActionResult AddNewDonor(DonorUI donor) => Ok(new { donor = donorsService.AddNewDonor(donor) });
+        public IActionResult AddNewDonor(DonorUI donor)
+        {
+            if (donor != null)
+            {
+                return Ok(new { donor = donorsService.AddNewDonor(donor) });
+            }
+            return BadRequest();
+        }
 
-        [HttpPost]
-        public IActionResult ChangeDonor(Donor donor) => Ok(new { donor = donorsService.ChangeDonor(donor) });
+        [HttpPut]
+        public IActionResult ChangeDonor(Donor donor) {
+            if (donor != null)
+            {
+                Donor result = donorsService.ChangeDonor(donor);
+                if (result != null)
+                {
+                    Ok(new { donor = result });
+                }
+            }
+            return BadRequest();
+        }
 
         [HttpDelete]
-        public IActionResult DeleteDonor(string id) => Ok(new { status = donorsService.DeleteDonor(id) });
+        public IActionResult DeleteDonor(string id)
+        {
+            bool result = donorsService.DeleteDonor(id);
+            if (id != null && result != false)
+            {
+                return Ok();
+            }
+            return BadRequest();
+        }
     }
 }

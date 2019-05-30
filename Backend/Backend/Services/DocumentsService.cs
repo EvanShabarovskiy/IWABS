@@ -6,16 +6,14 @@ using System.Threading.Tasks;
 
 namespace Backend.Services
 {
-    public class InfoService
+    public class DocumentsService
     {
         private IWABS_Context database;
 
-        public InfoService(IWABS_Context database)
+        public DocumentsService(IWABS_Context database)
         {
             this.database = database;
         }
-
-        public List<Medicine> GetMedicine() => database.Medicines.ToList();
 
         public List<Document> GetDocuments() => database.Documents.ToList();
     }

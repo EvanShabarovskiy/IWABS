@@ -61,11 +61,13 @@ namespace Backend
                 .Build());
             });
 
-            services.AddTransient<AuthService>();
-            services.AddTransient<DonorsService>();
             services.AddTransient<AdminService>();
-            services.AddTransient<NewsService>();
+            services.AddTransient<AuthService>();
+            services.AddTransient<DocumentsService>();
+            services.AddTransient<DonorsService>();
             services.AddTransient<MailService>();
+            services.AddTransient<MedicineService>();
+            services.AddTransient<NewsService>();
             services.AddTransient<SmtpClient>();
             services.AddMvc();
         }
