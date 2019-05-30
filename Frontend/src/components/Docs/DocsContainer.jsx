@@ -11,7 +11,7 @@ const DocsContainer = ({ setDocs, docs }) => {
   }, []);
   const getDocs = () => 
     Axios.get(api + 'documents')
-      .then(({ data }) => setDocs(data.docs))
+      .then(({ data }) => setDocs(data.documents))
       .catch(error => !!error.response && console.log(error.response));
   return <Docs docs={docs} />
 };
