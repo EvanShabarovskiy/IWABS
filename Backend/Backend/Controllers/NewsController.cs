@@ -26,7 +26,7 @@ namespace Backend.Controllers
         {
             if (post != null && file != null)
             {
-                return Ok(newsService.AddPost(post, file));
+                return Ok(new { addedNews = newsService.AddPost(post, file)});
             }
             return BadRequest();
         }
