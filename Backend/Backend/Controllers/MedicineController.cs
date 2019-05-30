@@ -48,7 +48,7 @@ namespace Backend.Controllers
             return BadRequest();
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteMedicine(string id)
         {
             bool status = medicineService.DeleteMedicine(id);

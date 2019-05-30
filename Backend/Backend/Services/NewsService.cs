@@ -28,7 +28,7 @@ namespace Backend.Services
             return news;
         }
 
-        public Post AddPost(PostUI postUI)
+        public Post AddPost(PostUI postUI, IFormFile file)
         {
             Post post = new Post();
 
@@ -49,14 +49,14 @@ namespace Backend.Services
                 Directory.CreateDirectory(newPath);
             }
 
-            if (postUI.File != null)
+            if (file != null)
             {
-                string fileName = Guid.NewGuid().ToString() + ContentDispositionHeaderValue.Parse(postUI.File.ContentDisposition).FileName.Trim('"');
+                string fileName = Guid.NewGuid().ToString() + ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
                 string fullPath = Path.Combine(newPath, fileName);
                 post.Image = fileName;
                 using (var stream = new FileStream(fullPath, FileMode.Create))
                 {
-                    postUI.File.CopyTo(stream);
+                    file.CopyTo(stream);
                 }
             }
 

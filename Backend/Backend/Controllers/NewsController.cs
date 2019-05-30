@@ -22,9 +22,13 @@ namespace Backend.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddPost(PostUI post)
+        public IActionResult AddPost(PostUI post, IFormFile file)
         {
-            return Ok(newsService.AddPost(post));
+            if (post != null)
+            {
+                return Ok(newsService.AddPost(post, file));
+            }
+            return BadRequest();
         }
 
         //[Authorize]
