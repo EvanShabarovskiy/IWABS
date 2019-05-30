@@ -8,7 +8,8 @@ namespace Backend.Models.UIModels
     public class MedicineUI
     {
         public string Name { get; set; }
-        public int Amount { get; set; }
-        public float Price { get; set; }
+        public string Amount { get; set; }
+        public string ReleaseForm { get; set; }
+        public string Unit { get; set; }
     }
 }
