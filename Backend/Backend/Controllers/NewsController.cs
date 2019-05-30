@@ -24,7 +24,7 @@ namespace Backend.Controllers
         [HttpPost]
         public IActionResult AddPost(PostUI post, IFormFile file)
         {
-            if (post != null)
+            if (post != null && file != null)
             {
                 return Ok(newsService.AddPost(post, file));
             }
