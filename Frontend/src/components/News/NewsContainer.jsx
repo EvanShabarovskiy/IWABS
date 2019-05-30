@@ -7,8 +7,6 @@ import { setNews } from '../../store/news/actions';
 const NewsContainer = ({ news, setNews }) => {
   useEffect(() => {
     getNews();
-    return () => {
-    };
   }, []);
   const getNews = () => 
     Axios.get(api + 'news')
