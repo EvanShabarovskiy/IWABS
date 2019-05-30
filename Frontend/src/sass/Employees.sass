@@ -3,12 +3,32 @@
   flex-wrap: wrap
   justify-content: center
   .employee
-    text-align: center
+    border: 1px solid #e9e9e9
+    margin: 10px
     padding: 20px
     display: grid
     grid-gap: 5px
     align-self: flex-start
+    position: relative
     .position
-      width: 300px
-    .full-name, .phone
-      font-size: .9rem
+      font-size: .8rem
+      margin: 0
+      width: 320px
+    .full-name 
+      font-family: 'Fira Sans', sans-serif !important
+      font-weight: 500
+      margin: 0
+      line-height: 1rem
+    .phone
+      position: absolute
+      right: 30px
+      bottom: 0
+      margin: 0
+      padding: 5px 10px
+      background-color: $l_red
+      font-size: .75rem
+      color: #ffffff
+      transform: translate(0, 50%)
+      &-icon
+        margin-right: 5px
+        font-size: .8rem
