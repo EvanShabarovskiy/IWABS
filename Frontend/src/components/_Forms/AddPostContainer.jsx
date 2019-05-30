@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux'
 
 import AddPost from './AddPost';
-import withForm from '../withForm';
 import { useToggle } from '../../assets/hooks/useToggle';
 import { useUpload } from '../../assets/hooks/useUpload';
 import { createPost } from '../../store/news/actions';
@@ -36,4 +35,7 @@ const AddPostContainer = ({ createPost }) => {
   }
 };
 
-export default connect(() => ({}), { createPost })(AddPostContainer);
+export default connect(
+  () => ({}), 
+  { createPost }
+)(AddPostContainer);

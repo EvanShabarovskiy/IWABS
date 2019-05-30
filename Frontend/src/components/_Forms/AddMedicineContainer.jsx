@@ -1,10 +1,18 @@
 import React from 'react';
 import AddMedicine from './AddMedicine';
-import withForm from '../withForm';
 import { useToggle } from '../../assets/hooks/useToggle';
+import { useFormValidation } from '../../assets/hooks/useFormValidation';
 
-const AddMedicineContainer = ({ setValue, data }) => {
+const initialState = {
+  name: '', 
+  releaseForm: '', 
+  unit: '', 
+  amount: ''
+};
+
+const AddMedicineContainer = () => {
   const { toggled, handleToggled } = useToggle();
+  const { data, change } = useFormValidation(initialState, initialState);
 
   const onSubmit = e => {
     e.preventDefault();
@@ -12,17 +20,10 @@ const AddMedicineContainer = ({ setValue, data }) => {
     handleToggled();
   }
   if (toggled) {
-    return <AddMedicine change={setValue} data={data} onSubmit={onSubmit} />
+    return <AddMedicine change={change} data={data} onSubmit={onSubmit} />
   } else {
     return <button className="btn toggle-btn" onClick={handleToggled}>додати ліки</button>
   }
 };
 
-const initialState = {
-  name: '', 
-  releaseForm: '', 
-  unit: '', 
-  amount: ''
-}
-
-export default withForm(initialState, initialState)(AddMedicineContainer);
+export default AddMedicineContainer;

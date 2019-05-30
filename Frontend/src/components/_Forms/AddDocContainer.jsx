@@ -1,12 +1,17 @@
 import React from 'react';
 import AddDoc from './AddDoc';
-import withForm from '../withForm';
 import { useToggle } from '../../assets/hooks/useToggle';
 import { useUpload } from '../../assets/hooks/useUpload';
+import { useFormValidation } from '../../assets/hooks/useFormValidation';
 
-const AddDocContainer = ({ setValue, data }) => {
+const initialState = { 
+  name: ''
+}
+
+const AddDocContainer = () => {
   const { toggled, handleToggled } = useToggle();
   const { upload } = useUpload();
+  const { data, change } = useFormValidation(initialState, initialState);
   
   const onSubmit = e => {
     e.preventDefault();
@@ -14,14 +19,10 @@ const AddDocContainer = ({ setValue, data }) => {
     handleToggled();
   }
   if (toggled) {
-    return <AddDoc upload={upload} change={setValue} data={data} onSubmit={onSubmit} />
+    return <AddDoc upload={upload} change={change} data={data} onSubmit={onSubmit} />
   } else {
     return <button className="btn toggle-btn" onClick={handleToggled}>додати документ</button>
   }
 };
 
-const initialState = { 
-  name: ''
-}
-
-export default withForm(initialState, initialState)(AddDocContainer);
+export default AddDocContainer;

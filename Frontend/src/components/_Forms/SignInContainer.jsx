@@ -6,9 +6,15 @@ import { SignIn } from './SignIn';
 import { api } from '../../assets/constants/api';
 import { toggleSignedIn } from '../../store/actions';
 import { Post } from '../../assets/services/request.service';
-import withForm from '../withForm';
+import { useFormValidation } from '../../assets/hooks/useFormValidation';
 
-const SignInContainer = ({ toggleSignedIn, data, setValue }) => {
+const initialState = {
+  email: '',
+  password: ''
+}
+
+const SignInContainer = ({ toggleSignedIn }) => {
+  const { data, change } = useFormValidation(initialState, initialState);
   const submit = e => {
     e.preventDefault();
     Post(
@@ -27,29 +33,20 @@ const SignInContainer = ({ toggleSignedIn, data, setValue }) => {
       name: 'email',
       type: 'text',
       placeholder: 'електронна адреса',
-      change: setValue
+      change
     },
     {
       value: data.password,
       name: 'password',
       type: 'password',
       placeholder: 'пароль',
-      change: setValue
+      change
     }
   ];
   return <SignIn submit={submit} fields={fieldsArr} />;
 };
 
-const initialState = {
-  email: '',
-  password: ''
-}
-
 export default connect(
   () => ({}), 
   { toggleSignedIn }
-)(
-  withForm(
-    initialState, 
-    initialState
-  )(SignInContainer));
+)(SignInContainer);
