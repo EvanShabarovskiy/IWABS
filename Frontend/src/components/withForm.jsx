@@ -42,6 +42,7 @@ const getDefaultValues = (initialState, requiredFields) => Component => props =>
       data={data}
       errors={errors}
       setValue={setValue}
+      setData={setData}
       validate={validate}
       setErrors={setErrors}
     />

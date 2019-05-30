@@ -1,22 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import Axios from 'axios';
-import { api } from '../../../assets/constants/api';
+import React, { useEffect} from 'react';
 import News from './News';
 import { connect } from 'react-redux'
-import { setNews } from '../../../store/news/actions';
-const NewsContainer = ({ news, setNews }) => {
-  useEffect(() => {
-    getNews();
-    return () => {
-    };
-  }, []);
-  const getNews = () => 
-    Axios.get(api + 'news')
-      .then(({ data }) => setNews(data.news))
-      .catch(error => !!error.response && console.log(error.response));
-  return (
-    <News news={news} />
-  );
+import { getNews } from '../../../store/news/actions';
+
+const NewsContainer = ({ news, getNews }) => {
+  useEffect(() => getNews(), []);
+  return <News news={news} />
 };
 
 const mapStateToProps = ({ news }) => ({
@@ -24,7 +13,7 @@ const mapStateToProps = ({ news }) => ({
 })
 
 const mapDispatchToProps = {
-  setNews
+  getNews
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewsContainer);

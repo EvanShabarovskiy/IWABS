@@ -1,51 +1,55 @@
 import React from 'react';
-import { SignIn } from './SignIn';
-import Axios from 'axios';
-import { set } from 'js-cookie';
-import { api } from '../../assets/constants/api';
 import { connect } from 'react-redux';
-import { toggleSignedIn } from '../../store/actions';
+import { set } from 'js-cookie';
 
-const SignInContainer = ({ toggleSignedIn }) => {
-  const [fields, setFields] = React.useState({
-    email: '',
-    password: ''
-  });
-  const change = e => {
-    const { name, value } = e.target;
-    setFields(fields => ({
-      ...fields,
-      [name]: value
-    }));
-  };
+import { SignIn } from './SignIn';
+import { api } from '../../assets/constants/api';
+import { toggleSignedIn } from '../../store/actions';
+import { Post } from '../../assets/services/request.service';
+import withForm from '../withForm';
+
+const SignInContainer = ({ toggleSignedIn, data, setValue }) => {
   const submit = e => {
     e.preventDefault();
-    Axios.post(api + 'auth', fields)
-      .then(({ data }) => {
-        set('token', data.token);
+    Post(
+      api + 'auth', 
+      data, 
+      ({ token }) => {
+        set('token', token);
         toggleSignedIn(true)
-      })
-      .catch(error => {
-        !!error.response && console.log(error.response);
-      });
+      },
+      error => console.log(error)
+    );
   };
   const fieldsArr = [
     {
-      value: fields.email,
+      value: data.email,
       name: 'email',
       type: 'text',
       placeholder: 'електронна адреса',
-      change
+      change: setValue
     },
     {
-      value: fields.password,
+      value: data.password,
       name: 'password',
       type: 'password',
       placeholder: 'пароль',
-      change
+      change: setValue
     }
   ];
   return <SignIn submit={submit} fields={fieldsArr} />;
 };
 
-export default connect(() => ({}), { toggleSignedIn })(SignInContainer);
+const initialState = {
+  email: '',
+  password: ''
+}
+
+export default connect(
+  () => ({}), 
+  { toggleSignedIn }
+)(
+  withForm(
+    initialState, 
+    initialState
+  )(SignInContainer));
