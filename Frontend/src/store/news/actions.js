@@ -18,8 +18,8 @@ export const createPost = data => dispatch => {
   Post(
     api + 'news', 
     data, 
-    data => dispatch({ type: CREATE_POST, payload: data }), 
-    error => console.log(error), 
+    ({ addedNews }) => dispatch({ type: CREATE_POST, payload: addedNews }), 
+    error => console.log('error', error), 
     get('token')
   );
 }

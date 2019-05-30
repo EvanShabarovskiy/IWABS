@@ -8,7 +8,6 @@ export const useUpload = () => {
   });
 
   const fileChange = ({ target: { files } }) => {
-    console.log('files', files);
     setUpload({
       file: files[0],
       fileName: files[0].name,
