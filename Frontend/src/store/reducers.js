@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
+
 import { TOGGLE_SIGNED_IN } from './actions';
 import { newsReducer } from './news/reducers';
+import { docsReducer } from './docs/reducers';
 
 const defaultState = {
   signedIn: false
@@ -20,5 +22,6 @@ const generalReducer = (state = defaultState, { type, payload }) => {
 
 export default combineReducers({
   general: generalReducer,
-  news: newsReducer
+  news: newsReducer,
+  docs: docsReducer
 });

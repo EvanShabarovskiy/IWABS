@@ -6,7 +6,7 @@ export const links = [
   },
   {
     active: false,
-    to: '/documents',
+    to: '/docs',
     label: 'документи'
   },
   {

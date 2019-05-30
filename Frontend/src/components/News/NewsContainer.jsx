@@ -7,16 +7,14 @@ import { setNews } from '../../store/news/actions';
 const NewsContainer = ({ news, setNews }) => {
   useEffect(() => {
     getNews();
-    return () => {
-    };
   }, []);
   const getNews = () => 
     Axios.get(api + 'news')
       .then(({ data }) => setNews(data.news))
       .catch(error => !!error.response && console.log(error.response));
-  return (
-    <News news={news} />
-  );
+
+  return <News news={news} />
+  
 };
 
 const mapStateToProps = ({ news }) => ({
