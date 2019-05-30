@@ -1,12 +1,12 @@
 import React from 'react';
 import { stat, api } from '../../../assets/constants/api';
 import Axios from 'axios';
-import { setNews } from '../../../store/news/actions';
+import { getNews } from '../../../store/news/actions';
 import { connect } from 'react-redux'
 
 const withPost = Component => {
 
-  const Wrapper = ({ news, setNews, post }) => {
+  const Wrapper = ({ news, getNews, post }) => {
 
     const onRemove = id => {
       if(confirm('Ви дійсно хочете видалити цей запис?'))
@@ -17,7 +17,7 @@ const withPost = Component => {
       Axios.delete(`${api}news/${id}`)
         .then(() => {
           news = news.filter(post => post.id != id);
-          setNews(news);
+          getNews(news);
         })
         .catch(error => !!error.response && console.log(error.response))
     }
@@ -32,7 +32,7 @@ const withPost = Component => {
   });
   
   const mapDispatchToProps = {
-    setNews
+    getNews
   };
   return connect(mapStateToProps, mapDispatchToProps)(Wrapper);
 };

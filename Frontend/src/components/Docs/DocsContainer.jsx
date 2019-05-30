@@ -1,27 +1,14 @@
 import React, { useEffect } from 'react';
 import Docs from './Docs';
-import Axios from 'axios';
 import { connect } from 'react-redux'
-import { setDocs } from '../../store/docs/actions'
-import { api } from '../../assets/constants/api';
+import { getDocs } from '../../store/docs/actions'
 
-const DocsContainer = ({ setDocs, docs }) => {
-  useEffect(() => {
-    getDocs();
-  }, []);
-  const getDocs = () => 
-    Axios.get(api + 'documents')
-      .then(({ data }) => setDocs(data.documents))
-      .catch(error => !!error.response && console.log(error.response));
+const DocsContainer = ({ getDocs, docs }) => {
+  useEffect(() => getDocs(), []);
   return <Docs docs={docs} />
 };
 
-const mapStateToProps = ({ docs }) => ({
-  docs
-})
-
-const mapDispatchToProps = {
-  setDocs
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(DocsContainer);
+export default connect(
+  ({ docs }) => ({ docs }), 
+  { getDocs }
+)(DocsContainer);
