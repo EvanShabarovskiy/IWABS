@@ -24,7 +24,7 @@ namespace Backend.Services
 
         public List<Post> GetNews()
         {
-            List<Post> news = database.News.ToList();
+            List<Post> news = database.News.OrderByDescending(x => x.PublishingDate).ToList();
             return news;
         }
 
@@ -35,7 +35,7 @@ namespace Backend.Services
             if (postUI != null)
             {
                 post.Id = Guid.NewGuid().ToString();
-                post.PublishingDate = DateTime.UtcNow.ToString("dd-MM-yyyy, HH:mm");
+                post.PublishingDate = DateTime.Now.ToString("dd-MM-yyyy, HH:mm");
                 post.Title = postUI.Title;
                 post.Text = postUI.Text;
             }

@@ -25,7 +25,7 @@ namespace Backend.Services
                 Id = Guid.NewGuid().ToString(),
                 Name = medicineUI.Name,
                 Amount = medicineUI.Amount,
-                Price = medicineUI.Price
+                ReleaseForm = medicineUI.ReleaseForm
             };
 
             database.Medicines.Add(medicine);
