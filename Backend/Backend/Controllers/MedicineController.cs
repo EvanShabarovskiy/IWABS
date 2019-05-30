@@ -25,12 +25,38 @@ namespace Backend.Controllers
         public IActionResult GetMedicine() => Ok(new { medicine = medicineService.GetMedicine() });
 
         [HttpPost]
-        public IActionResult AddNewMedicine(MedicineUI medicine) => Ok(new { donor = medicineService.AddNewMedicine(medicine) });
+        public IActionResult AddNewMedicine(MedicineUI medicine)
+        {
+            if (medicine != null)
+            {
+                return Ok(new { medicine = medicineService.AddNewMedicine(medicine) });
+            }
+            return BadRequest();
+        }
 
-        [HttpPost]
-        public IActionResult ChangeMedicine(Medicine medicine) => Ok(new { donor = medicineService.ChangeMedicine(medicine) });
+        [HttpPut]
+        public IActionResult ChangeMedicine(Medicine medicine)
+        {
+            if (medicine != null)
+            {
+                Medicine result = medicineService.ChangeMedicine(medicine);
+                if (result != null)
+                {
+                    return Ok(new { medicine = result });
+                }
+            }
+            return BadRequest();
+        }
 
         [HttpDelete]
-        public IActionResult DeleteMedicine(string id) => Ok(new { status = medicineService.DeleteMedicine(id) });
+        public IActionResult DeleteMedicine(string id)
+        {
+            bool status = medicineService.DeleteMedicine(id);
+            if (id != null && status != false)
+            {
+                Ok();
+            }
+            return BadRequest();
+        }
     }
 }

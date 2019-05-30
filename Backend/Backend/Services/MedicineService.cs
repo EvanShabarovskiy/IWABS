@@ -20,36 +20,30 @@ namespace Backend.Services
 
         public Medicine AddNewMedicine(MedicineUI medicineUI)
         {
-            if (medicineUI != null)
+            Medicine medicine = new Medicine
             {
-                Medicine medicine = new Medicine
-                {
-                    Id = Guid.NewGuid().ToString(),
-                    Name = medicineUI.Name,
-                    Amount = medicineUI.Amount,
-                    Price = medicineUI.Price
-                };
+                Id = Guid.NewGuid().ToString(),
+                Name = medicineUI.Name,
+                Amount = medicineUI.Amount,
+                Price = medicineUI.Price
+            };
 
-                database.Medicines.Add(medicine);
-                database.SaveChanges();
-                return medicine;
-            }
-            return null;
+            database.Medicines.Add(medicine);
+            database.SaveChanges();
+            return medicine;
         }
 
         public Medicine ChangeMedicine(Medicine medicineUI)
         {
-            if (medicineUI != null)
-            {
-                Medicine medicine = database.Medicines.FirstOrDefault(x => x.Id == medicineUI.Id);
+            Medicine medicine = database.Medicines.FirstOrDefault(x => x.Id == medicineUI.Id);
+            if (medicine != null) { 
                 database.Medicines.Update(medicine);
                 database.SaveChanges();
-                return medicine;
             }
-            return null;
+            return medicine;
         }
 
-        public string DeleteMedicine(string id)
+        public bool DeleteMedicine(string id)
         {
             Medicine medicine = database.Medicines.FirstOrDefault(x => x.Id == id);
 
@@ -57,9 +51,9 @@ namespace Backend.Services
             {
                 database.Medicines.Remove(medicine);
                 database.SaveChanges();
-                return "Deleted";
+                return true;
             }
-            return "Error";
+            return false;
         }
     }
 }

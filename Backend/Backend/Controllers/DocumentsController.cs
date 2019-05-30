@@ -12,14 +12,14 @@ namespace Backend.Controllers
     [ApiController]
     public class DocumentsController : ControllerBase
     {
-        private InfoService infoService;
+        private DocumentsService documentsService;
 
-        public DocumentsController(InfoService infoService)
+        public DocumentsController(DocumentsService documentsService)
         {
-            this.infoService = infoService;
+            this.documentsService = documentsService;
         }
 
         [HttpGet]
-        public IActionResult GetDocuments() => Ok(new { documents = infoService.GetDocuments() });
+        public IActionResult GetDocuments() => Ok(new { documents = documentsService.GetDocuments() });
     }
 }
