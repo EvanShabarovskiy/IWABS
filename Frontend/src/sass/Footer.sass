@@ -1,7 +1,51 @@
 #main-footer
-  background-color: #f1f1f1
+  background-color: #252525
   color: #505050
+  text-align: center
+  padding: 40px 0 5px 0
   .sub-title
     color: $d_red
     text-transform: capitalize
     padding: 20px 0
+  .awesome-title 
+    text-transform: uppercase
+    font-size: .8rem
+    color: #505050
+    font-weight: 300
+    margin-bottom: 20px
+  .developer-contacts
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 50px
+    color: #909090
+    font-size: .8rem
+    .developer-number
+      justify-self: end
+    .developer-email
+      justify-self: start
+  .footer-menu
+    display: grid
+    position: relative
+    grid-template-columns: repeat(auto-fit, minmax(31px, auto))
+    text-transform: uppercase
+    font-size: .7rem
+    letter-spacing: 2px
+    justify-content: center
+    grid-gap: 80px
+    padding-top: 30px
+    &::after
+      content: ''
+      position: absolute
+      left: 50%
+      bottom: -30px
+      transform: translate(-50%, 0)
+      border-bottom: 1px solid $d_red
+      width: 150px
+  .copyright
+    font-size: .7rem
+    margin-top: 60px
+    
+
+
+
+
