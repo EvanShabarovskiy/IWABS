@@ -1,11 +1,11 @@
 import React from 'react';
-import ContactUsFormContainer from './ContactUsFormContainer';
+import ContactUsContainer from '../_Forms/ContactUsContainer';
 
-const ContactUs = () => (
+const Contacts = () => (
   <section className="section contact-us">
     <h1 className="section-title">напишіть нам</h1>
-    <ContactUsFormContainer />
+    <ContactUsContainer />
   </section>
 );
 
-export default ContactUs;
+export default Contacts;

@@ -2,7 +2,7 @@ import React from 'react';
 import Field from '../_General/Field';
 import Form from '../_General/Form';
 
-const ContactUsForm = ({ onSubmit, data: { name, subject, email, message }, change }) => (
+const ContactUs = ({ onSubmit, name, subject, email, message, change }) => (
   <Form formClass="contact-us-form" onSubmit={onSubmit} title="задайте питання" buttonText="відправити">
     <Field name="name" value={name} placeholder="повне ім'я" change={change} />
     <Field name="subject" value={subject} placeholder="тема повідомлення" change={change} />
@@ -11,4 +11,4 @@ const ContactUsForm = ({ onSubmit, data: { name, subject, email, message }, chan
   </Form>
 );
 
-export default ContactUsForm;
+export default ContactUs;
