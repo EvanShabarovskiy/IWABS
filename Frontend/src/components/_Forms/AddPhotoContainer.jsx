@@ -1,15 +1,17 @@
 import React from 'react';
 import AddPhoto from './AddPhoto';
 import { useToggle } from '../../assets/hooks/useToggle';
-import { useUpload } from '../../assets/hooks/useUpload';
+import { useFormValidation } from '../../assets/hooks/useFormValidation';
 
 const initialState = { 
-  title: ''
+  title: '',
+  file: {
+    name: ''
+  }
 }
 
 const AddPhotoContainer = () => {
   const { toggled, handleToggled } = useToggle();
-  const { upload } = useUpload();
   const { data, change } = useFormValidation(initialState, initialState);
   
   const onSubmit = e => {
@@ -19,7 +21,7 @@ const AddPhotoContainer = () => {
   }
 
   if (toggled) {
-    return <AddPhoto upload={upload} change={change} data={data} onSubmit={onSubmit} />
+    return <AddPhoto {...data} change={change} onSubmit={onSubmit} />
   } else {
     return <button className="btn toggle-btn" onClick={handleToggled}>додати фото</button>
   }

@@ -5,7 +5,7 @@ export const useFormValidation = (initialState, requiredFields) =>  {
   const [errors, setErrors] = useState(requiredFields);
 
   const change = ({ target: { value, name, checked, type, files } }) => {
-    const typedValue = type === 'checkbox' ? checked : type === 'file' ? files[0] : value
+    const typedValue = type === 'checkbox' ? checked : type === 'file' ? files[0] : value;
     setData(data => ({
       ...data, 
       [name]: typedValue
@@ -40,6 +40,8 @@ export const useFormValidation = (initialState, requiredFields) =>  {
     }
     return true;
   };
+
+  typeof(data.file) !== 'undefined' && (data['fileName'] = data.file.name);
 
   return { data, errors, change, reset, validate, setErrors };
 }

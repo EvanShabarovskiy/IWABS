@@ -18,7 +18,6 @@ const initialState = {
 const AddPostContainer = ({ createPost }) => {
   const { toggled, handleToggled } = useToggle();
   const { data, change, reset } = useFormValidation(initialState, initialState);
-  const { file } = data;
   
   const onSubmit = e => {
     e.preventDefault();
@@ -29,7 +28,7 @@ const AddPostContainer = ({ createPost }) => {
   }
 
   if (toggled) {
-    return <AddPost {...data} fileName={file.name} change={change} onSubmit={onSubmit} />
+    return <AddPost {...data} change={change} onSubmit={onSubmit} />
   } else {
     return <button className="btn toggle-btn" onClick={handleToggled}>додати новину</button>
   }
