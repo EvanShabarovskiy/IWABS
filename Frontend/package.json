@@ -8,7 +8,7 @@
     "prod": "webpack --mode production",
     "watch": "webpack --mode development --watch",
     "start": "webpack-dev-server --mode development --open",
-    "local": "webpack-dev-server --mode development --open --host 192.168.0.105"
+    "local": "webpack-dev-server --mode development --open --host 192.168.0.109"
   },
   "keywords": [],
   "author": "",
