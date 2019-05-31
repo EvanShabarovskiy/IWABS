@@ -16,6 +16,11 @@ export const useFormValidation = (initialState, requiredFields) =>  {
     }));
   };
 
+  const reset = () => {
+    setData(initialState);
+    setErrors(requiredFields);
+  }
+
   const validate = (name, value, { condition, errorText }) => {
     if (value.trim() == '') {
       setErrors(errors => ({
@@ -36,5 +41,5 @@ export const useFormValidation = (initialState, requiredFields) =>  {
     return true;
   };
 
-  return { data, errors, change, setData, validate, setErrors };
+  return { data, errors, change, reset, validate, setErrors };
 }

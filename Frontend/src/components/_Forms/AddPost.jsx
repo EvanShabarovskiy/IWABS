@@ -3,9 +3,9 @@ import Field from '../_General/Field';
 import Upload from '../_General/Upload';
 import Form from '../_General/Form';
 
-const AddPost = ({ data: { title, text }, change, onSubmit, upload }) => (
+const AddPost = ({ title, text, fileName, change, onSubmit }) => (
   <Form formClass="add-post-form" onSubmit={onSubmit} title="нова новина" buttonText="додати новину">
-    <Upload {...upload} label="натисніть для завантаження" />
+    <Upload fileName={fileName} change={change} label="натисніть для завантаження" />
     <Field name="title" value={title} placeholder="заголовок" change={change} />
     <Field isTextarea name="text" value={text} placeholder="текст" change={change} />
   </Form>
