@@ -3,7 +3,7 @@ import Department from './Department';
 
 const ContactsInfo = () => 
   <div className="contacts-info">
-    <h1 className="contact-info-title"></h1>
+    <h1 className="contacts-info-title">ви можете зв'язатися з нами за цією інформацією</h1>
     
     <div className="emails">
       <p className="emails-title">потрібна допомога?</p>
