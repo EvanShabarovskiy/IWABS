@@ -1,0 +1,38 @@
+.form
+  display: grid
+  grid-gap: 15px
+  width: 420px
+  padding: 50px
+  background-color: #fff
+  &-title
+    justify-self: start
+    text-transform: uppercase
+    letter-spacing: 2px
+    font-size: 1.25rem
+    font-weight: 900
+  .field
+    &-title
+      letter-spacing: 1px
+      text-transform: capitalize
+      font-size: .8rem
+      color: #808080
+    .input, .textarea
+      padding: .5rem 1rem
+      width: 100%
+      border: none
+      border-bottom: 2px solid #d9d9d9
+      outline: none
+      &:focus
+        border-color: $d_red
+    .textarea
+      resize: none
+      height: 100px
+  .sub-btn
+    margin-top: 10px
+    background-color: $d_red
+    border: 1px solid $d_red
+    color: #ffffff
+    justify-self: center
+    &:hover
+      background-color: transparent
+      color: $d_red

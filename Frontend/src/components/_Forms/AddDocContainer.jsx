@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import AddDoc from './AddDoc';
 import { useToggle } from '../../assets/hooks/useToggle';
 import { useFormValidation } from '../../assets/hooks/useFormValidation';
@@ -11,26 +11,15 @@ const initialState = {
   }
 }
 
-const { style } = document.body;
-
 const AddDocContainer = () => {
   const { toggled, handleToggled } = useToggle();
   const { data, change } = useFormValidation(initialState, initialState);
-
-  useEffect(() => {
-    if (toggled) {
-      style.overflow = 'hidden';
-    } else {
-      style.overflow = 'visible';
-    }
-  }, [toggled]);
   
   const onSubmit = e => {
     e.preventDefault();
     console.log('submit');
     handleToggled();
   }
-
 
   return (
     <>
@@ -39,8 +28,7 @@ const AddDocContainer = () => {
       </Modal>
       <button className="btn toggle-btn" onClick={handleToggled}>додати документ</button>
     </>
-  ) 
- 
+  );
 };
 
 export default AddDocContainer;

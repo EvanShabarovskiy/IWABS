@@ -8,7 +8,7 @@ import MedicineContainer from './Medicine/MedicineContainer';
 import PhotoGalleryContainer from './PhotoGallery/PhotoGalleryContainer';
 
 const Admin = ({ match: { path } }) => (
-  <section className="section admin">
+  <section className="section admin page">
     <AdminMenu />
     <Switch>
       <Route exact path={path} component={() => <Redirect to={path + '/news'} />} />

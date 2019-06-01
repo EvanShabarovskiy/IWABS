@@ -5,7 +5,7 @@ const Department = ({ name, mobile, stationary }) =>
   <div className="department">
     <p className="department-name">{name}</p>
     <span className="department-number department-number-mobile">
-      <i class="fas fa-mobile-alt number-icon"></i>
+      <i className="fas fa-mobile-alt number-icon"></i>
       <span className="number">{mobile}</span>
     </span>
     <span className="department-number department-number-stationary">

@@ -21,12 +21,12 @@ const ContactsInfo = () =>
       stationary="(0362) 63-68-68" 
     />
     <p className="address">
-      <p className="address-title">адреса</p>
-      <p className="address-value">
+      <span className="address-title">адреса</span>
+      <span className="address-value">
         <span className="number">33014</span>
         , м. Рівне, вул. Ст. Бандери, 
         <span className="number"> 31</span>
-      </p>
+      </span>
     </p>
   </div>
 
