@@ -1,26 +1,30 @@
-=span
-  grid-column: span 2
-
-.contact-us
-  background-color: #f9f9f9
-  &-form.form
-    display: grid
-    grid-template-columns: repeat(2, 1fr)
-    grid-gap: 20px 40px
-    width: 600px
-    margin: 0 auto
-    background-color: #fff
-    .form-title
-      margin: 0
-      +span
-    .name-field
-      +span
-    .message-field
-      +span
-      .input
-        height: 150px
-    .sub-btn
-      +span
-    
-
-    
+.contact-us-form
+  padding: 50px
+  position: absolute
+  right: 15%
+  bottom: 0
+  border: none
+  border-radius: 0
+  background-color: #fff
+  box-shadow: $shadow
+  z-index: 1
+  .form-title
+    justify-self: start
+    text-transform: uppercase
+    letter-spacing: 2px
+  .field
+    &-title
+      letter-spacing: 1px
+    .input, .textarea
+      border: none
+      border-radius: 0
+      border-bottom: 2px solid #d9d9d9
+      outline: none
+      &:focus
+        border-color: $d_red
+    .textarea
+      height: 100px
+  .sub-btn
+    background-color: $d_red
+    border-color: $d_red
+    color: #ffffff

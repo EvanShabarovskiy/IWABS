@@ -1,7 +1,7 @@
 import React from 'react';
 import { get } from 'js-cookie'
 
-import ContactUsForm from './ContactUsForm';
+import ContactUs from './ContactUs';
 import { api } from '../../assets/constants/api';
 import { Post } from '../../assets/services/request.service';
 import { useFormValidation } from '../../assets/hooks/useFormValidation';
@@ -13,7 +13,7 @@ const initialState = {
   message: '' 
 }
 
-const ContactUsFormContainer = () => {
+const ContactUsContainer = () => {
   const { data, change } = useFormValidation(initialState, initialState);
   const onSubmit = e => {
     e.preventDefault();
@@ -26,9 +26,9 @@ const ContactUsFormContainer = () => {
     );
   }
 
-  return <ContactUsForm onSubmit={onSubmit} data={data} change={change} />
+  return <ContactUs {...data} onSubmit={onSubmit} change={change} />
 };
 
 
 
-export default ContactUsFormContainer; 
+export default ContactUsContainer; 

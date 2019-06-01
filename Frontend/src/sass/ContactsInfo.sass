@@ -1,0 +1,64 @@
+=title
+  color: #b9b9b9
+  text-transform: capitalize
+  font-size: .7rem
+=mon
+  font-family: 'Montserrat', sans-serif !important
+  font-weight: 900
+  text-indent: 10px
+  font-size: .75rem
+.contacts-info
+  display: grid
+  grid-gap: 20px
+  width: 420px
+  &-title
+    text-transform: uppercase
+    letter-spacing: 2px
+    position: relative
+    margin-top: 40px
+    margin-bottom: 20px
+    font-weight: 900
+    font-size: 1rem
+    &::before
+      content: ''
+      display: block
+      border-bottom: 2px solid $d_red
+      width: 200px
+      position: absolute
+      bottom: -20px
+  p
+    margin: 0
+  .address
+    &-title
+      +title
+    &-value
+      +mon
+  .emails
+    &-title
+      +title
+    .email
+      +mon
+  .department
+    padding: 20px
+    margin-bottom: 10px
+    border: 1px solid #d9d9d9
+    position: relative
+    &-name
+      text-transform: capitalize
+      font-weight: 700
+      font-size: .9rem
+      font-family: 'Fira Sans', sans-serif !important
+    &-number
+      padding: 5px 10px
+      background-color: $d_red
+      color: #ffffff
+      position: absolute
+      bottom: 0
+      transform: translate(0, 50%)
+      font-size: .7rem
+      &-mobile
+        left: 20px
+      &-stationary
+        right: 20px
+      .number-icon
+        margin-right: 5px
