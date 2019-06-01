@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Circle = ({ iconClass, title, value }) => (
-  <div className="circle">
+  <div className="achievement">
     <i className={iconClass} />
-    <h5 className="circle-title">{title}</h5>
-    <span className="circle-value number ">{value}</span>
+    <h5 className="achievement-title">{title}</h5>
+    <span className="achievement-value number ">{value}</span>
   </div>
 );
 
