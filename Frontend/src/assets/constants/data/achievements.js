@@ -1,4 +1,4 @@
-export const circles = [
+export const achievements = [
   {
     iconClass: 'fas fa-user-friends',
     title: 'донорів',
