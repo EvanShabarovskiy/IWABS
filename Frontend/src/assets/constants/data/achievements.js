@@ -7,7 +7,7 @@ export const achievements = [
   {
     iconClass: 'fas fa-tint',
     title: 'крові здано',
-    value: '4 768 літрів крові було здано'
+    value: 'було здано більш ніж 4 768 літрів крові'
   },
   {
     iconClass: 'fas fa-user-injured',
