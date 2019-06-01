@@ -10,8 +10,5 @@ export const Banner = () => (
       <span className="motivation-text">{motivation.text}</span>
       <button className="btn feedback-btn">напишіть нам</button>
     </div>
-    <div className="slogan-wrap">
-      <h1 className="title">{slogan}</h1>
-    </div>
   </section>
 );

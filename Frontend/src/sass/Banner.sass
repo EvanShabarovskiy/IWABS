@@ -3,7 +3,6 @@
   height: 450px
   display: flex
   align-items: center
-  justify-content: center
   overflow: hidden
   &::before, &::after
     content: ''
@@ -19,52 +18,41 @@
     background-size: cover
     background-position: center
   .motivation
-    flex-basis: 50%
+    flex-basis: 70%
     z-index: 1
-    text-align: center
     color: #ffffff
     padding: 180px
     &-title
-      text-transform: capitalize
-      padding: 20px 75px 30px
+      margin: 0
+      margin-bottom: 40px
+      text-transform: uppercase
+      letter-spacing: 2px
       position: relative
       color: #ffffff
       &::before
         content: ''
-        height: 1px
-        width: 50px
-        background-color: $l_red
+        height: 2px
+        width: 100px
+        background-color: $d_red
         position: absolute
-        left: calc(50% - 25px)
-        bottom: 15px
+        left: 0
+        bottom: -20px
     &-text
       font-size: 1.15rem
       line-height: 2rem
       letter-spacing: 1px
     .feedback-btn
       color: #ffffff
-      margin: 30px auto 0
-      border: 1px solid #ffffff
+      margin: 30px 0 0
+      border: 1px solid $d_red
+      background-color: $d_red
       text-transform: uppercase
       letter-spacing: 1px
       cursor: pointer
       transition: $transition
       &:hover
-        border-color: $l_red
-        background-color: $l_red
-
-  .slogan-wrap
-    flex-basis: 50%
-    z-index: 1
-    .title
-      display: none
-      font-weight: 900
-      font-size: 4.5rem
-      text-transform: capitalize
-      width: 700px
-      margin: 0 auto
-      text-align: center
-      color: #ffffff
+        border-color: #ffffff
+        background-color: transparent
 
 @media screen and (max-width: 1400px)
   .banner
