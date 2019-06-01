@@ -24,10 +24,13 @@ namespace Backend.Services
 
         public Document AddNewDocument(string name, IFormFile document)
         {
+            string[] format = document.ContentType.Split('/');
+
             Document doc = new Document
             {
                 Id = Guid.NewGuid().ToString(),
-                Title = name
+                Title = name,
+                Format = format[1]
             };
 
             string folderName = "Static/Documents";
