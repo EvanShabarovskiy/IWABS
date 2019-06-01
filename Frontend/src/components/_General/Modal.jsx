@@ -1,27 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { createPortal } from 'react-dom';
 
-const { createElement } = document;
-const { appendChild, removeChild, style } = document.body;
-
-const Modal = ({ onClose, children }) => {
-  let portal;
-  useEffect(() => {
-    style.overflow = 'hidden';
-    portal = createElement('div');
-    portal.className = 'modal-wrap';
-    appendChild(portal);
-    return () => {
-      removeChild(portal);
-    };
-  }, []);
-  return createPortal(
+const Modal = ({ onClose, children, open }) => 
+  open 
+    && createPortal(
       <div className="modal">
-          <button className="modal-close" onClick={onClose}>+</button>
-          {children}
+        <button className="close-modal btn" onClick={onClose}>+</button>
+        {children}
       </div>,
-      portal
-  );
-}
+      document.body
+    );
 
 export default Modal;
