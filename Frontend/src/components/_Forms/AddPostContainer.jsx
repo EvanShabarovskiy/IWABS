@@ -6,6 +6,7 @@ import { useToggle } from '../../assets/hooks/useToggle';
 import { createPost } from '../../store/news/actions';
 import { parseToFormData } from '../../assets/constants/functions/parseToFormData';
 import { useFormValidation } from '../../assets/hooks/useFormValidation';
+import Modal from '../_General/Modal';
 
 const initialState = {
   title: '',
@@ -27,11 +28,14 @@ const AddPostContainer = ({ createPost }) => {
     handleToggled();
   }
 
-  if (toggled) {
-    return <AddPost {...data} change={change} onSubmit={onSubmit} />
-  } else {
-    return <button className="btn toggle-btn" onClick={handleToggled}>додати новину</button>
-  }
+  return (
+    <>
+      <Modal open={toggled} onClose={handleToggled}>
+        <AddPost {...data} change={change} onSubmit={onSubmit} />
+      </Modal>
+      <button className="btn toggle-btn" onClick={handleToggled}>додати новину</button>
+    </>
+  );
 };
 
 export default connect(

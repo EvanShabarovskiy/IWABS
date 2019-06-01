@@ -2,6 +2,7 @@ import React from 'react';
 import AddPhoto from './AddPhoto';
 import { useToggle } from '../../assets/hooks/useToggle';
 import { useFormValidation } from '../../assets/hooks/useFormValidation';
+import Modal from '../_General/Modal';
 
 const initialState = { 
   title: '',
@@ -20,11 +21,14 @@ const AddPhotoContainer = () => {
     handleToggled();
   }
 
-  if (toggled) {
-    return <AddPhoto {...data} change={change} onSubmit={onSubmit} />
-  } else {
-    return <button className="btn toggle-btn" onClick={handleToggled}>додати фото</button>
-  }
+  return (
+    <>
+      <Modal open={toggled} onClose={handleToggled}>
+        <AddPhoto {...data} change={change} onSubmit={onSubmit} />
+      </Modal>
+      <button className="btn toggle-btn" onClick={handleToggled}>додати фото</button>
+    </>
+  );
 };
 
 export default AddPhotoContainer;

@@ -2,6 +2,7 @@ import React from 'react';
 import AddMedicine from './AddMedicine';
 import { useToggle } from '../../assets/hooks/useToggle';
 import { useFormValidation } from '../../assets/hooks/useFormValidation';
+import Modal from '../_General/Modal';
 
 const initialState = {
   name: '', 
@@ -19,11 +20,15 @@ const AddMedicineContainer = () => {
     console.log('submit');
     handleToggled();
   }
-  if (toggled) {
-    return <AddMedicine change={change} data={data} onSubmit={onSubmit} />
-  } else {
-    return <button className="btn toggle-btn" onClick={handleToggled}>додати ліки</button>
-  }
+
+  return (
+    <>
+      <Modal open={toggled} onClose={handleToggled}>
+        <AddMedicine change={change} data={data} onSubmit={onSubmit} />
+      </Modal>
+      <button className="btn toggle-btn" onClick={handleToggled}>додати ліки</button>
+    </>
+  )   
 };
 
 export default AddMedicineContainer;

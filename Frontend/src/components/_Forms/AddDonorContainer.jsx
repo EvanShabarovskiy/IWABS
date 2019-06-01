@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import AddDonor from './AddDonor';
 import { useToggle } from '../../assets/hooks/useToggle';
 import { useFormValidation } from '../../assets/hooks/useFormValidation';
+import Modal from '../_General/Modal';
 
 const initialState = { 
   name:'',
@@ -24,11 +25,14 @@ const AddDonorContainer = () => {
   const onDateChange = (_, date) => {
     setDate(date);
   }
-  if (toggled) {
-    return <AddDonor data={data} change={change} onSubmit={onSubmit} onDateChange={onDateChange} />    
-  } else {
-    return <button className="btn toggle-btn" onClick={handleToggled}>новий донор</button>
-  }
+  return (
+    <>
+      <Modal open={toggled} onClose={handleToggled}>
+        <AddDonor data={data} change={change} onSubmit={onSubmit} onDateChange={onDateChange} />
+      </Modal>
+      <button className="btn toggle-btn" onClick={handleToggled}>новий донор</button>
+    </>
+  )   
 };
 
 
