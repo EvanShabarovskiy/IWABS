@@ -29,7 +29,7 @@ namespace Backend.Controllers
         {
             if (donor != null)
             {
-                return Ok(new { donor = donorsService.AddNewDonor(donor) });
+                return Ok(new { createdDonor = donorsService.AddNewDonor(donor) });
             }
             return BadRequest();
         }
@@ -41,7 +41,7 @@ namespace Backend.Controllers
                 Donor result = donorsService.ChangeDonor(donor);
                 if (result != null)
                 {
-                    Ok(new { donor = result });
+                    Ok(new { changedDonor = result });
                 }
             }
             return BadRequest();
