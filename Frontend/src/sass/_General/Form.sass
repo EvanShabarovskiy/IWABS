@@ -1,27 +1,25 @@
 .form
-  display: grid
-  grid-gap: 15px
+  +grid(1, auto, 15px)
   width: 420px
   padding: 50px
   background-color: #fff
   &-title
     justify-self: start
-    text-transform: uppercase
+    +uppercase
     letter-spacing: 2px
     font-size: 1.25rem
     font-weight: 900
   .field
     &-title
       letter-spacing: 1px
-      text-transform: capitalize
+      +capitalize
       font-size: .8rem
       color: #808080
     .input, .textarea
       padding: .5rem 1rem
       width: 100%
-      border: none
+      +none
       border-bottom: 2px solid #d9d9d9
-      outline: none
       &:focus
         border-color: $d_red
     .textarea

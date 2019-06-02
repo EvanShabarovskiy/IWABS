@@ -1,18 +1,19 @@
 =title
+  display: block
   color: #b9b9b9
   text-transform: capitalize
   font-size: .7rem
 =mon
-  font-family: 'Montserrat', sans-serif !important
+  +mont 
+  display: block
   font-weight: 900
   text-indent: 10px
   font-size: .75rem
 .contacts-info
-  display: grid
-  grid-gap: 20px
+  +grid(1, auto, 20px)
   width: 420px
   &-title
-    text-transform: uppercase
+    +uppercase
     letter-spacing: 2px
     position: relative
     margin-top: 40px
@@ -24,20 +25,14 @@
       display: block
       border-bottom: 2px solid $d_red
       width: 200px
-      position: absolute
-      bottom: -20px
+      +position(absolute, auto, auto, auto, -20px)
   p
     margin: 0
-  .address
+  .address, .emails
     &-title
-      display: block
       +title
     &-value
-      display: block
       +mon
-  .emails
-    &-title
-      +title
     .email
       +mon
   .department
@@ -46,17 +41,16 @@
     border: 1px solid #d9d9d9
     position: relative
     &-name
-      text-transform: capitalize
+      +capitalize
       font-weight: 700
       font-size: .9rem
-      font-family: 'Fira Sans', sans-serif !important
+      +fira
     &-number
       padding: 5px 10px
       background-color: $d_red
       color: #ffffff
-      position: absolute
-      bottom: 0
-      transform: translate(0, 50%)
+      +position(absolute, auto, auto, auto, 0)
+      +translate(0, 50%)
       font-size: .7rem
       &-mobile
         left: 20px

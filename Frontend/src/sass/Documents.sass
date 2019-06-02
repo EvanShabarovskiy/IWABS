@@ -1,31 +1,27 @@
 .docs
-    display: grid
-    justify-items: center
-    align-content: start
-    .doc-list
-        display: grid
-        grid-template-columns: 1fr 1fr
-        justify-content: center
-        .doc
-            display: grid
-            grid-template-columns: auto 1fr
-            grid-gap: 10px
-            align-items: center
-            padding: 5px 50px
-            grid-auto-flow: dense
-            &:hover
-                &, .doc-icon
-                    color: $d_red
-
-            &.even
-                border-right: 1px solid #d9d9d9
-                .doc-icon
-                    grid-column: 2
+  +dg
+  justify-items: center
+  align-content: start
+  .doc-list
+    +grid(2, 1fr, 0)
+    justify-content: center
+    .doc
+      +grid(2, auto, 10px)
+      align-items: center
+      padding: 5px 50px
+      grid-auto-flow: dense
+      &:hover
+        &, .doc-icon
+          color: $d_red
+      &.even
+        border-right: 1px solid #d9d9d9
         .doc-icon
-            font-size: 1.5rem
-            color: #999999
-            transition: $transition
-        .doc-link
-            font-size: 1.1rem
-            line-height: 35px
-            transition: $transition 
+          grid-column: 2
+    .doc-icon
+      font-size: 1.5rem
+      color: #999999
+      +transition(.25s, ease)
+    .doc-link
+      font-size: 1.1rem
+      line-height: 35px
+      +transition(.25s, ease)

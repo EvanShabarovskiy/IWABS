@@ -2,10 +2,10 @@
   display: block
   +none
   padding: .5rem 1.25rem
-  text-transform: uppercase
+  +uppercase
   cursor: pointer
   letter-spacing: 1px
-  transition: all .25s ease
+  +transition(.25s, ease)
   font-weight: lighter
   &.toggle-btn
     margin: 0 auto 20px
@@ -15,44 +15,34 @@
     &:hover
       background-color: transparent
       color: $l_red
-
 .title
   text-align: center
   padding: 40px 40px 20px
-  text-transform: uppercase
+  +uppercase
   font-weight: 900
-
 .number
-  font-family: $rubik
-
+  +rubik
 .section
   position: relative
   padding: 120px 100px 40px
   &-title
-    position: absolute
-    top: 40px
-    left: 50%
-    transform: translate(-50%, 0)
+    +position(absolute, 40px, 50%, auto, auto)
+    +translate(-50%, 0)
     text-align: center
-    text-transform: uppercase
+    +uppercase
     font-size: 1.5rem
     letter-spacing: 5px
     margin: 0
     &::before
       content: ''
       width: 150px
-      height: 1px
-      background-color: #000000
-      position: absolute
-      bottom: -20px
-      left: calc(50% - 75px)
-
+      border-bottom: 1px solid #000
+      +position(absolute, auto, 50%, auto, -20px)
+      +translate(-50%, 0)
 .page
   min-height: 93vh
-
 .date-picker
   justify-self: center
   width: 280px
-
 .ant-select-dropdown-menu
   max-height: initial

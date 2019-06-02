@@ -1,27 +1,19 @@
 .modal
-  position: fixed
-  top: 0
-  left: 0
-  right: 0
-  bottom: 0
+  stretched(0)
   z-index: 100
   background-color: transparentize(#000000, .2)
-  display: grid
-  justify-content: center
-  align-items: center
+  +dg
+  +gcenter
   .child-wrap
     position: relative
     .close-modal
-      position: absolute
-      top: 0
-      right: 20px
-      display: grid
-      align-items: center
-      justify-content: center
+      position(absolute, 0, auto, 20px, auto)
+      +dg
+      +gcenter
       padding: 0
-      transform: translate(0, -50%) rotate(45deg)
-      width: 40px
-      height: 40px
+      +translate(0, -50%) 
+      +rotate(45deg)
+      +square(40px)
       font-size: 1.5rem
       background-color: $d_red
       color: #ffffff
