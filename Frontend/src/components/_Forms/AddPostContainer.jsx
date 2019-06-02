@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import AddPost from './AddPost';
 import { useToggle } from '../../assets/hooks/useToggle';
 import { createPost } from '../../store/news/actions';
-import { parseToFormData } from '../../assets/constants/functions/parseToFormData';
+import { parseToFormData } from '../../assets/functions/parseToFormData';
 import { useFormValidation } from '../../assets/hooks/useFormValidation';
 import Modal from '../_General/Modal';
 

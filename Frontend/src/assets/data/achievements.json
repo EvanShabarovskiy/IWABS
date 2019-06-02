@@ -1,0 +1,17 @@
+[
+  {
+    "iconClass": "fas fa-user-friends",
+    "title": "донори",
+    "value": "3 230 людей здало кров в нашому центрі"
+  },
+  {
+    "iconClass": "fas fa-tint",
+    "title": "крові здано",
+    "value": "було здано більш ніж 4 768 літрів крові"
+  },
+  {
+    "iconClass": "fas fa-user-injured",
+    "title": "надано допомогу",
+    "value": "було надано допомогу для 2 927 людей"
+  }
+]

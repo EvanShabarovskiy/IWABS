@@ -28,7 +28,7 @@ const AddDonorContainer = () => {
   return (
     <>
       <Modal open={toggled} onClose={handleToggled}>
-        <AddDonor data={data} change={change} onSubmit={onSubmit} onDateChange={onDateChange} />
+        <AddDonor {...data} change={change} onSubmit={onSubmit} onDateChange={onDateChange} />
       </Modal>
       <button className="btn toggle-btn" onClick={handleToggled}>новий донор</button>
     </>

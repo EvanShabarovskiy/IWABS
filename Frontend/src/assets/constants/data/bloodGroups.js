@@ -1,1 +1,0 @@
-export const bloodGroups = [ 'I-', 'I+', 'II-', 'II+', 'III-', 'III+', 'IV-', 'IV+' ];

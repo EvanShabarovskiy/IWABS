@@ -1,7 +1,5 @@
 import React from 'react';
-import { banner } from 'assets/constants/data/banner';
-
-const { motivation } = banner;
+import motivation from '../../assets/data/motivation.json';
 
 const Banner = ({ onClick }) => (
   <section className="banner">

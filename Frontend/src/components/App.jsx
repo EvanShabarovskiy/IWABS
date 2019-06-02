@@ -2,20 +2,17 @@ import * as React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { MainMenu } from './MainMenu/MainMenu';
 import Footer from './Footer/Footer';
-import { routing } from 'assets/constants/data/routing';
+import { routing } from 'assets/constants/routing';
 
-const App = () => (
+const App = () =>
   <Router>
     <>
       <MainMenu />
       <Switch>
-        {routing.map(({ exact, path, component }, i) => (
-          <Route key={i} exact={exact} path={path} component={component} />
-        ))}
+        { routing.map(route => <Route key={route.path} {...route} />) }
       </Switch>
       <Footer />
     </>
   </Router>
-);
 
 export default App;

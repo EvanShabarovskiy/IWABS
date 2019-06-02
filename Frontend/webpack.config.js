@@ -8,8 +8,6 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 //#endregion
 
-const React = require('react');
-
 /* --- Configuration var ---*/
 const config = {
   context: path.resolve(process.cwd(), 'src'),
