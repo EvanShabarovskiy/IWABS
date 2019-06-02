@@ -3,7 +3,7 @@ import ContactUsContainer from '../_Forms/ContactUsContainer';
 import ContactsInfo from './ContactsInfo';
 
 const Contacts = () => (
-  <section className="section contacts">
+  <section className="section contacts" id="contacts">
     <h1 className="section-title">контакти</h1>
     <ContactsInfo />
     <ContactUsContainer />
