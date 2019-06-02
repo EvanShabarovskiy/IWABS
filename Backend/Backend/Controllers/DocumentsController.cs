@@ -23,11 +23,11 @@ namespace Backend.Controllers
         public IActionResult GetDocuments() => Ok(new { documents = documentsService.GetDocuments() });
 
         [HttpPost]
-        public IActionResult AddNewDocument(string name, IFormFile document)
+        public IActionResult AddNewDocument(string name, IFormFile file)
         {
-            if (name != null && document != null)
+            if (name != null && file != null)
             {
-                return Ok(new { addedDocument = documentsService.AddNewDocument(name, document) });
+                return Ok(new { createdDoc = documentsService.AddNewDocument(name, file) });
             }
             return BadRequest();
         }

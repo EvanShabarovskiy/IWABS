@@ -29,7 +29,7 @@ namespace Backend.Controllers
         {
             if (medicine != null)
             {
-                return Ok(new { medicine = medicineService.AddNewMedicine(medicine) });
+                return Ok(new { createdMedicine = medicineService.AddNewMedicine(medicine) });
             }
             return BadRequest();
         }
@@ -42,7 +42,7 @@ namespace Backend.Controllers
                 Medicine result = medicineService.ChangeMedicine(medicine);
                 if (result != null)
                 {
-                    return Ok(new { medicine = result });
+                    return Ok(new { changedMedicine = result });
                 }
             }
             return BadRequest();

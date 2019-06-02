@@ -57,8 +57,8 @@ namespace Backend.Models
             builder.Entity<Document>().HasData(
               new Document[]
               {
-                    new Document { Id = Guid.NewGuid().ToString(), Title="Мотивація", DocumentName="first-doc.pdf" },
-                    new Document { Id = Guid.NewGuid().ToString(), Title="Вміння Дмитра", DocumentName="second-doc.pdf" },
+                    new Document { Id = Guid.NewGuid().ToString(), Title="Мотивація", DocumentName="first-doc.pdf", Format="pdf" },
+                    new Document { Id = Guid.NewGuid().ToString(), Title="Вміння Дмитра", DocumentName="second-doc.pdf", Format="pdf" },
               }
             );
         }
