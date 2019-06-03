@@ -2,14 +2,14 @@ import * as React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { MainMenu } from './MainMenu/MainMenu';
 import Footer from './Footer/Footer';
-import { routing } from 'assets/constants/routing';
+import { app } from 'assets/constants/routing';
 
 const App = () =>
   <Router>
     <>
       <MainMenu />
       <Switch>
-        { routing.map(route => <Route key={route.path} {...route} />) }
+        { app.map(route => <Route key={route.path} {...route} />) }
       </Switch>
       <Footer />
     </>
