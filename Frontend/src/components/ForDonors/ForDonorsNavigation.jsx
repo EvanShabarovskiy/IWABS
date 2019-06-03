@@ -4,7 +4,7 @@ import links from '../../assets/data/forDonorsLinks';
 import { Link } from '../_General/Link';
 
 const ForDonorsNavigation = () =>
-  <Menu>
+  <Menu menuId="for-donors-nav">
     { links.map(link => <Link key={link.to} {...link} />) }
   </Menu>
 
