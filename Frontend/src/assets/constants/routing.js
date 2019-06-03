@@ -2,6 +2,7 @@ import AdminRoute from '../../components/AdminRoute';
 import NewsRoute from '../../components/NewsRoute';
 import MainRoute from '../../components/MainRoute';
 import DocsContainer from '../../components/Docs/DocsContainer';
+import ForDonors from '../../components/ForDonors/ForDonors';
 
 export const routing = [
   {
@@ -20,5 +21,10 @@ export const routing = [
   {
     path: '/docs',
     component: DocsContainer
+  },
+  {
+    path: '/for-donors',
+    component: ForDonors,
+    
   }
 ];
