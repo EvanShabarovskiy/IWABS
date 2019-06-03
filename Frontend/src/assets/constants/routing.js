@@ -36,6 +36,7 @@ export const app = [
 
 export const donors = [
   {
+    exact: true,
     path: '/for-donors',
     component: InformationForADonor
   },

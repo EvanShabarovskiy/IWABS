@@ -1,0 +1,19 @@
+[
+  {
+    "active": true,
+    "to": "/for-donors",
+    "label": "інформація для донора"
+  },
+  {
+    "to": "/for-donors/become-a-donor",
+    "label": "як стати донором"
+  },
+  {
+    "to": "/for-donors/privileges",
+    "label": "пільги донорам"
+  },
+  {
+    "to": "/for-donors/contraindications",
+    "label": "протипоказання"
+  }
+]
