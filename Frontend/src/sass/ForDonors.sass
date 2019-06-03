@@ -1,0 +1,32 @@
+#for-donors-nav
+  .links-wrap
+    +flex
+    justify-content: center
+    margin: 0
+    padding: 15px
+    .link-wrap
+      padding: 10px
+      .link
+        padding: 15px
+        +uppercase
+        font-size: .7rem
+        position: relative
+        &.active
+          color: $l_red !important
+          &::before
+            content: ''
+            +position(absolute, auto, 0, 0, 0)
+            height: 2px
+            background-color: $l_red
+.for-donors
+  min-height: auto
+  padding: 
+    left: 20%
+    right: 20%
+  .content-section
+    margin-top: 40px
+    .sub-title
+      +uppercase
+      letter-spacing: 2px
+    .text
+      text-indent: 25px
