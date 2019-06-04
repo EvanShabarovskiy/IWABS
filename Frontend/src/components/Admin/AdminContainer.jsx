@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import SignInContainer from '../_Forms/SignInContainer';
 
 const AdminContainer = ({ signedIn }) => {
-  if (!signedIn) {
+  if (signedIn) {
     return <Admin />;
   } else {
     return <SignInContainer />;
