@@ -1,14 +1,3 @@
-=title
-  display: block
-  color: #b9b9b9
-  text-transform: capitalize
-  font-size: .7rem
-=mon
-  +mont 
-  display: block
-  font-weight: 900
-  text-indent: 10px
-  font-size: .75rem
 .contacts-info
   +grid(1, auto, 20px)
   width: 420px
@@ -30,11 +19,17 @@
     margin: 0
   .address, .emails
     &-title
-      +title
-    &-value
-      +mon
-    .email
-      +mon
+      display: block
+      color: #b9b9b9
+      text-transform: capitalize
+      font-size: .7rem
+    &-value, .email
+      +mont 
+      display: block
+      text-indent: 10px
+      font-size: .75rem
+      .icon
+        color: $d_red
   .department
     padding: 20px
     margin-bottom: 10px
