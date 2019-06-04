@@ -1,18 +1,29 @@
 #main-footer
   background-color: #252525
-  color: #505050
+  color: #606060
   text-align: center
-  padding: 40px 0 5px 0
+  padding: 40px 0 20px 0
+  .company
+    margin-bottom: 20px
+    .logo
+      filter: grayscale(100%)
+      margin-bottom: 20px
+    &-name
+      letter-spacing: 2px
+      font-size: .8rem
+      width: 370px
+      margin: 0 auto
   .sub-title
     color: $d_red
     +capitalize
     padding: 20px 0
-  .awesome-title 
+  .author 
     +uppercase
     font-size: .8rem
     color: #505050
     font-weight: 300
     margin-bottom: 20px
+    letter-spacing: 1px
   .developer-contacts
     +grid(2, 1fr, 50px)
     color: #909090
@@ -21,6 +32,7 @@
       justify-self: end
     .developer-email
       justify-self: start
+      +mont
   .footer-menu
     +grid(auto-fit, minmax(31px, auto), 80px)
     position: relative
@@ -36,7 +48,8 @@
       border-bottom: 1px solid $d_red
       width: 150px
   .copyright
-    font-size: .7rem
+    +capitalize
+    font-size: .75rem
     margin-top: 60px
     
 

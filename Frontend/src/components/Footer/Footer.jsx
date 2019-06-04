@@ -4,16 +4,33 @@ import links from '../../assets/data/links';
 
 const Footer = () => 
     <footer id="main-footer">
-        <h4 className="awesome-title">awesome deweloper</h4>
+        <section className="company">
+            <img src="/images/logo.png" className="logo" />
+            <p className="company-name">
+                КОМУНАЛЬНЕ ПІДПРИЄМСТВО "РІВНЕНСЬКИЙ ОБЛАСНИЙ ЦЕНТР СЛУЖБИ КРОВІ"
+                РІВНЕНСЬКОЇ ОБЛАСНОЇ РАДИ
+            </p>
+        </section>
+        <h4 className="author">створено</h4>
         <div className="developer-contacts">
-            <p className="developer-number">+38(068)458-86-57</p>
-            <p className="developer-email">sergiy.bobovskiy16@gmail.com</p>
+            <p className="developer-number">
+                <i class="fas fa-phone icon"></i>
+                <span className="number">+38(068)458-86-57</span>
+            </p>
+            <p className="developer-email">
+                <i class="fas fa-envelope icon"></i>
+                sergiy.bobovskiy16@gmail.com
+            </p>
         </div>
         <div className="footer-menu">
             { links.map(link => <Link key={link.to} {...link} /> ) }
         </div>
         <span className="footer-line"></span>
-        <p className="copyright">&copy; Copyright {new Date().getFullYear()}, All rights reserved</p>
+        <p className="copyright">
+            <i class="fas fa-copyright icon"></i>
+            <span className="number">{new Date().getFullYear()}. </span>
+            всі права захищені. політика конфіденційності
+        </p>
     </footer>;
 
 export default Footer;
