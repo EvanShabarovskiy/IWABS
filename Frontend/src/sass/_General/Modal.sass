@@ -1,5 +1,5 @@
 .modal
-  stretched(0)
+  +stretched(0)
   z-index: 100
   background-color: transparentize(#000000, .2)
   +dg
@@ -7,12 +7,11 @@
   .child-wrap
     position: relative
     .close-modal
-      position(absolute, 0, auto, 20px, auto)
+      +position(absolute, 0, auto, 20px, auto)
       +dg
       +gcenter
       padding: 0
-      +translate(0, -50%) 
-      +rotate(45deg)
+      +translRotate(0, -50%, 45deg) 
       +square(40px)
       font-size: 1.5rem
       background-color: $d_red
