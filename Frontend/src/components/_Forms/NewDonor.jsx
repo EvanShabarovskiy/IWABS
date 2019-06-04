@@ -6,14 +6,13 @@ import Form from '../_General/Form';
 
 const { Option } = Select;
 
-const AddDonor = ({ name, email, bloodGroup, bloodDonated, address, change, onSubmit, onDateChange, onSelectChange}) => (
+const NewDonor = ({ name, email, bloodGroup, bloodDonated, address, change, onSubmit, onDateChange, onSelectChange}) => (
   <Form formClass="add-donor-form" onSubmit={onSubmit} title="новий донор" buttonText="додати донора">
     <Field name="name" value={name} placeholder="ім'я та фамілія донора" change={change} />
     <Field name="email" value={email} placeholder="електронна адреса" change={change} />
     <Field name="bloodDonated" value={bloodDonated} placeholder="крові здано" change={change}/>
     <Field name="address" value={address} placeholder="адреса" change={change}/>
     <Select
-      value={bloodGroup}
       className="blood-group-select"
       style={{ width: '100%' }}
       size="large"
@@ -30,4 +29,4 @@ const AddDonor = ({ name, email, bloodGroup, bloodDonated, address, change, onSu
   </Form>
 );
 
-export default AddDonor;
+export default NewDonor;

@@ -1,13 +1,10 @@
 import React from 'react';
-import AddDonorContainer from '../../_Forms/AddDonorContainer';
+import NewDonorContainer from '../../_Forms/NewDonorContainer';
 
-const Donors = () => {
-  return (
-    <section className="section donors">
-      <h1 className="section-title">донори</h1>
-      <AddDonorContainer />
-    </section>
-  );
-};
+const Donors = () =>
+  <section className="section donors">
+    <h1 className="section-title">донори</h1>
+    <NewDonorContainer />
+  </section>
 
 export default Donors;
