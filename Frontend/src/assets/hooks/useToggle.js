@@ -2,10 +2,13 @@ import { useState, useEffect } from "react";
 
 const { style } = document.body;
 
-export const useToggle = () => {
+export const useToggle = reset => {
   const [toggled, setToggled] = useState(false);
 
-  const handleToggled = () => setToggled(!toggled);
+  const handleToggled = () => {
+    setToggled(!toggled);
+    reset();
+  }
 
   useEffect(() => {
     if (toggled) {

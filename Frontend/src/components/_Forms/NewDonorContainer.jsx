@@ -1,26 +1,31 @@
 import React, { useState } from 'react';
-import AddDonor from './AddDonor';
+import { connect } from 'react-redux'
+
+import NewDonor from './NewDonor';
 import { useToggle } from '../../assets/hooks/useToggle';
 import { useFormValidation } from '../../assets/hooks/useFormValidation';
 import Modal from '../_General/Modal';
+import { createDonor } from '../../store/donors/actions';
 
 const initialState = { 
   name:'',
   email:'',
   bloodGroup:'',
   bloodDonated:'',
-  address:''
+  address:'',
 }
 
-const AddDonorContainer = () => {
-  const { toggled, handleToggled } = useToggle();
+const NewDonorContainer = ({ createDonor }) => {
   const [date, setDate] = useState('');
-  const { data, change } = useFormValidation(initialState, initialState);
+  const { data, change, reset } = useFormValidation(initialState, initialState);
+  const { toggled, handleToggled } = useToggle(reset);
 
   const onSubmit = e => {
     e.preventDefault();
-    console.log('submit');
+    data['date'] = date;
+    createDonor(data);
     handleToggled();
+    reset();
   }
   const onDateChange = (_, date) => {
     setDate(date);
@@ -28,7 +33,7 @@ const AddDonorContainer = () => {
   return (
     <>
       <Modal open={toggled} onClose={handleToggled}>
-        <AddDonor {...data} change={change} onSubmit={onSubmit} onDateChange={onDateChange} />
+        <NewDonor {...data} change={change} onSubmit={onSubmit} onDateChange={onDateChange} />
       </Modal>
       <button className="btn toggle-btn" onClick={handleToggled}>новий донор</button>
     </>
@@ -37,4 +42,4 @@ const AddDonorContainer = () => {
 
 
 
-export default AddDonorContainer;
+export default connect(() => ({}), { createDonor })(NewDonorContainer);

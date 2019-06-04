@@ -8,8 +8,9 @@ const getHeaders = (token) => (
   } : null
 );
 
-export const Get = (url, success, error) => {
-  get(url)
+export const Get = (url, success, error, token) => {
+  const headers = getHeaders(token);
+  get(url, !!headers && headers)
     .then(({ data }) => success(data))
     .catch(({ response }) => error(response))
 } 
