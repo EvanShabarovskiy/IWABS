@@ -1,4 +1,5 @@
 ﻿using Backend.Models;
+using Backend.Models.UIModels;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using System;
@@ -10,31 +11,22 @@ using System.Threading.Tasks;
 
 namespace Backend.Services
 {
-    public class DocumentsService
+    public class GaleryService
     {
         private IWABS_Context database;
-        public IHostingEnvironment env;
+        private IHostingEnvironment env;
 
-        public DocumentsService(IWABS_Context database, IHostingEnvironment env)
+        public GaleryService(IWABS_Context database, IHostingEnvironment env)
         {
             this.database = database;
             this.env = env;
         }
 
-        public List<Document> GetDocuments() => database.Documents.ToList();
-
-        public Document AddNewDocument(string name, IFormFile document)
+        public List<Image> GetImages() => database.Images.ToList();
+        
+        public Image AddNewImage(ImageUI imageUI, IFormFile file)
         {
-            string[] format = document.ContentType.Split('/');
-
-            Document doc = new Document
-            {
-                Id = Guid.NewGuid().ToString(),
-                Title = name,
-                Format = format[1]
-            };
-
-            string folderName = "Static/Documents";
+            string folderName = "Static/Images/Galery";
             string webRootPath = env.ContentRootPath;
             string newPath = Path.Combine(webRootPath, folderName);
 
@@ -43,35 +35,39 @@ namespace Backend.Services
                 Directory.CreateDirectory(newPath);
             }
 
-            string fileName = Guid.NewGuid().ToString() + ContentDispositionHeaderValue.Parse(document.ContentDisposition).FileName.Trim('"');
+            string fileName = Guid.NewGuid().ToString() + ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
             string fullPath = Path.Combine(newPath, fileName);
-            doc.DocumentName = fileName;
             using (var stream = new FileStream(fullPath, FileMode.Create))
             {
-                document.CopyTo(stream);
+                file.CopyTo(stream);
             }
 
-            database.Documents.Add(doc);
+            Image image = new Image
+            {
+                Id = Guid.NewGuid().ToString(),
+                Title = imageUI.Title,
+                ImageName = fileName
+            };
+
+            database.Images.Add(image);
             database.SaveChanges();
 
-            return doc;
-        } 
+            return image;
+        }
 
-        public bool DeleteDocument(string id)
+        public bool DeleteImage(string id)
         {
-            Document doc = database.Documents.FirstOrDefault(x => x.Id == id);
-
-            if (doc != null)
+            Image image = database.Images.FirstOrDefault(x => x.Id == id);
+            if(image != null)
             {
-                string filePath = "Static/Documents/" + doc.DocumentName;
+                string filePath = "Static/Images/Galery/" + image.ImageName;
                 string webRootPath = env.ContentRootPath;
                 string newPath = Path.Combine(webRootPath, filePath);
                 if (File.Exists(newPath))
                 {
                     File.Delete(newPath);
                 }
-
-                database.Documents.Remove(doc);
+                database.Images.Remove(image);
                 database.SaveChanges();
                 return true;
             }

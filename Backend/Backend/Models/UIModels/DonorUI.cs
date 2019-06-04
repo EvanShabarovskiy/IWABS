@@ -9,7 +9,7 @@ namespace Backend.Models.UIModels
     {
         public string Name { get; set; }
         public string Email { get; set; }
-        public float BloodDonated { get; set; }
+        public string BloodDonated { get; set; }
         public string BloodGroup { get; set; }
         public string DateOfBirth { get; set; }
         public string Adress { get; set; }
