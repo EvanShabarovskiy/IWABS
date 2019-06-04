@@ -46,7 +46,24 @@
   width: 280px
 .ant-select-dropdown-menu
   max-height: initial
-
+.ant-select-selection, .ant-calendar-picker-input
+  border: none
+  border-radius: 0
+  border-bottom: 2px solid #d9d9d9 
+  box-shadow: none !important
+  &:hover, &:focus
+    border-color: $d_red !important
+.ant-calendar-selected-day
+  .ant-calendar-date
+    background-color: transparentize($d_red, .85)
+    color: $d_red
+    border-color: $d_red
+.ant-calendar-date:hover
+  background-color: transparentize($d_red, .85)
+.ant-calendar-picker-input, .ant-calendar-input
+  +capitalize
+  letter-spacing: 1px
+  color: #808080
 .icon
   margin-right: 5px
   font-size: .7rem

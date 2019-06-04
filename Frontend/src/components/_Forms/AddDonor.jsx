@@ -26,7 +26,7 @@ const AddDonor = ({ name, email, bloodGroup, bloodDonated, address, change, onSu
         ))
       }
    </Select>
-    <DatePicker className="date-picker" showToday={false} size="large" onChange={onDateChange} />
+    <DatePicker className="date-picker" placeholder="дата народження" showToday={false} size="large" onChange={onDateChange} />
   </Form>
 );
 
