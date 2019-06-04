@@ -40,7 +40,7 @@ namespace Backend.Services
                 post.Text = postUI.Text;
             }
 
-            string folderName = "Static/Images";
+            string folderName = "Static/Images/News";
             string webRootPath = env.ContentRootPath;
             string newPath = Path.Combine(webRootPath, folderName);
 
@@ -72,7 +72,7 @@ namespace Backend.Services
 
             if (post != null)
             {
-                string filePath = "Static/Images/" + post.Image;
+                string filePath = "Static/Images/News/" + post.Image;
                 string webRootPath = env.ContentRootPath;
                 string newPath = Path.Combine(webRootPath, filePath);
                 if (File.Exists(newPath))

@@ -19,7 +19,7 @@
 
   <ItemGroup>
     <Folder Include="Static\Documents\" />
-    <Folder Include="Static\Images\" />
+    <Folder Include="Static\Images\Galery\" />
   </ItemGroup>
 
 </Project>

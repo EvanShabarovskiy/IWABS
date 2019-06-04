@@ -18,6 +18,7 @@ namespace Backend.Models
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Medicine> Medicines { get; set; }
         public DbSet<Document> Documents { get; set; }
+        public DbSet<Image> Images { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -31,34 +32,43 @@ namespace Backend.Models
             builder.Entity<Post>().HasData(
                 new Post[]
                 {
-                    new Post { Id = Guid.NewGuid().ToString(), Image="first-image.jpg", PublishingDate=DateTime.Now.ToString("dd-MM-yyyy, HH:mm"), Title="First Post", Text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)." },
-                    new Post { Id = Guid.NewGuid().ToString(), Image="second-image.jpg", PublishingDate=DateTime.Now.ToString("dd-MM-yyyy, HH:mm"), Title="Second Post", Text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)." },
-
+                    new Post { Id = Guid.NewGuid().ToString(), Image="first-image.jpg", PublishingDate=DateTime.Now.ToString("dd-MM-yyyy, HH:mm"), Title="Вірші Тараса Шевченка про Україну", Text="Тарас Шевченко прожив 47 років: з них пробув 24 роки в кріпацтві, 10 – на засланні, а решту – під наглядом жандармів. Загалом на Батьківщині він був нечастим гостем… Але де б він не перебував – він завжди залишався сином своєї землі, пам’ятав її і сумував за нею, як за матір’ю. Саме тому Україна стала у творчості Шевченка головним образом, овіяним любов’ю і тугою. Саме такою, далекою та недоступною, постає образ України у вірші “Думи мої думи…”." },
+                    new Post { Id = Guid.NewGuid().ToString(), Image="second-image.jpeg", PublishingDate=DateTime.Now.ToString("dd-MM-yyyy, HH:mm"), Title="Про донорство крові в Фінляндії", Text="Міністерство охорони здоров'я Фінляндії занепокоєно ситуацією з донорством крові в країні, оскільки кількість донацій з 2011 по 2016 роки знижується в середньому на 10-13% кожного року. З приводу цього організація Червоного Хреста вже підготувала низку заходів, щоб заохотити громадян здавати кров частіше. Як зазначає голова фінського Червоного Хреста, жінок серед донорів крові більше, ніж чоловіків на 23%. В 2016 році в Фінляндії було зібрано 204 503 пакетів цільної крові, проте цей показник має тенденцію до спаду."},
+                    new Post { Id = Guid.NewGuid().ToString(), Image="three-image.jpg", PublishingDate=DateTime.Now.ToString("dd-MM-yyyy, HH:mm"), Title="Ніхто не має права вимагати у пацієнта шукати донорів", Text="Питаннями пошуку донорів крові має займатись центр крові чи станція переливання, і ніхто не може вимагати від пацієнта самостійно шукати собі донора. Про це в інтерв’ю Радіо Свобода розповіла президент Асоціації молодих донорів України Ірина Славінська. За її словами, через недосконалість системи служби крові 40% заготовленого матеріалу просто знищується. На думку Славінської, проблему «пошуку донорів» може вирішити елементарна співпраця працівників центру крові з громадськими організаціями та волонтерами, систематична популяризація добровільного безоплатного донорства та налагоджена логістика між медичними закладами різного підпорядкування." },
+                    new Post { Id = Guid.NewGuid().ToString(), Image="four-image.jpg", PublishingDate=DateTime.Now.ToString("dd-MM-yyyy, HH:mm"), Title="Як заохочують донорів здавати кров у різних країнах", Text="14 червня – Всесвітній день донора крові. За статистикою, один донор крові може врятувати життя трьох людей. Проте існує лише кілька десятків країн, де донорська кров забезпечує 100% потреби, необхідної для населення. В Україні показники донорства крові невисокі. За словами експертів, серед головних чинників такої ситуації – недовіра до лікарень, відсутність належної техніки, а також менталітет. В Україні не допомагає залученню до донорства навіть оплата за здачу крові і два вихідних. Цікаво, що в багатьох країнах світу стати донором – це звичайна справа." }
                 }
             );
 
             builder.Entity<Donor>().HasData(
                new Donor[]
                {
-                    new Donor { Id = Guid.NewGuid().ToString(), Name="Frederick Berch", Email="fred123@gmail.com", Adress="12/4, Soborna.st, Rivne", BloodDonated=3.42f, BloodGroup="I+", DateOfBirth="23-03-1995" },
-                    new Donor { Id = Guid.NewGuid().ToString(), Name="Jesica Millson", Email="jessjess@gmail.com", Adress="34a, Molodizhna.st, Bichal", BloodDonated=2.78f, BloodGroup="IV-", DateOfBirth="02-07-1998" },
+                    new Donor { Id = Guid.NewGuid().ToString(), Name="Тарасюк Петро Сергійович", Email="fredfre123@gmail.com", Adress="12/4, вул.Соборна, Рівне", BloodDonated="3.4", BloodGroup="I+", DateOfBirth="23-03-1995" },
+                    new Donor { Id = Guid.NewGuid().ToString(), Name="Мартинюк Людмила Миколаївна", Email="jess.liud@gmail.com", Adress="34a, вул.Дубунська, Рівне", BloodDonated="2.7", BloodGroup="IV-", DateOfBirth="02-07-1998" },
+                    new Donor { Id = Guid.NewGuid().ToString(), Name="Прокопчук Сергій Вікторович", Email="sergiy.pro@gmail.com", Adress="12, вул.Тараса Шевченка, Харків", BloodDonated="4.3", BloodGroup="I-", DateOfBirth="12-05-1990" },
+                    new Donor { Id = Guid.NewGuid().ToString(), Name="Вдрабадан Іван Григорович", Email="chekunia@gmail.com", Adress="27/12, вул.Незалежності, Луцьк", BloodDonated="1.0", BloodGroup="III-", DateOfBirth="22-12-1994" },
+                    new Donor { Id = Guid.NewGuid().ToString(), Name="Мирончук Андрій Петрович", Email="miron3322@gmail.com", Adress="8, вул.Степана Петлюри, Львів", BloodDonated="1.2", BloodGroup="II+", DateOfBirth="13-01-1997" },
                }
             );
 
             builder.Entity<Medicine>().HasData(
               new Medicine[]
               {
-                    new Medicine { Id = Guid.NewGuid().ToString(), Name="Маріхуана медицинська", Amount="999", ReleaseForm="Someshit-233", Unit="g" },
-                    new Medicine { Id = Guid.NewGuid().ToString(), Name="Анал гин", Amount="69", ReleaseForm="More shit than before", Unit="pills"},
-                    new Medicine { Id = Guid.NewGuid().ToString(), Name="Парацетамол эптить", Amount="45", ReleaseForm="Most big shit of every time", Unit="pills" },
+                    new Medicine { Id = Guid.NewGuid().ToString(), Name="Аміаку розчин 10%", Amount="14", ReleaseForm="10%-40мл", Unit="фл" },
+                    new Medicine { Id = Guid.NewGuid().ToString(), Name="Бинт", Amount="202", ReleaseForm="Бинт марлевий медичний 7*14", Unit="шт"},
+                    new Medicine { Id = Guid.NewGuid().ToString(), Name="Бланідас Актив", Amount="10", ReleaseForm="1000 мл", Unit="шт" },
+                    new Medicine { Id = Guid.NewGuid().ToString(), Name="Дузіфекційний засіб", Amount="10", ReleaseForm="Еконорм ДЕЗ Антисептик", Unit="шт" },
+                    new Medicine { Id = Guid.NewGuid().ToString(), Name="Набір", Amount="45", ReleaseForm="Витратні матеріали для атоматичного плазмаферезу", Unit="набір" },
               }
             );
 
             builder.Entity<Document>().HasData(
               new Document[]
               {
-                    new Document { Id = Guid.NewGuid().ToString(), Title="Мотивація", DocumentName="first-doc.pdf", Format="pdf" },
-                    new Document { Id = Guid.NewGuid().ToString(), Title="Вміння Дмитра", DocumentName="second-doc.pdf", Format="pdf" },
+                    new Document { Id = Guid.NewGuid().ToString(), Title="Додаток до річного плану зі змінами за квітень 2019 року", DocumentName="first-doc.pdf", Format="pdf" },
+                    new Document { Id = Guid.NewGuid().ToString(), Title="Річний план зі змінами травень 2019 року", DocumentName="second-doc.pdf", Format="pdf" },
+                    new Document { Id = Guid.NewGuid().ToString(), Title="Додаток до річного плану зі змінами за січень 2019 року", DocumentName="three-doc.docx", Format="docx" },
+                    new Document { Id = Guid.NewGuid().ToString(), Title="Додаток до річного плану зі змінами за березень 2019 року", DocumentName="four-doc.docx", Format="docx" },
+                    new Document { Id = Guid.NewGuid().ToString(), Title="Додаток до річного плану за грудень 2018 року", DocumentName="five-doc.txt", Format="txt" },
               }
             );
         }
