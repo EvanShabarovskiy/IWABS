@@ -14,11 +14,11 @@ const Footer = () =>
         <h4 className="author">створено</h4>
         <div className="developer-contacts">
             <p className="developer-number">
-                <i class="fas fa-phone icon"></i>
+                <i className="fas fa-phone icon"></i>
                 <span className="number">+38(068)458-86-57</span>
             </p>
             <p className="developer-email">
-                <i class="fas fa-envelope icon"></i>
+                <i className="fas fa-envelope icon"></i>
                 sergiy.bobovskiy16@gmail.com
             </p>
         </div>
@@ -27,7 +27,7 @@ const Footer = () =>
         </div>
         <span className="footer-line"></span>
         <p className="copyright">
-            <i class="fas fa-copyright icon"></i>
+            <i className="fas fa-copyright icon"></i>
             <span className="number">{new Date().getFullYear()}. </span>
             всі права захищені. політика конфіденційності
         </p>

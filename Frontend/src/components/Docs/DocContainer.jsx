@@ -3,6 +3,7 @@ import Doc from "./Doc";
 
 const DocContainer = ({ doc, index }) => {
     let iconClass;
+    let isEven;
     switch (doc.format) {
         case 'pdf':
             iconClass = 'far fa-file-pdf doc-icon';
@@ -20,8 +21,9 @@ const DocContainer = ({ doc, index }) => {
             iconClass = 'fas fa-poop doc-icon doc-icon';
             break;
     }
+
     doc['iconClass'] = iconClass;
-    doc['isEven'] = !index % 2;
+    doc['isEven'] = index % 2 == 0;
 
     return <Doc {...doc} />
 }
