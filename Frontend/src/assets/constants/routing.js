@@ -1,6 +1,5 @@
-import AdminRoute from '../../components/AdminRoute';
-import NewsRoute from '../../components/NewsRoute';
-import MainRoute from '../../components/MainRoute';
+import Main from '../../components/Main';
+import NewsContainer from '../../components/News/NewsContainer';
 import DocsContainer from '../../components/Docs/DocsContainer';
 import ForDonors from '../../components/ForDonors/ForDonors';
 
@@ -13,15 +12,11 @@ export const app = [
   {
     exact: true,
     path: '/',
-    component: MainRoute
+    component: Main
   },
   {
     path: '/news',
-    component: NewsRoute
-  },
-  {
-    path: '/admin',
-    component: AdminRoute
+    component: NewsContainer
   },
   {
     path: '/docs',
@@ -30,7 +25,6 @@ export const app = [
   {
     path: '/for-donors',
     component: ForDonors,
-    
   }
 ];
 

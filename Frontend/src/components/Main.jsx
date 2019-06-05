@@ -1,19 +1,18 @@
 import React from 'react';
 
-import { EmployeesContainer } from './Employees/EmployeesContainer';
+import BannerContainer from './Banner/BannerContainer';
 import Achievements from './Achievements/Achievements';
 import HistoryContainer from './History/HistoryContainer';
+import Employees from './Employees/Employees';
 import Contacts from './Contacts/Contacts';
-import BannerContainer from './Banner/BannerContainer';
 
-const MainRoute = () => (
+const Main = () =>
   <>
     <BannerContainer />
     <Achievements />
     <HistoryContainer />
-    <EmployeesContainer />
+    <Employees />
     <Contacts />
   </>
-);
 
-export default MainRoute;
+export default Main;

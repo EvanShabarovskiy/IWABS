@@ -1,8 +1,11 @@
 import React from 'react';
+import employees from '../../assets/data/employees';
+import Employee from './Employee';
 
-export const Employees = ({ children }) => (
+const Employees = () =>
   <section className="section employees">
     <h1 className="section-title">наші працівники</h1>
-    {children}
+    { employees.map(employee => <Employee key={employee.phone} {...employee} />) }
   </section>
-);
+
+export default Employees;
