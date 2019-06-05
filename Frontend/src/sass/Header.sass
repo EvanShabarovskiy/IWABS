@@ -1,5 +1,8 @@
 #main-header
   box-shadow: $shadow
+  +grid(2, auto, 0)
+  justify-content: end
+  align-items: center
   .flag
     +flex
     +position(absolute, 0, 60px, auto, auto)
@@ -45,6 +48,12 @@
           letter-spacing: 1px
           &.active
             color: $l_red !important
+  .sign-out-btn
+    border: 1px solid $d_red
+    color: #ffffff
+    background: $d_red
+    margin: 0 20px
+    font-size: .7rem
 @media screen and (max-width: 1400px)
   #main-menu
     .flag
