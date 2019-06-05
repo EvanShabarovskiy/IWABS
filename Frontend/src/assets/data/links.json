@@ -9,6 +9,11 @@
     "label": "документи"
   },
   {
+    "private": true,
+    "to": "/donors",
+    "label": "донори"
+  },
+  {
     "to": "/for-donors",
     "label": "для донорів"
   },

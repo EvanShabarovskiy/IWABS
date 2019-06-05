@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from './Link';
 
-const Menu = ({ menuId, children }) => (
+const Menu = ({ menuId, links }) => (
   <nav id={menuId} className="menu">
     <ul className="links-wrap">
-      {children}
+      { links.map(link => <Link {...link} />)}
     </ul>
   </nav>
 );
