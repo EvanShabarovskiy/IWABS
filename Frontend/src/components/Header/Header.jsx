@@ -8,7 +8,7 @@ const Header = ({ signedIn }) =>
   <header id="main-header">
     <Flag />
     <Menu menuId="main-menu" links={signedIn ? links : links.filter(link => !link.private)} />
-    { !signedIn && <button className="btn sign-out-btn">вийти</button> }
+    { signedIn && <button className="btn sign-out-btn">вийти</button> }
   </header>
 
 export default connect(
