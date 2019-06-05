@@ -1,15 +1,14 @@
 import React from 'react';
-import Post from './Post';
+import cx from 'classnames';
 
-const News = ({ news }) => (
+import PostContainer from './PostContainer';
+
+const News = ({ news, signedIn }) =>
   <section className="news page section">
     <h1 className="section-title">новини</h1>
-    {news.map(post => (
-      <Post key={post.id} post={post} />
-    ))}
+    <div className={cx('news-list', signedIn && 'controlled')}>
+      { news.map(post => <PostContainer key={post.id} post={post} />) }
+    </div>
   </section>
-);
-
-
 
 export default News;

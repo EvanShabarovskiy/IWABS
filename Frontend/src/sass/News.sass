@@ -1,34 +1,46 @@
-.news 
-  .post 
-    width: 768px
-    margin: 0 auto
-    margin-bottom: 25px
-    &-title
-      font-size: 1.75rem
-      font-weight: 600
-      +fira
-      margin: 0 !important
-    &-img 
-      width: 100%
-      margin: 20px 0
-    .publishing-date 
-      font-size: .7rem
-      color: #cccccc
-      +capitalize
-      +rubik
-    &-text 
-      text-indent: 25px
-    .read-more 
-      border: 1px solid #E10602
-      margin-top: 15px
-      color: #E10602
-      display: block
-      &:hover 
-        background-color: #E10602
-        color: #fff
-    &::after
-      content: ''
-      display: block
-      clear: both
+.news
+  .news-list
+    .post 
+      width: 768px
+      margin: 0 auto
+      margin-top: 25px
+      margin-bottom: 50px
+      position: relative
+      &-title
+        font-size: 1.75rem
+        font-weight: 600
+        +fira
+        margin: 0 !important
+      &-img 
+        width: 100%
+        margin: 20px 0
+      .publishing-date 
+        font-size: .7rem
+        color: #cccccc
+        +capitalize
+        +rubik
+      &-text 
+        text-indent: 25px
+      .read-more 
+        border: 1px solid #E10602
+        margin-top: 15px
+        color: #E10602
+        display: block
+        &:hover 
+          background-color: #E10602
+          color: #fff
+      &::after
+        content: ''
+        display: block
+        clear: both
+    &.controlled
+      .post 
+        padding: 40px
+        box-shadow: $shadow
+        margin-top: 25px
+        margin-bottom: 50px
+
+
+
 
   

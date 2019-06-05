@@ -1,0 +1,23 @@
+[
+  {
+    "active": true,
+    "to": "/admin/news",
+    "label": "новини"
+  },
+  {
+    "to": "/admin/donors",
+    "label": "донори"
+  },
+  {
+    "to": "/admin/docs",
+    "label": "документи"
+  },
+  {
+    "to": "/admin/medicine",
+    "label": "ліки"
+  },
+  {
+    "to": "/admin/gallery",
+    "label": "фотогалерея"
+  }
+]

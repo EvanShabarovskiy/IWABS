@@ -13,13 +13,13 @@ const Contraindications = () =>
         const { list, preTitle } = obj;
         if (typeof(list) !== 'undefined') {
           return (
-            <section className="content-section">
+            <section key={i} className="content-section">
               <p className="text">{preTitle}</p>
               <List list={list} />
             </section>
           );
         } else {
-          return <p className="text">{obj}</p>
+          return <p key={i} className="text">{obj}</p>
         }
       }) }
     </section>

@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import News from './News';
 import { connect } from 'react-redux'
 import { getNews } from '../../store/news/actions';
 
-const NewsContainer = ({ news, getNews }) => {
+const NewsContainer = ({ signedIn, news, getNews }) => {
   useEffect(() => getNews(), []);
-  return <News news={news} />
+  return <News news={news} signedIn={signedIn} />
 };
 
-
 export default connect(
-  ({ news }) => ({ news }), 
+  ({ news, general: { signedIn } }) => ({ news, signedIn }), 
   { getNews }
 )(NewsContainer);
