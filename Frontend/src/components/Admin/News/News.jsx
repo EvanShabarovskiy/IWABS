@@ -1,6 +1,6 @@
 import React from 'react';
 import Post from './Post';
-import AddPostContainer from '../../_Forms/AddPostContainer';
+import AddPostContainer from '../../_Forms/NewPostContainer';
 
 const News = ({ news }) => (
   <section className="news section">
