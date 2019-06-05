@@ -1,5 +1,5 @@
 import React from 'react';
-import AddPhotoContainer from '../../_Forms/AddPhotoContainer';
+import AddPhotoContainer from '../../_Forms/NewPhotoContainer';
 
 const PhotoGallery = () => {
   return (

@@ -16,8 +16,9 @@ const initialState = {
 }
 
 const NewPostContainer = ({ createPost }) => {
-  const { toggled, handleToggled } = useToggle();
   const { data, change, reset } = useFormValidation(initialState, initialState);
+  const toggle = useToggle();
+  const { handleToggled } = toggle;
   
   const onSubmit = e => {
     e.preventDefault();
@@ -27,7 +28,7 @@ const NewPostContainer = ({ createPost }) => {
     handleToggled();
   }
 
-  return <NewPost {...data} change={change} onSubmit={onSubmit} toggled={toggled} handleToggled={handleToggled} />
+  return <NewPost {...data} {...toggle} change={change} onSubmit={onSubmit} />
 };
 
 export default connect(

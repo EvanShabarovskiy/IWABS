@@ -18,8 +18,8 @@ const initialState = {
 const NewDonorContainer = ({ createDonor }) => {
   const [date, setDate] = useState('');
   const { data, change, reset } = useFormValidation(initialState, initialState);
-  const { toggled, handleToggled } = useToggle(reset);
-
+  const toggle = useToggle(reset);
+  const { handleToggled } = toggle;
   const onSubmit = e => {
     e.preventDefault();
     data['date'] = date;
@@ -30,14 +30,7 @@ const NewDonorContainer = ({ createDonor }) => {
   const onDateChange = (_, date) => {
     setDate(date);
   }
-  return (
-    <>
-      <Modal open={toggled} onClose={handleToggled}>
-        <NewDonor {...data} change={change} onSubmit={onSubmit} onDateChange={onDateChange} />
-      </Modal>
-      <button className="btn toggle-btn" onClick={handleToggled}>новий донор</button>
-    </>
-  )   
+  return <NewDonor {...data} {...toggle} change={change} onSubmit={onSubmit} onDateChange={onDateChange} />
 };
 
 

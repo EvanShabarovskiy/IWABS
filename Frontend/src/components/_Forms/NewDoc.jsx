@@ -2,12 +2,17 @@ import React from 'react';
 import Field from '../_General/Field';
 import Upload from '../_General/Upload';
 import Form from '../_General/Form';
+import Modal from '../_General/Modal';
 
-const AddDoc = ({ fileName, name, change, onSubmit }) => (
-  <Form formClass="add-doc-form" onSubmit={onSubmit} title="новий документ" buttonText="додати документ">
-    <Upload fileName={fileName} change={change} label="натисніть для завантаження" />
-    <Field name="name" value={name} placeholder="назва документа" change={change} />
-  </Form>
-);
+const NewDoc = ({ fileName, name, change, onSubmit, toggled, handleToggled }) =>
+  <>
+    <Modal open={toggled} onClose={handleToggled} >
+      <Form formClass="new-doc-form" onSubmit={onSubmit} title="новий документ" buttonText="додати документ">
+        <Upload fileName={fileName} change={change} label="натисніть для завантаження" />
+        <Field name="name" value={name} placeholder="назва документа" change={change} />
+      </Form>
+    </Modal>
+    <button className="btn toggle-btn" onClick={handleToggled}>додати документ</button>
+  </>
 
-export default AddDoc;
+export default NewDoc;

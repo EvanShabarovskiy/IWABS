@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import NewDoc from './NewDoc';
 import { useToggle } from '../../assets/hooks/useToggle';
 import { useFormValidation } from '../../assets/hooks/useFormValidation';
-import Modal from '../_General/Modal';
 import { createDoc } from '../../store/docs/actions'
 import { parseToFormData } from '../../assets/functions/parseToFormData';
 
@@ -17,8 +16,9 @@ const initialState = {
 
 const NewDocContainer = ({ createDoc }) => {
   const { data, change, reset } = useFormValidation(initialState, initialState);
-  const { toggled, handleToggled } = useToggle(reset);
-  
+  const toggle = useToggle(reset);
+  const { handleToggled } = toggle;
+
   const onSubmit = e => {
     e.preventDefault();
     const formData = parseToFormData(data);
@@ -27,14 +27,10 @@ const NewDocContainer = ({ createDoc }) => {
     reset();
   }
 
-  return (
-    <>
-      <Modal open={toggled} onClose={handleToggled} >
-        <NewDoc {...data} change={change} onSubmit={onSubmit} />
-      </Modal>
-      <button className="btn toggle-btn" onClick={handleToggled}>додати документ</button>
-    </>
-  );
+  return <NewDoc {...data} {...toggle} change={change} onSubmit={onSubmit} />
 };
 
-export default connect(() => ({}), { createDoc })(NewDocContainer);
+export default connect(
+  () => ({}), 
+  { createDoc }
+)(NewDocContainer);
