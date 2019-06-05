@@ -1,8 +1,5 @@
-#main-menu
-  +flex
-  justify-content: flex-end
+#main-header
   box-shadow: $shadow
-  position: relative
   .flag
     +flex
     +position(absolute, 0, 60px, auto, auto)
@@ -30,20 +27,24 @@
         margin: 0
         line-height: 1.15rem
         +uppercase
-  .links-wrap
+  #main-menu
     +flex
-    padding: 20px
-    margin: 0 !important
-    .link-wrap
-      padding: 5px 20px
-      .link
-        display: block
-        padding: 5px
-        font-size: .7rem
-        +uppercase
-        letter-spacing: 1px
-        &.active
-          color: $l_red !important
+    justify-content: flex-end
+    position: relative
+    .links-wrap
+      +flex
+      padding: 20px
+      margin: 0 !important
+      .link-wrap
+        padding: 5px 20px
+        .link
+          display: block
+          padding: 5px
+          font-size: .7rem
+          +uppercase
+          letter-spacing: 1px
+          &.active
+            color: $l_red !important
 @media screen and (max-width: 1400px)
   #main-menu
     .flag

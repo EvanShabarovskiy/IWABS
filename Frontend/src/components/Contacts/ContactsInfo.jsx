@@ -8,11 +8,11 @@ const ContactsInfo = () =>
     <div className="emails">
       <p className="emails-title">потрібна допомога?</p>
       <p className="email">
-        <i class="fas fa-at icon"></i>
+        <i className="fas fa-at icon"></i>
         RivneOSPK@gmail.com
       </p>
       <p className="email">
-        <i class="fas fa-at icon"></i>
+        <i className="fas fa-at icon"></i>
         Obl.stancija.perel.krovi@icc.rv.ua
       </p>
     </div>
@@ -29,7 +29,7 @@ const ContactsInfo = () =>
     <p className="address">
       <span className="address-title">адреса</span>
       <span className="address-value">
-        <i class="fas fa-map-marker-alt icon"></i>
+        <i className="fas fa-map-marker-alt icon"></i>
         <span className="number">33014</span>
         , м. Рівне, вул. Ст. Бандери, 
         <span className="number"> 31</span>

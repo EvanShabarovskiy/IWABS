@@ -33,20 +33,21 @@
     .developer-email
       justify-self: start
       +mont
-  .footer-menu
-    +grid(auto-fit, minmax(31px, auto), 80px)
-    position: relative
-    +uppercase
-    font-size: .7rem
-    letter-spacing: 2px
-    justify-content: center
-    padding-top: 30px
-    &::after
-      content: ''
-      +position(absolute, auto, 50%, auto, -30px)
-      +translate(-50%, 0)
-      border-bottom: 1px solid $d_red
-      width: 150px
+  #footer-menu
+    .links-wrap
+      +grid(auto-fit, minmax(31px, auto), 80px)
+      position: relative
+      +uppercase
+      font-size: .7rem
+      letter-spacing: 2px
+      justify-content: center
+      padding-top: 30px
+      &::after
+        content: ''
+        +position(absolute, auto, 50%, auto, -30px)
+        +translate(-50%, 0)
+        border-bottom: 1px solid $d_red
+        width: 150px
   .copyright
     +capitalize
     font-size: .75rem
