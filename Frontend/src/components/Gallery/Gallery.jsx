@@ -1,13 +1,14 @@
 import React from 'react';
-import AddPhotoContainer from '../_Forms/AddPhotoContainer';
+import Photo from './Photo';
+//import AddPhotoContainer from '../_Forms/AddPhotoContainer';
 
-const PhotoGallery = () => {
+const Gallery = ({ images }) => {
   return (
     <section className="section photo-gallery">
       <h1 className="section-title">фотогалерея</h1>
       {/* <AddPhotoContainer /> */}
       <div className="images-container">
-        { sectionImages.map(image => 
+        { images.map(image => 
             <Photo key={image.id} {...image}/>
         )}
       </div>
@@ -15,4 +16,4 @@ const PhotoGallery = () => {
   );
 };
 
-export default PhotoGallery;
+export default Gallery;
