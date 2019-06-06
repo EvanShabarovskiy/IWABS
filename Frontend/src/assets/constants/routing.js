@@ -7,6 +7,7 @@ import InformationForADonor from "../../components/ForDonors/InformationForADono
 import HowToBecomeADonor from "../../components/ForDonors/HowToBecomeADonor";
 import PrivilegesForDonors from "../../components/ForDonors/PrivilegesForDonors";
 import Contraindications from "../../components/ForDonors/Contraindications";
+import GalleryContainer from '../../components/Gallery/GalleryContainer';
 
 export const app = [
   {
@@ -25,6 +26,10 @@ export const app = [
   {
     path: '/for-donors',
     component: ForDonors,
+  },
+  {
+    path: '/photos',
+    component: GalleryContainer,
   }
 ];
 

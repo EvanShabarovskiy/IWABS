@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 
 import { TOGGLE_SIGNED_IN } from './actions';
 import { newsReducer } from './news/reducers';
-import { imagesReducer } from './images/reducers';
+import { imagesReducer } from './gallery/reducers';
 import { docsReducer } from './docs/reducers';
 
 const defaultState = {

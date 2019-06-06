@@ -56,7 +56,7 @@ namespace Backend.Models
                     new Medicine { Id = Guid.NewGuid().ToString(), Name="Аміаку розчин 10%", Amount="14", ReleaseForm="10%-40мл", Unit="фл" },
                     new Medicine { Id = Guid.NewGuid().ToString(), Name="Бинт", Amount="202", ReleaseForm="Бинт марлевий медичний 7*14", Unit="шт"},
                     new Medicine { Id = Guid.NewGuid().ToString(), Name="Бланідас Актив", Amount="10", ReleaseForm="1000 мл", Unit="шт" },
-                    new Medicine { Id = Guid.NewGuid().ToString(), Name="Дузіфекційний засіб", Amount="10", ReleaseForm="Еконорм ДЕЗ Антисептик", Unit="шт" },
+                    new Medicine { Id = Guid.NewGuid().ToString(), Name="Дезіфекційний засіб", Amount="10", ReleaseForm="Еконорм ДЕЗ Антисептик", Unit="шт" },
                     new Medicine { Id = Guid.NewGuid().ToString(), Name="Набір", Amount="45", ReleaseForm="Витратні матеріали для атоматичного плазмаферезу", Unit="набір" },
               }
             );
@@ -71,6 +71,17 @@ namespace Backend.Models
                     new Document { Id = Guid.NewGuid().ToString(), Title="Додаток до річного плану за грудень 2018 року", DocumentName="five-doc.txt", Format="txt" },
               }
             );
+
+            builder.Entity<Image>().HasData(
+             new Image[]
+             {
+                    new Image { Id = Guid.NewGuid().ToString(), Title="Заголовок до першого фото", ImageName="first-image.jpg" },
+                    new Image { Id = Guid.NewGuid().ToString(), Title="Заголовок до другого фото", ImageName="second-image.jpg" },
+                    new Image { Id = Guid.NewGuid().ToString(), Title="Заголовок до третього фото", ImageName="three-image.jpg" },
+                    new Image { Id = Guid.NewGuid().ToString(), Title="Заголовок до четвертого фото", ImageName="four-image.jpg" },
+                    new Image { Id = Guid.NewGuid().ToString(), Title="Заголовок до п'ятого фото", ImageName="five-image.jpg" },
+             }
+           );
         }
     }
 }

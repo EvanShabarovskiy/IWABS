@@ -1,9 +1,9 @@
 import React from 'react';
-import { galery } from '../../assets/constants/api';
+import { gallery } from '../../assets/constants/api';
 
 const Photo = ({ title, imageName }) => (
   <div className="photo">
-    <img className="img" src={galery + imageName} />
+    <img className="img" src={gallery + imageName} />
   </div>
 );
 
