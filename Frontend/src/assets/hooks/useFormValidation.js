@@ -25,7 +25,7 @@ export const useFormValidation = (initialState, requiredFields) =>  {
     if (value.trim() == '') {
       setErrors(errors => ({
           ...errors,
-          [name]: 'this field can not be empty',
+          [name]: 'поле не може бути пустим',
         })
       );
       return false;

@@ -1,0 +1,27 @@
+.field
+  &-title
+    letter-spacing: 1px
+    +capitalize
+    font-size: .8rem
+    color: #808080
+  .input, .textarea
+    padding: .5rem 1rem
+    width: 100%
+    +none
+    border-bottom: 2px solid #d9d9d9
+    &:focus
+      border-color: $d_red
+  .textarea
+    resize: none
+    height: 100px
+  &-error-text
+    +capitalize
+    font-size: 0.7rem
+    letter-spacing: 1px
+    color: $l_red
+  &.error
+    .field-title
+      color: $l_red
+    .input, .textarea
+      background-color: transparentize($d_red, .8)
+      border-color: $l_red
