@@ -10,23 +10,23 @@ using Microsoft.AspNetCore.Mvc;
 namespace Backend.Controllers
 {
     [Route("api/[controller]")]
-    public class GaleryController : ControllerBase
+    public class GalleryController : ControllerBase
     {
-        private GaleryService galeryService;
+        private GalleryService galleryService;
 
-        public GaleryController(GaleryService galeryService)
+        public GalleryController(GalleryService galleryService)
         {
-            this.galeryService = galeryService;
+            this.galleryService = galleryService;
         }
 
         [HttpGet]
-        public IActionResult GetImages() => Ok(new { images = galeryService.GetImages() });
+        public IActionResult GetImages() => Ok(new { images = galleryService.GetImages() });
 
         [HttpPost]
         public IActionResult AddNewImage(ImageUI image, IFormFile file)
         {
             if (image.Title != null || file != null) {
-                return Ok(new { addedImage = galeryService.AddNewImage(image, file) });
+                return Ok(new { addedImage = galleryService.AddNewImage(image, file) });
             }
             return BadRequest();
         }
@@ -34,7 +34,7 @@ namespace Backend.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteImage(string id)
         {
-            bool status = galeryService.DeleteImage(id);
+            bool status = galleryService.DeleteImage(id);
             if(id != null && status)
             {
                 return Ok();
