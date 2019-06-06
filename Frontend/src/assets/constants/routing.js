@@ -42,7 +42,7 @@ export const app = [
     component: ForDonors,
   },
   {
-    path: '/photos',
+    path: '/gallery',
     component: GalleryContainer,
   }
 ];
