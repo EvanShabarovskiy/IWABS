@@ -11,7 +11,7 @@ const App = ({ signedIn }) =>
     <>
       <Header />
       <Switch>
-        { appRedirected.map(({ path, redirect }) => <Route key={path} path={path} component={() => redirect(signedIn)} />)}
+        { appRedirected.map(({ path, redirect, returnCondition }) => <Route key={path} path={path} component={() => redirect(returnCondition(signedIn))} />)}
         { app.map(route => <Route key={route.path} {...route} />) }
       </Switch>
       <Footer />

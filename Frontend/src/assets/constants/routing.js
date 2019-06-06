@@ -15,10 +15,12 @@ import GalleryContainer from '../../components/Gallery/GalleryContainer';
 export const appRedirected = [
   {
     path: '/sign-in',
+    returnCondition: signedIn => !signedIn,
     redirect: condition => redirectCheck(condition, signInParams)
   },
   {
     path: '/donors',
+    returnCondition: signedIn => signedIn,
     redirect: condition => redirectCheck(condition, donorsParams)
   },
 ]
