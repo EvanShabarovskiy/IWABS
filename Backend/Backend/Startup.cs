@@ -68,6 +68,7 @@ namespace Backend
             services.AddTransient<MailService>();
             services.AddTransient<MedicineService>();
             services.AddTransient<NewsService>();
+            services.AddTransient<GalleryService>();
             services.AddTransient<SmtpClient>();
             services.AddMvc();
         }

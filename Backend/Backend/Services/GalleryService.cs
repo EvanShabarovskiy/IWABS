@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 
 namespace Backend.Services
 {
-    public class GaleryService
+    public class GalleryService
     {
         private IWABS_Context database;
         private IHostingEnvironment env;
 
-        public GaleryService(IWABS_Context database, IHostingEnvironment env)
+        public GalleryService(IWABS_Context database, IHostingEnvironment env)
         {
             this.database = database;
             this.env = env;
