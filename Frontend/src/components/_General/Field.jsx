@@ -1,7 +1,8 @@
 import React from 'react';
+import cx from 'classnames'
 
-const Field = ({ name, value, placeholder, type, change, isTextarea }) => (
-  <label htmlFor={`id-${name}`} className={`field ${name}-field`}>
+const Field = ({ name, value, placeholder, type, change, isTextarea, error }) => (
+  <label htmlFor={`id-${name}`} className={cx('field', `${name}-field`, error && 'error')}>
     <span className="field-title">{placeholder}</span>
     {isTextarea ? 
       <textarea
@@ -21,6 +22,7 @@ const Field = ({ name, value, placeholder, type, change, isTextarea }) => (
         autoComplete="off"
       />
     }
+    { error && <span className="field-error-text"> {error} </span> }
   </label>
 );
 
