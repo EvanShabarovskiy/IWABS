@@ -22,7 +22,7 @@ const Field = ({ name, value, placeholder, type, change, isTextarea, error }) =>
         autoComplete="off"
       />
     }
-    { error && <span className="field-error-text">{error}</span> }
+    { error && <span className="field-error-text"> {error} </span> }
   </label>
 );
 

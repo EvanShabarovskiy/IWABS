@@ -1,5 +1,16 @@
 .upload-block
   +dg
+  .upload-error-text
+    +capitalize
+    font-size: .75rem
+    text-align: center
+    margin-bottom: 3px
+    color: $l_red
+    & ~ .upload
+      .upload-btn
+        border-color: $l_red
+        color: $l_red
+        background-color: transparentize($d_red, .8)
   .upload
     &-input
       display: none
@@ -15,12 +26,12 @@
         margin-right: 10px
         font-size: .9rem
       &:hover
-        border-color: $l_red
-        color: $l_red
+        border-color: $d_red
+        color: $d_red
   .file-name
     padding: 5px
     cursor: pointer
     +transition(.25s, ease)
     justify-self: center
     &:hover
-      color: $l_red
+      color: $d_red

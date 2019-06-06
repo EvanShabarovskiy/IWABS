@@ -14,7 +14,10 @@
   .textarea
     resize: none
     height: 100px
+    & ~ .field-error-text
+      margin-top: -5px
   &-error-text
+    display: block
     +capitalize
     font-size: 0.7rem
     letter-spacing: 1px

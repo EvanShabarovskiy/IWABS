@@ -38,8 +38,8 @@ const SignInContainer = ({ toggleSignedIn }) => {
         data, 
         ({ token }) => {
           set('token', token);
-          toggleSignedIn(true)
           reset();
+          toggleSignedIn(true);
         },
         error => console.log(error)
       );
