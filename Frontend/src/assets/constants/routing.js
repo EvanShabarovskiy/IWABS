@@ -3,10 +3,24 @@ import NewsContainer from '../../components/News/NewsContainer';
 import DocsContainer from '../../components/Docs/DocsContainer';
 import ForDonors from '../../components/ForDonors/ForDonors';
 
+import { redirectCheck } from '../functions/redirectCheck';
+import { donorsParams, signInParams } from './routingParams';
+
 import InformationForADonor from "../../components/ForDonors/InformationForADonor";
 import HowToBecomeADonor from "../../components/ForDonors/HowToBecomeADonor";
 import PrivilegesForDonors from "../../components/ForDonors/PrivilegesForDonors";
 import Contraindications from "../../components/ForDonors/Contraindications";
+
+export const appRedirected = [
+  {
+    path: '/sign-in',
+    redirect: condition => redirectCheck(condition, signInParams)
+  },
+  {
+    path: '/donors',
+    redirect: condition => redirectCheck(condition, donorsParams)
+  },
+]
 
 export const app = [
   {
