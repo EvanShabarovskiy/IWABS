@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { set } from 'js-cookie';
 import { isEmail } from 'validator'
 
-import { SignIn } from './SignIn';
+import SignIn from './SignIn';
 import { api } from '../../assets/constants/api';
 import { toggleSignedIn } from '../../store/actions';
 import { Post } from '../../assets/services/request.service';
@@ -14,7 +14,7 @@ const initialState = {
   password: ''
 }
 
-const SignInContainer = ({ toggleSignedIn }) => {
+const SignInContainer = ({ toggleSignedIn, formLoading }) => {
   const { data, errors, change, validate, reset } = useFormValidation(initialState, initialState);
   const validateParams = {
     email: {
@@ -63,10 +63,10 @@ const SignInContainer = ({ toggleSignedIn }) => {
       change
     }
   ];
-  return <SignIn submit={submit} fields={fieldsArr} />;
+  return <SignIn loading={formLoading} submit={submit} fields={fieldsArr} />;
 };
 
 export default connect(
-  () => ({}), 
+  ({ general: { formLoading }}) => ({ formLoading }), 
   { toggleSignedIn }
 )(SignInContainer);

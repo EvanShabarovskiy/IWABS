@@ -2,25 +2,24 @@
   border: 5px solid transparent
   border-top-color: $d_red
   border-radius: 50%
-
 @keyframes load 
   0%
     +rotate(0)
   100%
     +rotate(360deg)
-  
+.modal
+  .load-container
+    +position(fixed, 0, 0, 0, 0)
+    background: #ffffff
+
 .load-container
   +dg
   +gcenter
-  +position(fixed, 0, 0, 0, 0)
-  background: #ffffff
+  +stretched(0)
+  background: #ffffff80
   z-index: 999
   .load
     +square(80px)
     +loadBd
     margin-top: -40px
-    position: relative
     animation: 1s linear infinite load
-    
-
-
