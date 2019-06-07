@@ -1,12 +1,14 @@
 import { combineReducers } from 'redux';
 
-import { TOGGLE_SIGNED_IN } from './actions';
+import { TOGGLE_SIGNED_IN, TOGGLE_PAGE_LOADING, TOGGLE_FORM_LOADING } from './actions';
 import { newsReducer } from './news/reducers';
 import { imagesReducer } from './gallery/reducers';
 import { docsReducer } from './docs/reducers';
 
 const defaultState = {
-  signedIn: false
+  signedIn: false,
+  pageLoading: true,
+  formLoading: false
 };
 
 const generalReducer = (state = defaultState, { type, payload }) => {
@@ -15,6 +17,16 @@ const generalReducer = (state = defaultState, { type, payload }) => {
       return {
         ...state,
         signedIn: payload
+      };
+    case TOGGLE_PAGE_LOADING:
+      return {
+        ...state,
+        pageLoading: payload
+      };
+    case TOGGLE_FORM_LOADING:
+      return {
+        ...state,
+        formLoading: payload
       };
   }
 

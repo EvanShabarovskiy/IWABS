@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
-
-const { style } = document.body;
+import { useState } from "react";
 
 export const useToggle = reset => {
   const [toggled, setToggled] = useState(false);
@@ -9,14 +7,6 @@ export const useToggle = reset => {
     setToggled(!toggled);
     reset();
   }
-
-  useEffect(() => {
-    if (toggled) {
-      style.overflow = 'hidden';
-    } else {
-      style.overflow = 'visible';
-    }
-  }, [toggled]);
 
   return { toggled, handleToggled };
 }
