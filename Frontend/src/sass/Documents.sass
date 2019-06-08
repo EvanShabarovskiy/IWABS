@@ -2,14 +2,15 @@
   +dg
   justify-items: center
   align-content: start
-  .doc-list
+  .docs-container
     +grid(2, 1fr, 0)
     justify-content: center
     .doc
       +grid(2, auto, 10px)
       align-items: center
-      padding: 5px 50px
+      padding: 10px 50px
       grid-auto-flow: dense
+      position: relative
       &:hover
         &, .doc-icon
           color: $d_red
@@ -28,3 +29,19 @@
       font-size: 1.1rem
       line-height: 35px
       +transition(.25s, ease)
+    &.controlled
+      .doc
+        .control-buttons
+          +position(absolute, 27px, auto, 20px, auto)
+          .control-btn
+            background-color: transparent
+            color: #d9d9d9
+            &:hover
+              color: $d_red
+        &.even
+          padding: 10px 75px 10px 0
+        &.odd
+          padding: 10px 0 10px 75px
+          .control-buttons
+            +position(absolute, 27px, 20px, auto, auto)
+

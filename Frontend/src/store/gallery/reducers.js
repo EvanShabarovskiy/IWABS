@@ -12,7 +12,7 @@ export const imagesReducer = (state = initialState, { type, payload }) => {
         ...state
       ]
     case REMOVE_IMAGE:
-      return state.filter(post => post.id !== payload)
+      return state.filter(image => image.id !== payload)
   }
   return state;
 }

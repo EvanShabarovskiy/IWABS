@@ -1,7 +1,11 @@
 import React from "react";
-import Doc from "./Doc";
+import { connect } from 'react-redux'
 
-const DocContainer = ({ doc, index }) => {
+import Doc from "./Doc";
+import { documents } from "../../assets/constants/api";
+import { removeDoc } from '../../store/docs/actions';
+
+const DocContainer = ({ doc, index, signedIn, removeDoc }) => {
     switch (doc.format) {
         case 'pdf':
             doc['iconClass'] = 'far fa-file-pdf doc-icon';
@@ -19,8 +23,13 @@ const DocContainer = ({ doc, index }) => {
             doc['iconClass'] = 'fas fa-poop doc-icon';
             break;
     }
-    doc['isEven'] = index % 2 == 0;
-    return <Doc {...doc} />
+    const onRemove = () => confirm('Ви дійсно хочете видалити цей документ?') && removeDoc(doc.id);
+    const isEven = index % 2 == 0;
+    doc['href'] = documents + doc.documentName;
+    return <Doc {...doc} isEven={isEven} showControls={signedIn} onRemove={onRemove} />
 }
 
-export default DocContainer
+export default connect(
+    ({ general: { signedIn }}) => ({ signedIn }),
+    { removeDoc }
+  )(DocContainer);

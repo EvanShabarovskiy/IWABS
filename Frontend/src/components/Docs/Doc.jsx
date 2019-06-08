@@ -1,12 +1,12 @@
 import React from 'react';
-import { host } from '../../assets/constants/api';
 import cx from 'classnames';
+import ControlButtons from '../_General/ControlButtons';
 
-const Doc = ({ title, documentName, iconClass, isEven }) => (
-  <li className={cx('doc', isEven ? 'even' : 'odd')}>
+const Doc = ({ title, href, iconClass, isEven, showControls, onRemove }) =>
+  <div className={cx('doc', isEven ? 'even' : 'odd')}>
     <i className={iconClass}></i>
-    <a href={host + 'static/documents/' + documentName} className="link doc-link" >{title}</a>
-  </li>
-);
+    <a href={href} className="link doc-link" >{title}</a>
+    { showControls && <ControlButtons remove onRemove={onRemove} /> }
+  </div>
 
 export default Doc; 

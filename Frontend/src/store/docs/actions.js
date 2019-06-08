@@ -1,9 +1,11 @@
-import { Get, Post } from '../../assets/services/request.service';
+import { Get, Post, Delete } from '../../assets/services/request.service';
 import { api } from "../../assets/constants/api";
 import { get } from 'js-cookie';
 
 export const GET_DOCS = 'GET_DOCS';
-export const CREATE_DOC = 'CREATE_DOC'
+export const CREATE_DOC = 'CREATE_DOC';
+export const REMOVE_DOC = 'REMOVE_DOC';
+
 
 export const getDocs = () => dispatch => {
   Get(
@@ -21,4 +23,13 @@ export const createDoc = doc => dispatch => {
     error => console.log('error', error), 
     get('token')
   );
+}
+
+export const removeDoc = id => dispatch => {
+  Delete(
+    `${api}documents/${id}`,
+    () => dispatch({ type: REMOVE_DOC, payload: id }),
+    error => console.log(error),
+    get('token')
+  )
 }
