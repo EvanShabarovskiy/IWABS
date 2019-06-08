@@ -16,7 +16,7 @@ const Modal = ({ onClose, children, open }) => {
       document.body
     );
   }
-
+  style.overflow = 'visible';
   return null;
 }
 

@@ -6,9 +6,8 @@ import Modal from '../_General/Modal';
 
 const NewPost = ({ title, text, fileName, change, errors, onSubmit, toggled, handleToggled }) =>
   <>
-    {console.log(errors)}
     <Modal open={toggled} onClose={handleToggled}>
-      <Form formClass="new-post-form" onSubmit={onSubmit}  title="нова новина" buttonText="додати новину">
+      <Form formClass="new-post-form" onSubmit={onSubmit} title="нова новина" buttonText="додати новину">
         <Upload fileName={fileName} error={errors.file} change={change} label="натисніть для завантаження" />
         <Field name="title" value={title} error={errors.title} placeholder="заголовок" change={change} />
         <Field isTextarea name="text" value={text} error={errors.text} placeholder="текст" change={change} />

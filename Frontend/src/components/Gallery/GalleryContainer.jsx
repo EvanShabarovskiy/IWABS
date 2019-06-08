@@ -3,14 +3,12 @@ import { connect } from 'react-redux'
 import { getImages } from '../../store/gallery/actions';
 import Gallery from './Gallery';
 
-const GalleryContainer = ({ images, getImages }) => {
+const GalleryContainer = ({ signedIn, images, getImages }) => {
   useEffect(() => getImages(), []);
-  console.log(images);
-  return <Gallery images={images} />
+  return <Gallery images={images} signedIn={signedIn} />
 };
 
-
 export default connect(
-  ({ images }) => ({ images }), 
+  ({ images, general: { signedIn } }) => ({ images, signedIn }), 
   { getImages }
 )(GalleryContainer);

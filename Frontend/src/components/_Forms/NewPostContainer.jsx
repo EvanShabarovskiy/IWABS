@@ -41,7 +41,6 @@ const NewPostContainer = ({ createPost }) => {
   const onSubmit = e => {
     e.preventDefault();
     const dataKeys = Object.keys(data);
-    console.log(dataKeys)
     const validateResults = dataKeys.map(item => item && validate(item, data[item], !!validateParams[item] && validateParams[item]));
     const isValid = validateResults.find(value => value == false) != false && true; 
     let formData = parseToFormData(data);
