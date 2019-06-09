@@ -7,7 +7,7 @@ import { docsReducer } from './docs/reducers';
 
 const defaultState = {
   signedIn: false,
-  pageLoading: false,
+  pageLoading: true,
   formLoading: false
 };
 
