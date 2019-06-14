@@ -1,0 +1,19 @@
+.donors-container
+  +grid(1, auto, 20px)
+  .donor
+    +dg
+    grid-template-columns: 25px 1.5fr 1fr 150px 150px 170px 1fr
+    grid-gap: 15px
+    padding: 20px
+    margin: 0
+    box-shadow: 0 0 24px #00000010
+    align-items: center
+    &:first-child
+      +capitalize
+      color: #ffffff
+      letter-spacing: 1px
+      font-weight: 600
+      background-color: #252525
+    li
+      font-size: .8rem
+      

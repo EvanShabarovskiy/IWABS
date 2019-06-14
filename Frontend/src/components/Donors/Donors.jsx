@@ -5,7 +5,8 @@ const Donors = ({ donors }) =>
   <section className="section page">
     <h1 className="section-title">донори</h1>
     <div className="donors-container">
-      { donors.map(donor => <Donor key={donor.id} {...donor}/>) }
+      <Donor index="№" name="ім'я донора" email="емейл" bloodDonated="крові здано" bloodGroup="група крові" dateOfBirth="дата народження" address="адреса" />
+      { donors.map((donor, i) => <Donor key={donor.id} index={i + 1} {...donor}/>) }
     </div>
   </section>
 
