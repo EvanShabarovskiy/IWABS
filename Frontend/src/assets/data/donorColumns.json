@@ -1,0 +1,9 @@
+{
+  "index": "№",
+  "name": "ім'я донора",
+  "email": "емейл",
+  "bloodDonated": "крові здано",
+  "bloodGroup": "група крові",
+  "dateOfBirth": "дата народження",
+  "address": "адреса"
+}

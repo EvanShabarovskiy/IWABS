@@ -1,12 +1,15 @@
 import React from 'react';
+import cx from 'classnames';
 import Donor from './Donor';
+import DonorContainer from './DonorContainer';
+import columns from '../../assets/data/donorColumns';
 
-const Donors = ({ donors }) =>
+const Donors = ({ donors, signedIn }) =>
   <section className="section page">
     <h1 className="section-title">донори</h1>
-    <div className="donors-container">
-      <Donor index="№" name="ім'я донора" email="емейл" bloodDonated="крові здано" bloodGroup="група крові" dateOfBirth="дата народження" address="адреса" />
-      { donors.map((donor, i) => <Donor key={donor.id} index={i + 1} {...donor}/>) }
+    <div className={cx('donors-container', signedIn && 'controlled')}>
+      <Donor {...columns} />
+      { donors.map((donor, i) => <DonorContainer key={donor.id} index={i + 1} donor={donor}/>) }
     </div>
   </section>
 

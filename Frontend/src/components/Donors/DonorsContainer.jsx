@@ -6,10 +6,10 @@ import { useSelector } from 'react-redux'
 
 const DonorsContainer = ({ getDonors }) => {
   const donors = useSelector(({ donors }) => donors);
-  // const signedIn = useSelector(({ general }) => general.signedIn);
-
+  const signedIn = useSelector(({ general }) => general.signedIn);
+  
   useEffect(() => getDonors(), []);
-  return <Donors donors={donors}/>;
+  return <Donors signedIn={signedIn} donors={donors}/>;
 };
 
 export default connect(null, { getDonors })(DonorsContainer);
