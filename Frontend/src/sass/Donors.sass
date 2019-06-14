@@ -1,5 +1,10 @@
 .donors-container
   +grid(1, auto, 20px)
+  &.controlled
+    .donor
+      .control-buttons
+        +translate(50%, 0)
+        +position(absolute, auto, auto, 0, auto)
   .donor
     +dg
     grid-template-columns: 25px 1.5fr 1fr 150px 150px 170px 1fr
@@ -7,6 +12,7 @@
     padding: 20px
     margin: 0
     box-shadow: 0 0 24px #00000010
+    position: relative
     align-items: center
     &:first-child
       +capitalize
