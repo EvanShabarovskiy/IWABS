@@ -6,23 +6,26 @@
     position: relative
     .image-overlay
       +stretched(0)
+      +transition(.5s, ease)
       .image-title
         color: transparent
         text-align: center
         font-size: 1.2rem
         +position(absolute, auto, 0, 0, 0)
-        +mont
-      &:hover
         +transition(.5s, ease)
+        +mont
+        &::after
+          content: ''
+          display: block
+          margin: 10px auto
+          width: 100px
+          border-bottom: 1px solid transparent
+          +transition(.5s, ease)
+      &:hover
         background-color: #00000050
         .image-title
-          +transition(.5s, ease)
           color: #fff
           &::after
-            content: ''
-            display: block
-            margin: 10px auto
-            width: 100px
-            border-bottom: 1px solid $l_red
+            border-color: $l_red
     img
       width: 100%

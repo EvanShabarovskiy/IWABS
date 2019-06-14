@@ -19,7 +19,6 @@ export const getDocs = () => dispatch => {
     error => dispatch(togglePageLoading(false))
   );
 }
-
 export const createDoc = doc => dispatch => {
   dispatch(togglePageLoading(true));
   Post(
