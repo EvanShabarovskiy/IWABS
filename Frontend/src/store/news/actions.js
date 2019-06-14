@@ -15,7 +15,7 @@ export const getNews = () => dispatch => {
       dispatch({ type: GET_NEWS, payload: news });
       setTimeout(() => dispatch(togglePageLoading(false)), 500);
     }, 
-    error => console.log(error)
+    error => dispatch(togglePageLoading(false))
   );
 } 
 
@@ -28,7 +28,7 @@ export const createPost = data => dispatch => {
       dispatch({ type: CREATE_POST, payload: createdPost });
       setTimeout(() => dispatch(togglePageLoading(false)), 500);
     }, 
-    error => console.log('error', error), 
+    error => dispatch(togglePageLoading(false)), 
     get('token')
   );
 }
@@ -41,7 +41,7 @@ export const removePost = id => dispatch => {
       dispatch({ type: REMOVE_POST, payload: id });
       setTimeout(() => dispatch(togglePageLoading(false)), 500);
     },
-    error => console.log(error),
+    error => dispatch(togglePageLoading(false)),
     get('token')
   )
 }

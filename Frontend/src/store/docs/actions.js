@@ -16,7 +16,7 @@ export const getDocs = () => dispatch => {
       dispatch({ type: GET_DOCS, payload: documents });
       setTimeout(() => dispatch(togglePageLoading(false)), 500);
     }, 
-    error => console.log(error)
+    error => dispatch(togglePageLoading(false))
   );
 }
 
@@ -29,7 +29,7 @@ export const createDoc = doc => dispatch => {
       dispatch({ type: CREATE_DOC, payload: createdDocument });
       setTimeout(() => dispatch(togglePageLoading(false)), 500);
     }, 
-    error => console.log('error', error), 
+    error => dispatch(togglePageLoading(false)), 
     get('token')
   );
 }
@@ -42,7 +42,7 @@ export const removeDoc = id => dispatch => {
       dispatch({ type: REMOVE_DOC, payload: id });
       setTimeout(() => dispatch(togglePageLoading(false)), 500);
     },
-    error => console.log(error),
+    error => dispatch(togglePageLoading(false)),
     get('token')
   )
 }

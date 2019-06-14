@@ -16,7 +16,7 @@ export const getImages = () => dispatch => {
       dispatch({ type: GET_IMAGES, payload: images });
       setTimeout(() => dispatch(togglePageLoading(false)), 500);
     }, 
-    error => console.log(error)
+    error => dispatch(togglePageLoading(false))
   );
 } 
 
@@ -29,7 +29,7 @@ export const addImage = data => dispatch => {
       dispatch({ type: ADD_IMAGE, payload: addedImage });
       setTimeout(() => dispatch(togglePageLoading(false)), 500);
     }, 
-    error => console.log('error', error), 
+    error => dispatch(togglePageLoading(false)), 
     get('token')
   );
 }
@@ -42,7 +42,7 @@ export const removeImage = id => dispatch => {
       dispatch({ type: REMOVE_IMAGE, payload: id });
       setTimeout(() => dispatch(togglePageLoading(false)), 500);
     },
-    error => console.log(error),
+    error => dispatch(togglePageLoading(false)),
     get('token')
   )
 }
