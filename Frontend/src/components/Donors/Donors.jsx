@@ -7,7 +7,7 @@ import columns from '../../assets/data/donorColumns';
 const Donors = ({ donors, signedIn }) =>
   <section className="section page">
     <h1 className="section-title">донори</h1>
-    <div className={cx('donors-container', signedIn && 'controlled')}>
+    <div className={cx('donors-container', 'table', signedIn && 'controlled')}>
       <Donor {...columns} />
       { donors.map((donor, i) => <DonorContainer key={donor.id} index={i + 1} donor={donor}/>) }
     </div>

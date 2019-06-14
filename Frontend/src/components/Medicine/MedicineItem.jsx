@@ -1,12 +1,12 @@
 import React from 'react';
 
 const MedicineItem = ({ index, name, releaseForm, unit, amount }) => 
-  <li className="medicine-item">
-    <span className="item-index">{index}</span>
-    <span className="item-name">{name}</span>
-    <span className="release-form">{releaseForm}</span>
-    <span className="unit">{unit}</span>
-    <span className="amount">{amount}</span>
-  </li>
+  <ul className="medicine-item table-item">
+    <li className="column">{index}</li>
+    <li className="column">{name}</li>
+    <li className="column">{releaseForm}</li>
+    <li className="column">{unit}</li>
+    <li className="column">{amount}</li>
+  </ul>
 
 export default MedicineItem;
