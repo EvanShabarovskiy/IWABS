@@ -5,6 +5,7 @@ import { newsReducer } from './news/reducers';
 import { imagesReducer } from './gallery/reducers';
 import { docsReducer } from './docs/reducers';
 import { donorsReducer } from './donors/reducers';
+import { medicineReducer } from './medicine/reducers';
 
 const defaultState = {
   signedIn: false,
@@ -40,4 +41,5 @@ export default combineReducers({
   docs: docsReducer,
   images: imagesReducer,
   donors: donorsReducer,
+  medicine: medicineReducer
 });

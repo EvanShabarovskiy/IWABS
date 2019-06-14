@@ -3,8 +3,8 @@ import { api } from '../../assets/constants/api';
 import { get } from 'js-cookie'
 
 export const GET_MEDICINE = 'GET_MEDICINE';
-export const CREATE_MEDICINE_ITEM = 'GET_MEDICINE_ITEM';
-export const REMOVE_MEDICINE_ITEM = 'REMOVE_MEDICINE_ITEM';
+export const CREATE_MEDICINE = 'GET_MEDICINE';
+export const REMOVE_MEDICINE = 'REMOVE_MEDICINE';
 
 export const getMedicine = () => dispatch => {
   Get(
@@ -14,21 +14,21 @@ export const getMedicine = () => dispatch => {
   );
 } 
 
-export const addMedicineItem = item => dispatch => {
+export const createMedicine = item => dispatch => {
   Post(
     api + 'medicine', 
     item, 
-    ({ createdItem }) => dispatch({ type: CREATE_MEDICINE_ITEM, payload: createdItem
+    ({ createdMedicine }) => dispatch({ type: CREATE_MEDICINE, payload: createdMedicine
     }), 
     error => console.log('error', error), 
     get('token')
   );
 }
 
-export const deleteMedicineItem = id => dispatch => {
+export const removeMedicine = id => dispatch => {
   Delete(
     `${api}medicine/${id}`,
-    () => dispatch({ type: REMOVE_MEDICINE_ITEM, payload: id }),
+    () => dispatch({ type: REMOVE_MEDICINE, payload: id }),
     error => console.log(error),
     get('token')
   )
