@@ -4,6 +4,7 @@ import { TOGGLE_SIGNED_IN, TOGGLE_PAGE_LOADING, TOGGLE_FORM_LOADING } from './ac
 import { newsReducer } from './news/reducers';
 import { imagesReducer } from './gallery/reducers';
 import { docsReducer } from './docs/reducers';
+import { donorsReducer } from './donors/reducers';
 
 const defaultState = {
   signedIn: false,
@@ -37,5 +38,6 @@ export default combineReducers({
   general: generalReducer,
   news: newsReducer,
   docs: docsReducer,
-  images: imagesReducer
+  images: imagesReducer,
+  donors: donorsReducer,
 });

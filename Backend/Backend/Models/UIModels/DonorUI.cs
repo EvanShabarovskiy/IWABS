@@ -12,6 +12,6 @@ namespace Backend.Models.UIModels
         public string BloodDonated { get; set; }
         public string BloodGroup { get; set; }
         public string DateOfBirth { get; set; }
-        public string Adress { get; set; }
+        public string Address { get; set; }
     }
 }

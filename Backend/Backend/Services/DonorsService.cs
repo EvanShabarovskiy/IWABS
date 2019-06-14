@@ -26,7 +26,7 @@ namespace Backend.Services
                 DateOfBirth = donorUI.DateOfBirth,
                 Email = donorUI.Email,
                 Name = donorUI.Name,
-                Adress = donorUI.Adress,
+                Address = donorUI.Address,
                 BloodDonated = donorUI.BloodDonated,
                 BloodGroup = donorUI.BloodGroup,
             };

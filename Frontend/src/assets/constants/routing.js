@@ -11,6 +11,7 @@ import HowToBecomeADonor from "../../components/ForDonors/HowToBecomeADonor";
 import PrivilegesForDonors from "../../components/ForDonors/PrivilegesForDonors";
 import Contraindications from "../../components/ForDonors/Contraindications";
 import GalleryContainer from '../../components/Gallery/GalleryContainer';
+import DonorsContainer from '../../components/Donors/DonorsContainer';
 
 export const appRedirected = [
   {
@@ -18,11 +19,11 @@ export const appRedirected = [
     returnCondition: signedIn => !signedIn,
     redirect: condition => redirectCheck(condition, signInParams)
   },
-  {
-    path: '/donors',
-    returnCondition: signedIn => signedIn,
-    redirect: condition => redirectCheck(condition, donorsParams)
-  },
+  // {
+  //   path: '/donors',
+  //   returnCondition: signedIn => signedIn,
+  //   redirect: condition => redirectCheck(condition, donorsParams)
+  // },
 ]
 
 export const app = [
@@ -46,6 +47,10 @@ export const app = [
   {
     path: '/gallery',
     component: GalleryContainer,
+  },
+  {
+    path: '/donors',
+    component: DonorsContainer,
   }
 ];
 
