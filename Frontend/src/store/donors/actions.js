@@ -4,6 +4,7 @@ import { get } from 'js-cookie'
 
 export const GET_DONORS = 'GET_DONORS';
 export const CREATE_DONOR = 'CREATE_DONOR';
+export const REMOVE_DONOR = 'REMOVE_DONOR';
 
 export const getDonors = () => dispatch => {
   Get(

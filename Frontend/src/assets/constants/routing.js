@@ -12,6 +12,7 @@ import PrivilegesForDonors from "../../components/ForDonors/PrivilegesForDonors"
 import Contraindications from "../../components/ForDonors/Contraindications";
 import GalleryContainer from '../../components/Gallery/GalleryContainer';
 import DonorsContainer from '../../components/Donors/DonorsContainer';
+import MedicineContainer from '../../components/Medicine/MedicineContainer';
 
 export const appRedirected = [
   {
@@ -51,7 +52,11 @@ export const app = [
   {
     path: '/donors',
     component: DonorsContainer,
-  }
+  },
+  {
+    path: '/medicine',
+    component: MedicineContainer,
+  },
 ];
 
 export const donors = [

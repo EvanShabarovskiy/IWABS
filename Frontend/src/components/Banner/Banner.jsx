@@ -6,7 +6,7 @@ const Banner = ({ onClick }) => (
     <div className="motivation">
       <h2 className="motivation-title">{motivation.title}</h2>
       <span className="motivation-text">{motivation.text}</span>
-      <button className="btn feedback-btn" onClick={onClick}>напишіть нам</button>
+      <button className="btn feedback-btn" onClick={onClick}>замовити онлайн</button>
     </div>
   </section>
 );

@@ -1,4 +1,4 @@
-import { GET_DONORS, CREATE_DONOR } from "./actions";
+import { GET_DONORS, CREATE_DONOR, REMOVE_DONOR } from "./actions";
 
 const initialState = []
 
@@ -11,8 +11,8 @@ export const donorsReducer = (state = initialState, { type, payload }) => {
         payload,
         ...state
       ]
-    // case REMOVE_POST:
-    //   return state.filter(post => post.id !== payload)
+    case REMOVE_DONOR:
+      return state.filter(post => post.id !== payload)
   }
   return state;
 }
