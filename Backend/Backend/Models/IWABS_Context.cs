@@ -42,11 +42,11 @@ namespace Backend.Models
             builder.Entity<Donor>().HasData(
                new Donor[]
                {
-                    new Donor { Id = Guid.NewGuid().ToString(), Name="Тарасюк Петро Сергійович", Email="fredfre123@gmail.com", Adress="12/4, вул.Соборна, Рівне", BloodDonated="3.4", BloodGroup="I+", DateOfBirth="23-03-1995" },
-                    new Donor { Id = Guid.NewGuid().ToString(), Name="Мартинюк Людмила Миколаївна", Email="jess.liud@gmail.com", Adress="34a, вул.Дубунська, Рівне", BloodDonated="2.7", BloodGroup="IV-", DateOfBirth="02-07-1998" },
-                    new Donor { Id = Guid.NewGuid().ToString(), Name="Прокопчук Сергій Вікторович", Email="sergiy.pro@gmail.com", Adress="12, вул.Тараса Шевченка, Харків", BloodDonated="4.3", BloodGroup="I-", DateOfBirth="12-05-1990" },
-                    new Donor { Id = Guid.NewGuid().ToString(), Name="Вдрабадан Іван Григорович", Email="chekunia@gmail.com", Adress="27/12, вул.Незалежності, Луцьк", BloodDonated="1.0", BloodGroup="III-", DateOfBirth="22-12-1994" },
-                    new Donor { Id = Guid.NewGuid().ToString(), Name="Мирончук Андрій Петрович", Email="miron3322@gmail.com", Adress="8, вул.Степана Петлюри, Львів", BloodDonated="1.2", BloodGroup="II+", DateOfBirth="13-01-1997" },
+                    new Donor { Id = Guid.NewGuid().ToString(), Name="Тарасюк Петро Сергійович", Email="fredfre123@gmail.com", Address="12/4, вул.Соборна, Рівне", BloodDonated="3.4", BloodGroup="I+", DateOfBirth="23-03-1995" },
+                    new Donor { Id = Guid.NewGuid().ToString(), Name="Мартинюк Людмила Миколаївна", Email="jess.liud@gmail.com", Address="34a, вул.Дубунська, Рівне", BloodDonated="2.7", BloodGroup="IV-", DateOfBirth="02-07-1998" },
+                    new Donor { Id = Guid.NewGuid().ToString(), Name="Прокопчук Сергій Вікторович", Email="sergiy.pro@gmail.com", Address="12, вул.Тараса Шевченка, Харків", BloodDonated="4.3", BloodGroup="I-", DateOfBirth="12-05-1990" },
+                    new Donor { Id = Guid.NewGuid().ToString(), Name="Вдрабадан Іван Григорович", Email="chekunia@gmail.com", Address="27/12, вул.Незалежності, Луцьк", BloodDonated="1.0", BloodGroup="III-", DateOfBirth="22-12-1994" },
+                    new Donor { Id = Guid.NewGuid().ToString(), Name="Мирончук Андрій Петрович", Email="miron3322@gmail.com", Address="8, вул.Степана Петлюри, Львів", BloodDonated="1.2", BloodGroup="II+", DateOfBirth="13-01-1997" },
                }
             );
 

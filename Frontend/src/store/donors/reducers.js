@@ -2,7 +2,7 @@ import { GET_DONORS, CREATE_DONOR } from "./actions";
 
 const initialState = []
 
-export const newsReducer = (state = initialState, { type, payload }) => {
+export const donorsReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case GET_DONORS:
       return payload;
