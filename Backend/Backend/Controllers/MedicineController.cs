@@ -54,7 +54,7 @@ namespace Backend.Controllers
             bool status = medicineService.DeleteMedicine(id);
             if (id != null && status != false)
             {
-                Ok();
+                return Ok();
             }
             return BadRequest();
         }

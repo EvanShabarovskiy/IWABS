@@ -71,28 +71,36 @@
   min-height: 70vh
 
 .table
-  +grid(1, auto, 20px)
   &.controlled
     .table-item
       .control-buttons
-        +translate(50%, 0)
-        +position(absolute, auto, auto, 0, auto)
+        +translate(0, 0)
+        +position(absolute, auto, auto, 10px, auto)
+        .control-btn
+          background-color: transparent
+          color: #d9d9d9
+          &:hover
+            color: $d_red
   &-item
     +dg
     grid-gap: 15px
-    padding: 20px
+    padding: 10px
     margin: 0
-    box-shadow: 0 0 24px #00000010
     position: relative
     align-items: center
+    &:hover
+      background-color: #f9f9f9
     &:first-child
       +capitalize
-      color: #ffffff
+      color: $d_red
       letter-spacing: 1px
       font-weight: 600
-      background-color: #252525
+      &:hover
+        background-color: #fff
     .column
       font-size: .8rem
+      &:last-child
+        padding-right: 10px
     &.donor
       grid-template-columns: 25px 1.5fr 1fr 150px 150px 170px 1fr
     &.medicine-item
