@@ -21,8 +21,6 @@ const NewPostContainer = ({ createPost }) => {
   const toggle = useToggle(reset);
   const { handleToggled } = toggle;
 
-  console.log(typeof(data.file))
-
   const validateParams = {
     file: {
       condition: data.file == '',
@@ -54,7 +52,4 @@ const NewPostContainer = ({ createPost }) => {
   return <NewPost {...data} {...toggle} fileName={data.file.name} errors={errors} change={change} onSubmit={onSubmit} />
 };
 
-export default connect(
-  () => ({}), 
-  { createPost }
-)(NewPostContainer);
+export default connect(null, { createPost })(NewPostContainer);

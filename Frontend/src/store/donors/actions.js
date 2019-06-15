@@ -14,7 +14,7 @@ export const getDonors = () => dispatch => {
   );
 } 
 
-export const addDonor = donor => dispatch => {
+export const createDonor = donor => dispatch => {
   Post(
     api + 'donors', 
     donor, 

@@ -33,6 +33,7 @@ const NewDocContainer = ({ createDoc }) => {
  }
 
   const onSubmit = e => {
+    console.log('submit');
     e.preventDefault();
     const dataKeys = Object.keys(data);
     const validateResults = dataKeys.map(item => item && validate(item, data[item], !!validateParams[item] && validateParams[item]));
@@ -50,6 +51,6 @@ const NewDocContainer = ({ createDoc }) => {
 };
 
 export default connect(
-  () => ({}), 
+  null, 
   { createDoc }
 )(NewDocContainer);
