@@ -8,7 +8,7 @@ export const imagesReducer = (state = initialState, { type, payload }) => {
       return payload;
     case ADD_IMAGE:
       return [
-        payload,
+        payload.addedImage,
         ...state
       ]
     case REMOVE_IMAGE:

@@ -5,7 +5,7 @@ import NewDoc from './NewDoc';
 import { useToggle } from '../../assets/hooks/useToggle';
 import { useFormValidation } from '../../assets/hooks/useFormValidation';
 import { createDoc } from '../../store/docs/actions'
-import { parseToFormData } from '../../assets/functions/parseToFormData';
+import { parseToFormData } from '../../assets/utils/parseToFormData';
 
 const initialState = {
   title: '',

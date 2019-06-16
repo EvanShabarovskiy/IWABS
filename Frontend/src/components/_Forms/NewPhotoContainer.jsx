@@ -1,11 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux'
 
 import NewPhoto from './NewPhoto';
 import { useToggle } from '../../assets/hooks/useToggle';
 import { useFormValidation } from '../../assets/hooks/useFormValidation';
-import { addImage } from '../../store/gallery/actions'
+import { ADD_IMAGE } from '../../store/gallery/actions'
 import { parseToFormData } from '../../assets/functions/parseToFormData';
+import { useCreate } from '../../assets/hooks/useCreate';
 
 const initialState = {
   title: '',
@@ -15,10 +15,11 @@ const initialState = {
 const requiredFields = initialState;
 requiredFields['file'] = '';
 
-const NewPhotoContainer = ({ addImage }) => {
+const NewPhotoContainer = () => {
   const { data, errors, change, reset, validate } = useFormValidation(initialState, requiredFields);
   const toggle = useToggle(reset);
   const { handleToggled } = toggle;
+  const createImage = useCreate();
 
   const validateParams = {
     file: {
@@ -39,7 +40,7 @@ const NewPhotoContainer = ({ addImage }) => {
     let formData = parseToFormData(data);
 
     if (isValid) {
-      addImage(formData);
+      createImage(formData, 'gallery', ADD_IMAGE);
       reset();
       handleToggled();
     }
@@ -48,7 +49,4 @@ const NewPhotoContainer = ({ addImage }) => {
   return <NewPhoto {...data} {...toggle} fileName={data.file.name} errors={errors} change={change} onSubmit={onSubmit} />
 };
 
-export default connect(
-  () => ({}), 
-  { addImage }
-)(NewPhotoContainer);
+export default NewPhotoContainer;
