@@ -9,5 +9,6 @@ namespace Backend.Models
     public class Medicine : MedicineUI
     {
         public string Id { get; set; }
+        public string CreatingDate { get; set; }
     }
 }
