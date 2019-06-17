@@ -26,7 +26,7 @@ namespace Backend.Services
         
         public Image AddNewImage(ImageUI imageUI, IFormFile file)
         {
-            string folderName = "Static/Images/Galery";
+            string folderName = "Static/Images/Gallery";
             string webRootPath = env.ContentRootPath;
             string newPath = Path.Combine(webRootPath, folderName);
 
@@ -60,7 +60,7 @@ namespace Backend.Services
             Image image = database.Images.FirstOrDefault(x => x.Id == id);
             if(image != null)
             {
-                string filePath = "Static/Images/Galery/" + image.ImageName;
+                string filePath = "Static/Images/Gallery/" + image.ImageName;
                 string webRootPath = env.ContentRootPath;
                 string newPath = Path.Combine(webRootPath, filePath);
                 if (File.Exists(newPath))
