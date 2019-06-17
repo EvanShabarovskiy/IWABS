@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import NewDonor from './NewDonor';
 import { useToggle } from '../../assets/hooks/useToggle';
 import { useFormValidation } from '../../assets/hooks/useFormValidation';
-import Modal from '../_General/Modal';
 import { createDonor } from '../../store/donors/actions';
 
 const initialState = { 
