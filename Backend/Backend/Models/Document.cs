@@ -11,6 +11,6 @@ namespace Backend.Models
         public string Id { get; set; }
         public string DocumentName { get; set; }
         public string Format { get; set; }
-        public string CreatedDate { get; set; }
+        public string CreationDate { get; set; }
     }
 }

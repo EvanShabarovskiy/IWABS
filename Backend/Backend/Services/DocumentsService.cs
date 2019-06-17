@@ -21,7 +21,7 @@ namespace Backend.Services
             this.env = env;
         }
 
-        public List<Document> GetDocuments() => database.Documents.OrderByDescending(x => x.CreatedDate).ToList();
+        public List<Document> GetDocuments() => database.Documents.OrderByDescending(x => x.CreationDate).ToList();
 
         public Document AddNewDocument(string title, IFormFile document)
         {
@@ -32,7 +32,7 @@ namespace Backend.Services
                 Id = Guid.NewGuid().ToString(),
                 Title = title,
                 Format = format[1],
-                CreatedDate = DateTime.Now.ToString()
+                CreationDate = DateTime.Now.ToString()
             };
 
             string folderName = "Static/Documents";

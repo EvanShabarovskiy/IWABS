@@ -9,5 +9,6 @@ namespace Backend.Models
     public class Donor : DonorUI
     {
         public string Id { get; set; }
+        public string CreationDate { get; set; }
     }
 }

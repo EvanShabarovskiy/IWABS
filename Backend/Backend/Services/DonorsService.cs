@@ -17,7 +17,7 @@ namespace Backend.Services
             this.database = database;
         }
 
-        public List<Donor> GetDonors() => database.Donors.ToList();
+        public List<Donor> GetDonors() => database.Donors.OrderByDescending(x => x.CreationDate).ToList();
 
         public Donor AddNewDonor(DonorUI donorUI)
         {
@@ -29,6 +29,7 @@ namespace Backend.Services
                 Address = donorUI.Address,
                 BloodDonated = donorUI.BloodDonated,
                 BloodGroup = donorUI.BloodGroup,
+                CreationDate = DateTime.Now.ToString()
             };
 
             database.Donors.Add(donor);
