@@ -22,7 +22,7 @@ namespace Backend.Services
             this.env = env;
         }
 
-        public List<Image> GetImages() => database.Images.ToList();
+        public List<Image> GetImages() => database.Images.OrderByDescending(x => x.CreationDate).ToList();
         
         public Image AddNewImage(ImageUI imageUI, IFormFile file)
         {
@@ -46,7 +46,8 @@ namespace Backend.Services
             {
                 Id = Guid.NewGuid().ToString(),
                 Title = imageUI.Title,
-                ImageName = fileName
+                ImageName = fileName,
+                CreationDate = DateTime.Now.ToString()
             };
 
             database.Images.Add(image);

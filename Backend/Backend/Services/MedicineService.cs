@@ -16,7 +16,7 @@ namespace Backend.Services
             this.database = database;
         }
 
-        public List<Medicine> GetMedicine() => database.Medicines.OrderByDescending(x => x.CreatingDate).ToList();
+        public List<Medicine> GetMedicine() => database.Medicines.OrderByDescending(x => x.CreationDate).ToList();
 
         public Medicine AddNewMedicine(MedicineUI medicineUI)
         {
@@ -26,7 +26,7 @@ namespace Backend.Services
                 Name = medicineUI.Name,
                 Amount = medicineUI.Amount,
                 ReleaseForm = medicineUI.ReleaseForm,
-                CreatingDate = DateTime.Now.ToString()
+                CreationDate = DateTime.Now.ToString()
             };
 
             database.Medicines.Add(medicine);

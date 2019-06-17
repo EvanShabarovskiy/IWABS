@@ -10,5 +10,6 @@ namespace Backend.Models
     {
         public string Id { get; set; }
         public string ImageName { get; set; }
+        public string CreationDate { get; set; }
     }
 }
