@@ -21,17 +21,18 @@ namespace Backend.Services
             this.env = env;
         }
 
-        public List<Document> GetDocuments() => database.Documents.ToList();
+        public List<Document> GetDocuments() => database.Documents.OrderByDescending(x => x.CreatedDate).ToList();
 
-        public Document AddNewDocument(string name, IFormFile document)
+        public Document AddNewDocument(string title, IFormFile document)
         {
             string[] format = document.ContentType.Split('/');
 
             Document doc = new Document
             {
                 Id = Guid.NewGuid().ToString(),
-                Title = name,
-                Format = format[1]
+                Title = title,
+                Format = format[1],
+                CreatedDate = DateTime.Now.ToString()
             };
 
             string folderName = "Static/Documents";

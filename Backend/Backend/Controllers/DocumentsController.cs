@@ -26,9 +26,9 @@ namespace Backend.Controllers
         [HttpPost]
         public IActionResult AddNewDocument(DocumentUI document)
         {
-            if (document.Name != null && document.File != null)
+            if (document.Title != null && document.File != null)
             {
-                return Ok(new { createdDoc = documentsService.AddNewDocument(document.Name, document.File) });
+                return Ok(new { createdDoc = documentsService.AddNewDocument(document.Title, document.File) });
             }
             return BadRequest();
         }

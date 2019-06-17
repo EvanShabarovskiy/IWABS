@@ -22,11 +22,7 @@ namespace Backend.Services
             this.env = env;
         }
 
-        public List<Post> GetNews()
-        {
-            List<Post> news = database.News.OrderByDescending(x => x.PublishingDate).ToList();
-            return news;
-        }
+        public List<Post> GetNews() => database.News.OrderByDescending(x => x.PublishingDate).ToList();
 
         public Post AddPost(PostUI postUI, IFormFile file)
         {

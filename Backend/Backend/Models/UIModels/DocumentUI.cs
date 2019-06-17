@@ -8,7 +8,7 @@ namespace Backend.Models.UIModels
 {
     public class DocumentUI
     {
-        public string Name { get; set; }
+        public string Title { get; set; }
         public IFormFile File { get; set; }
     }
 }
