@@ -3,7 +3,7 @@ import NewsContainer from '../../components/News/NewsContainer';
 import DocsContainer from '../../components/Docs/DocsContainer';
 import ForDonors from '../../components/ForDonors/ForDonors';
 
-import { redirectCheck } from '../functions/redirectCheck';
+import { redirectCheck } from '../utils/redirectCheck';
 import { donorsParams, signInParams } from './routingParams';
 
 import InformationForADonor from "../../components/ForDonors/InformationForADonor";
