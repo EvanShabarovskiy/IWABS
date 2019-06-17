@@ -42,44 +42,44 @@ namespace Backend.Models
             builder.Entity<Donor>().HasData(
                new Donor[]
                {
-                    new Donor { Id = Guid.NewGuid().ToString(), Name="Тарасюк Петро Сергійович", Email="fredfre123@gmail.com", Address="12/4, вул.Соборна, Рівне", BloodDonated="3.4", BloodGroup="I+", DateOfBirth="23-03-1995" },
-                    new Donor { Id = Guid.NewGuid().ToString(), Name="Мартинюк Людмила Миколаївна", Email="jess.liud@gmail.com", Address="34a, вул.Дубунська, Рівне", BloodDonated="2.7", BloodGroup="IV-", DateOfBirth="02-07-1998" },
-                    new Donor { Id = Guid.NewGuid().ToString(), Name="Прокопчук Сергій Вікторович", Email="sergiy.pro@gmail.com", Address="12, вул.Тараса Шевченка, Харків", BloodDonated="4.3", BloodGroup="I-", DateOfBirth="12-05-1990" },
-                    new Donor { Id = Guid.NewGuid().ToString(), Name="Вдрабадан Іван Григорович", Email="chekunia@gmail.com", Address="27/12, вул.Незалежності, Луцьк", BloodDonated="1.0", BloodGroup="III-", DateOfBirth="22-12-1994" },
-                    new Donor { Id = Guid.NewGuid().ToString(), Name="Мирончук Андрій Петрович", Email="miron3322@gmail.com", Address="8, вул.Степана Петлюри, Львів", BloodDonated="1.2", BloodGroup="II+", DateOfBirth="13-01-1997" },
+                    new Donor { Id = Guid.NewGuid().ToString(), CreationDate = DateTime.Now.ToString(), Name="Тарасюк Петро Сергійович", Email="fredfre123@gmail.com", Address="12/4, вул.Соборна, Рівне", BloodDonated="3.4", BloodGroup="I+", DateOfBirth="23-03-1995" },
+                    new Donor { Id = Guid.NewGuid().ToString(), CreationDate = DateTime.Now.ToString(), Name="Мартинюк Людмила Миколаївна", Email="jess.liud@gmail.com", Address="34a, вул.Дубунська, Рівне", BloodDonated="2.7", BloodGroup="IV-", DateOfBirth="02-07-1998" },
+                    new Donor { Id = Guid.NewGuid().ToString(), CreationDate = DateTime.Now.ToString(), Name="Прокопчук Сергій Вікторович", Email="sergiy.pro@gmail.com", Address="12, вул.Тараса Шевченка, Харків", BloodDonated="4.3", BloodGroup="I-", DateOfBirth="12-05-1990" },
+                    new Donor { Id = Guid.NewGuid().ToString(), CreationDate = DateTime.Now.ToString(), Name="Вдрабадан Іван Григорович", Email="chekunia@gmail.com", Address="27/12, вул.Незалежності, Луцьк", BloodDonated="1.0", BloodGroup="III-", DateOfBirth="22-12-1994" },
+                    new Donor { Id = Guid.NewGuid().ToString(), CreationDate = DateTime.Now.ToString(), Name="Мирончук Андрій Петрович", Email="miron3322@gmail.com", Address="8, вул.Степана Петлюри, Львів", BloodDonated="1.2", BloodGroup="II+", DateOfBirth="13-01-1997" },
                }
             );
 
             builder.Entity<Medicine>().HasData(
               new Medicine[]
               {
-                    new Medicine { Id = Guid.NewGuid().ToString(), Name="Аміаку розчин 10%", Amount="14", ReleaseForm="10%-40мл", Unit="фл" },
-                    new Medicine { Id = Guid.NewGuid().ToString(), Name="Бинт", Amount="202", ReleaseForm="Бинт марлевий медичний 7*14", Unit="шт"},
-                    new Medicine { Id = Guid.NewGuid().ToString(), Name="Бланідас Актив", Amount="10", ReleaseForm="1000 мл", Unit="шт" },
-                    new Medicine { Id = Guid.NewGuid().ToString(), Name="Дезіфекційний засіб", Amount="10", ReleaseForm="Еконорм ДЕЗ Антисептик", Unit="шт" },
-                    new Medicine { Id = Guid.NewGuid().ToString(), Name="Набір", Amount="45", ReleaseForm="Витратні матеріали для атоматичного плазмаферезу", Unit="набір" },
+                    new Medicine { Id = Guid.NewGuid().ToString(), CreationDate = DateTime.Now.ToString(), Name="Аміаку розчин 10%", Amount="14", ReleaseForm="10%-40мл", Unit="фл" },
+                    new Medicine { Id = Guid.NewGuid().ToString(), CreationDate = DateTime.Now.ToString(), Name="Бинт", Amount="202", ReleaseForm="Бинт марлевий медичний 7*14", Unit="шт"},
+                    new Medicine { Id = Guid.NewGuid().ToString(), CreationDate = DateTime.Now.ToString(), Name="Бланідас Актив", Amount="10", ReleaseForm="1000 мл", Unit="шт" },
+                    new Medicine { Id = Guid.NewGuid().ToString(), CreationDate = DateTime.Now.ToString(), Name="Дезіфекційний засіб", Amount="10", ReleaseForm="Еконорм ДЕЗ Антисептик", Unit="шт" },
+                    new Medicine { Id = Guid.NewGuid().ToString(), CreationDate = DateTime.Now.ToString(), Name="Набір", Amount="45", ReleaseForm="Витратні матеріали для атоматичного плазмаферезу", Unit="набір" },
               }
             );
 
             builder.Entity<Document>().HasData(
               new Document[]
               {
-                    new Document { Id = Guid.NewGuid().ToString(), Title="Додаток до річного плану зі змінами за квітень 2019 року", DocumentName="first-doc.pdf", Format="pdf" },
-                    new Document { Id = Guid.NewGuid().ToString(), Title="Річний план зі змінами травень 2019 року", DocumentName="second-doc.pdf", Format="pdf" },
-                    new Document { Id = Guid.NewGuid().ToString(), Title="Додаток до річного плану зі змінами за січень 2019 року", DocumentName="three-doc.docx", Format="docx" },
-                    new Document { Id = Guid.NewGuid().ToString(), Title="Додаток до річного плану зі змінами за березень 2019 року", DocumentName="four-doc.docx", Format="docx" },
-                    new Document { Id = Guid.NewGuid().ToString(), Title="Додаток до річного плану за грудень 2018 року", DocumentName="five-doc.txt", Format="txt" },
+                    new Document { Id = Guid.NewGuid().ToString(), CreationDate = DateTime.Now.ToString(), Title="Додаток до річного плану зі змінами за квітень 2019 року", DocumentName="first-doc.pdf", Format="pdf" },
+                    new Document { Id = Guid.NewGuid().ToString(), CreationDate = DateTime.Now.ToString(), Title="Річний план зі змінами травень 2019 року", DocumentName="second-doc.pdf", Format="pdf" },
+                    new Document { Id = Guid.NewGuid().ToString(), CreationDate = DateTime.Now.ToString(), Title="Додаток до річного плану зі змінами за січень 2019 року", DocumentName="three-doc.docx", Format="docx" },
+                    new Document { Id = Guid.NewGuid().ToString(), CreationDate = DateTime.Now.ToString(), Title="Додаток до річного плану зі змінами за березень 2019 року", DocumentName="four-doc.docx", Format="docx" },
+                    new Document { Id = Guid.NewGuid().ToString(), CreationDate = DateTime.Now.ToString(), Title="Додаток до річного плану за грудень 2018 року", DocumentName="five-doc.txt", Format="txt" },
               }
             );
 
             builder.Entity<Image>().HasData(
              new Image[]
              {
-                    new Image { Id = Guid.NewGuid().ToString(), Title="Заголовок до першого фото", ImageName="first-image.jpg" },
-                    new Image { Id = Guid.NewGuid().ToString(), Title="Заголовок до другого фото", ImageName="second-image.jpg" },
-                    new Image { Id = Guid.NewGuid().ToString(), Title="Заголовок до третього фото", ImageName="three-image.jpg" },
-                    new Image { Id = Guid.NewGuid().ToString(), Title="Заголовок до четвертого фото", ImageName="four-image.jpg" },
-                    new Image { Id = Guid.NewGuid().ToString(), Title="Заголовок до п'ятого фото", ImageName="five-image.jpg" },
+                    new Image { Id = Guid.NewGuid().ToString(), CreationDate = DateTime.Now.ToString(), Title="Заголовок до першого фото", ImageName="first-image.jpg" },
+                    new Image { Id = Guid.NewGuid().ToString(), CreationDate = DateTime.Now.ToString(), Title="Заголовок до другого фото", ImageName="second-image.jpg" },
+                    new Image { Id = Guid.NewGuid().ToString(), CreationDate = DateTime.Now.ToString(), Title="Заголовок до третього фото", ImageName="three-image.jpg" },
+                    new Image { Id = Guid.NewGuid().ToString(), CreationDate = DateTime.Now.ToString(), Title="Заголовок до четвертого фото", ImageName="four-image.jpg" },
+                    new Image { Id = Guid.NewGuid().ToString(), CreationDate = DateTime.Now.ToString(), Title="Заголовок до п'ятого фото", ImageName="five-image.jpg" },
              }
            );
         }

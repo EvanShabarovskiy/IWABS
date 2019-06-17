@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace Backend.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
     public class DocumentsController : ControllerBase
     {
         private DocumentsService documentsService;
@@ -24,11 +23,11 @@ namespace Backend.Controllers
         public IActionResult GetDocuments() => Ok(new { documents = documentsService.GetDocuments() });
 
         [HttpPost]
-        public IActionResult AddNewDocument(DocumentUI document)
+        public IActionResult AddNewDocument(DocumentUI document, IFormFile file)
         {
-            if (document.Title != null && document.File != null)
+            if (document.Title != null && file != null)
             {
-                return Ok(new { createdDoc = documentsService.AddNewDocument(document.Title, document.File) });
+                return Ok(new { createdDoc = documentsService.AddNewDocument(document, file) });
             }
             return BadRequest();
         }

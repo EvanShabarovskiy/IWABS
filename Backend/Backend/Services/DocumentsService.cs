@@ -1,4 +1,5 @@
 ﻿using Backend.Models;
+using Backend.Models.UIModels;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using System;
@@ -23,17 +24,9 @@ namespace Backend.Services
 
         public List<Document> GetDocuments() => database.Documents.OrderByDescending(x => x.CreationDate).ToList();
 
-        public Document AddNewDocument(string title, IFormFile document)
+        public Document AddNewDocument(DocumentUI documentUI, IFormFile document)
         {
             string[] format = document.ContentType.Split('/');
-
-            Document doc = new Document
-            {
-                Id = Guid.NewGuid().ToString(),
-                Title = title,
-                Format = format[1],
-                CreationDate = DateTime.Now.ToString()
-            };
 
             string folderName = "Static/Documents";
             string webRootPath = env.ContentRootPath;
@@ -43,6 +36,14 @@ namespace Backend.Services
             {
                 Directory.CreateDirectory(newPath);
             }
+
+            Document doc = new Document
+            {
+                Id = Guid.NewGuid().ToString(),
+                Title = documentUI.Title,
+                Format = format[1],
+                CreationDate = DateTime.Now.ToString()
+            };
 
             string fileName = Guid.NewGuid().ToString() + ContentDispositionHeaderValue.Parse(document.ContentDisposition).FileName.Trim('"');
             string fullPath = Path.Combine(newPath, fileName);
