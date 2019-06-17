@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Backend.Models.UIModels;
 using Backend.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -23,11 +24,11 @@ namespace Backend.Controllers
         public IActionResult GetDocuments() => Ok(new { documents = documentsService.GetDocuments() });
 
         [HttpPost]
-        public IActionResult AddNewDocument(string name, IFormFile file)
+        public IActionResult AddNewDocument(DocumentUI document)
         {
-            if (name != null && file != null)
+            if (document.Name != null && document.File != null)
             {
-                return Ok(new { createdDoc = documentsService.AddNewDocument(name, file) });
+                return Ok(new { createdDoc = documentsService.AddNewDocument(document.Name, document.File) });
             }
             return BadRequest();
         }
