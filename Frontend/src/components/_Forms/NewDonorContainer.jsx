@@ -16,21 +16,24 @@ const initialState = {
 
 const NewDonorContainer = ({ createDonor }) => {
   const [date, setDate] = useState('');
+  const [group, setGroup] = useState('');
   const { data, change, reset } = useFormValidation(initialState, initialState);
   const toggle = useToggle(reset);
   const { handleToggled } = toggle;
   const onSubmit = e => {
     e.preventDefault();
-    data['date'] = date;
-    console.log('data', data);
-    // createDonor(data);
-    // handleToggled();
-    // reset();
+    data['dateOfBirth'] = date;
+    data['bloodGroup'] = group;
+    createDonor(data);
+    handleToggled();
+    reset();
   }
+
+  const onSelectChange = value => setGroup(value);
   const onDateChange = (_, date) => {
     setDate(date);
   }
-  return <NewDonor {...data} {...toggle} change={change} onSubmit={onSubmit} onDateChange={onDateChange} />
+  return <NewDonor {...data} {...toggle} change={change} onSubmit={onSubmit} onDateChange={onDateChange} onSelectChange={onSelectChange} />
 };
 
 
