@@ -4,7 +4,7 @@ import NewPhoto from './NewPhoto';
 import { useToggle } from '../../assets/hooks/useToggle';
 import { useFormValidation } from '../../assets/hooks/useFormValidation';
 import { ADD_IMAGE } from '../../store/gallery/actions'
-import { parseToFormData } from '../../assets/functions/parseToFormData';
+import { parseToFormData } from '../../assets/utils/parseToFormData';
 import { useCreate } from '../../assets/hooks/useCreate';
 
 const initialState = {

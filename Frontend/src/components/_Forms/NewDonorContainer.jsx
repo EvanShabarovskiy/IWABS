@@ -23,9 +23,10 @@ const NewDonorContainer = ({ createDonor }) => {
   const onSubmit = e => {
     e.preventDefault();
     data['date'] = date;
-    createDonor(data);
-    handleToggled();
-    reset();
+    console.log('data', data);
+    // createDonor(data);
+    // handleToggled();
+    // reset();
   }
   const onDateChange = (_, date) => {
     setDate(date);
