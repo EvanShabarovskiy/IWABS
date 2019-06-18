@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 import NewDoc from './NewDoc';
 import { useToggle } from '../../assets/hooks/useToggle';
@@ -9,16 +9,16 @@ import { parseToFormData } from '../../assets/utils/parseToFormData';
 
 const initialState = {
   title: '',
-  text: '',
   file: null
 }
 
 const requiredFields = initialState;
 requiredFields['file'] = '';
 
-const NewDocContainer = ({ createDoc }) => {
+const NewDocContainer = () => {
   const { data, errors, change, reset, validate } = useFormValidation(initialState, requiredFields);
   const toggle = useToggle(reset);
+  const dispatch = useDispatch();
   const { handleToggled } = toggle;
 
   const validateParams = {
@@ -33,15 +33,13 @@ const NewDocContainer = ({ createDoc }) => {
  }
 
   const onSubmit = e => {
-    console.log('submit');
     e.preventDefault();
     const dataKeys = Object.keys(data);
     const validateResults = dataKeys.map(item => item && validate(item, data[item], !!validateParams[item] && validateParams[item]));
     const isValid = validateResults.find(value => value == false) != false && true; 
     let formData = parseToFormData(data);
-    
     if (isValid) {
-      createDoc(formData);
+      dispatch(createDoc(formData));
       reset();
       handleToggled();
     }
@@ -50,7 +48,4 @@ const NewDocContainer = ({ createDoc }) => {
   return <NewDoc {...data} {...toggle} errors={errors} fileName={data.file.name} change={change} onSubmit={onSubmit} />
 };
 
-export default connect(
-  null, 
-  { createDoc }
-)(NewDocContainer);
+export default NewDocContainer;

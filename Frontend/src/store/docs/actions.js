@@ -24,8 +24,8 @@ export const createDoc = doc => dispatch => {
   Post(
     api + 'documents', 
     doc, 
-    ({ createdDocument }) => {
-      dispatch({ type: CREATE_DOC, payload: createdDocument });
+    ({ createdDoc }) => {
+      dispatch({ type: CREATE_DOC, payload: createdDoc });
       setTimeout(() => dispatch(togglePageLoading(false)), 500);
     }, 
     error => dispatch(togglePageLoading(false)), 
