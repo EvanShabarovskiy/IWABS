@@ -16,11 +16,13 @@ const DocContainer = ({ doc, index, signedIn, removeDoc }) => {
         case 'txt':
             doc['iconClass'] = 'far fa-file-alt doc-icon';
             break;
-        case 'jpg' || 'png':
+        case 'jpg':
+        case 'jpeg':
+        case 'png':
             doc['iconClass'] = 'far fa-file-image doc-icon';
             break;
         default:
-            doc['iconClass'] = 'fas fa-poop doc-icon';
+            doc['iconClass'] = 'fas fa-file doc-icon';
             break;
     }
     const onRemove = () => confirm('Ви дійсно хочете видалити цей документ?') && removeDoc(doc.id);
