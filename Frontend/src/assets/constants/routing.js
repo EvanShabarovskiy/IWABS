@@ -10,11 +10,10 @@ const GalleryContainer = loadmang(() => import('../../components/Gallery/Gallery
 const DonorsContainer = loadmang(() => import('../../components/Donors/DonorsContainer'));
 const MedicineContainer = loadmang(() => import('../../components/Medicine/MedicineContainer'));
 
-const InformationForADonor = loadmang(() => import('../../components/ForDonors/InformationForADonor'));
-const HowToBecomeADonor = loadmang(() => import('../../components/ForDonors/HowToBecomeADonor'));
-const Contraindications = loadmang(() => import('../../components/ForDonors/Contraindications'));
-const PrivilegesForDonors = loadmang(() => import('../../components/ForDonors/PrivilegesForDonors'));
-
+import InformationForADonor from '../../components/ForDonors/InformationForADonor';
+import HowToBecomeADonor from '../../components/ForDonors/HowToBecomeADonor';
+import PrivilegesForDonors from '../../components/ForDonors/PrivilegesForDonors';
+import Contraindications from '../../components/ForDonors/Contraindications';
 
 export const appRedirected = [
   {
