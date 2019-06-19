@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
-import { connect, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { getMedicine } from '../../store/medicine/actions';
 import Medicine from './Medicine';
 
-const MedicineContainer = ({ getMedicine }) => {
+const MedicineContainer = () => {
   const signedIn = useSelector(({ general: { signedIn } }) => signedIn);
   const medicine = useSelector(({ medicine }) => medicine);
-  useEffect(() => getMedicine(), []);
+  const dispatch = useDispatch();
+  useEffect(() => dispatch(getMedicine()), []);
   return <Medicine signedIn={signedIn} medicine={medicine}/>;
 };
 
-export default connect(null, { getMedicine })(MedicineContainer);
+export default MedicineContainer;

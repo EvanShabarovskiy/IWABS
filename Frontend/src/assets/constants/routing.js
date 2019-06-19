@@ -1,18 +1,20 @@
-import Main from '../../components/Main';
-import NewsContainer from '../../components/News/NewsContainer';
-import DocsContainer from '../../components/Docs/DocsContainer';
-import ForDonors from '../../components/ForDonors/ForDonors';
-
+import { loadmang } from '../utils/loadmang';
 import { redirectCheck } from '../utils/redirectCheck';
 import { donorsParams, signInParams } from './routingParams';
 
-import InformationForADonor from "../../components/ForDonors/InformationForADonor";
-import HowToBecomeADonor from "../../components/ForDonors/HowToBecomeADonor";
-import PrivilegesForDonors from "../../components/ForDonors/PrivilegesForDonors";
-import Contraindications from "../../components/ForDonors/Contraindications";
-import GalleryContainer from '../../components/Gallery/GalleryContainer';
-import DonorsContainer from '../../components/Donors/DonorsContainer';
-import MedicineContainer from '../../components/Medicine/MedicineContainer';
+const Main = loadmang(() => import('../../components/Main'));
+const NewsContainer = loadmang(() => import('../../components/News/NewsContainer'));
+const DocsContainer = loadmang(() => import('../../components/Docs/DocsContainer'));
+const ForDonors = loadmang(() => import('../../components/ForDonors/ForDonors'));
+const GalleryContainer = loadmang(() => import('../../components/Gallery/GalleryContainer'));
+const DonorsContainer = loadmang(() => import('../../components/Donors/DonorsContainer'));
+const MedicineContainer = loadmang(() => import('../../components/Medicine/MedicineContainer'));
+
+const InformationForADonor = loadmang(() => import('../../components/ForDonors/InformationForADonor'));
+const HowToBecomeADonor = loadmang(() => import('../../components/ForDonors/HowToBecomeADonor'));
+const Contraindications = loadmang(() => import('../../components/ForDonors/Contraindications'));
+const PrivilegesForDonors = loadmang(() => import('../../components/ForDonors/PrivilegesForDonors'));
+
 
 export const appRedirected = [
   {
@@ -20,11 +22,11 @@ export const appRedirected = [
     returnCondition: signedIn => !signedIn,
     redirect: condition => redirectCheck(condition, signInParams)
   },
-  // {
-  //   path: '/donors',
-  //   returnCondition: signedIn => signedIn,
-  //   redirect: condition => redirectCheck(condition, donorsParams)
-  // },
+  {
+    path: '/donors',
+    returnCondition: signedIn => signedIn,
+    redirect: condition => redirectCheck(condition, donorsParams)
+  },
 ]
 
 export const app = [

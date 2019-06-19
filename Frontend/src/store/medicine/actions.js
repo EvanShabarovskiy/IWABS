@@ -3,7 +3,7 @@ import { api } from '../../assets/constants/api';
 import { get } from 'js-cookie'
 
 export const GET_MEDICINE = 'GET_MEDICINE';
-export const CREATE_MEDICINE = 'GET_MEDICINE';
+export const CREATE_MEDICINE = 'CREATE_MEDICINE';
 export const REMOVE_MEDICINE = 'REMOVE_MEDICINE';
 
 export const getMedicine = () => dispatch => {
@@ -18,8 +18,7 @@ export const createMedicine = item => dispatch => {
   Post(
     api + 'medicine', 
     item, 
-    ({ createdMedicine }) => dispatch({ type: CREATE_MEDICINE, payload: createdMedicine
-    }), 
+    ({ createdMedicine }) => dispatch({ type: CREATE_MEDICINE, payload: createdMedicine }), 
     error => console.log('error', error), 
     get('token')
   );

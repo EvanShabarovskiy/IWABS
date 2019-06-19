@@ -8,11 +8,11 @@ const ContactsInfo = () =>
     <div className="emails">
       <p className="emails-title">потрібна допомога?</p>
       <p className="email">
-        <i className="fas fa-at icon"></i>
+        <i className="fas fa-envelope icon"></i>
         RivneOSPK@gmail.com
       </p>
       <p className="email">
-        <i className="fas fa-at icon"></i>
+        <i className="fas fa-envelope icon"></i>
         Obl.stancija.perel.krovi@icc.rv.ua
       </p>
     </div>

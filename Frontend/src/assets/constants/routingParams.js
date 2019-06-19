@@ -1,5 +1,7 @@
-import DonorsContainer from "../../components/Donors/DonorsContainer";
-import SignInContainer from "../../components/_Forms/SignInContainer";
+import { loadmang } from "../utils/loadmang";
+
+const DonorsContainer = loadmang(() => import('../../components/Donors/DonorsContainer'));
+const SignInContainer = loadmang(() => import('../../components/_Forms/SignInContainer'));
 
 export const signInParams = {
   Component: SignInContainer,
