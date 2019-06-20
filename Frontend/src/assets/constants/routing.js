@@ -1,14 +1,13 @@
-import { loadmang } from '../utils/loadmang';
 import { redirectCheck } from '../utils/redirectCheck';
 import { donorsParams, signInParams } from './routingParams';
 
-const Main = loadmang(() => import('../../components/Main'));
-const NewsContainer = loadmang(() => import('../../components/News/NewsContainer'));
-const DocsContainer = loadmang(() => import('../../components/Docs/DocsContainer'));
-const ForDonors = loadmang(() => import('../../components/ForDonors/ForDonors'));
-const GalleryContainer = loadmang(() => import('../../components/Gallery/GalleryContainer'));
-const DonorsContainer = loadmang(() => import('../../components/Donors/DonorsContainer'));
-const MedicineContainer = loadmang(() => import('../../components/Medicine/MedicineContainer'));
+import Main from '../../components/Main';
+import NewsContainer from '../../components/News/NewsContainer';
+import DocsContainer from '../../components/Docs/DocsContainer';
+import ForDonors from '../../components/ForDonors/ForDonors';
+import GalleryContainer from '../../components/Gallery/GalleryContainer';
+import DonorsContainer from '../../components/Donors/DonorsContainer';
+import MedicineContainer from '../../components/Medicine/MedicineContainer';
 
 import InformationForADonor from '../../components/ForDonors/InformationForADonor';
 import HowToBecomeADonor from '../../components/ForDonors/HowToBecomeADonor';
